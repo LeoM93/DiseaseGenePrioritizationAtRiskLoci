@@ -33,8 +33,26 @@ class GSEAValidation():
 		self.filter = filter_
 
 		self.map__algorithm__solution = {dir_: self.__load_solution__(self.algorithms_file_path + dir_ + "/solution.txt") for dir_ in os.listdir(self.algorithms_file_path) if dir_[0] != "." and dir_ not in self.filter}
-		print(self.map__algorithm__solution)
 		self.__load_locus_genes__()
+
+
+
+	def distribution_of_solution(self,):
+		self.map__algorithm__locus__score = {}
+		
+		for algorithm, solution in self.map__algorithm__solution.items():
+			self.map__algorithm__locus__score[algorithm] = {}
+			for gene in solution:
+				if gene in self.map__gene__locus:
+					locus =  self.map__gene__locus[gene]
+
+					if locus not in self.map__algorithm__locus__score[algorithm]:
+						self.map__algorithm__locus__score[algorithm][locus] = 0
+					self.map__algorithm__locus__score[algorithm][locus] += 1
+
+		pd.DataFrame(self.map__algorithm__locus__score).fillna(0.0).to_csv(self.validation_dir_path + "distribution_of_solution.tsv",sep= "\t")
+
+
 
 	def __load_locus_genes__(self,):
 
@@ -82,7 +100,7 @@ class GSEAValidation():
 				organism='Human', # don't forget to set organism to the one you desired! e.g. Yeast
 				description='test_name',
 				outdir='test/enrichr_kegg',
-				# no_plot=True,
+				no_plot=True,
 				cutoff= 0.05 # test dataset, use lower value from range(0,1)
 		                )
 			data_frame = result.results
@@ -154,7 +172,7 @@ class GSEAValidation():
 				organism='Human', # don't forget to set organism to the one you desired! e.g. Yeast
 				description='test_name',
 				outdir='test/enrichr_kegg',
-				# no_plot=True,
+				no_plot=True,
 				cutoff= 0.05 # test dataset, use lower value from range(0,1)
 		                )
 				data_frame = result.results
@@ -176,8 +194,9 @@ if __name__ == "__main__":
 		locus_gene_file_path = "../../datasets/GWAS/unbiased_copd_snp_database.txt",
 		disease_experiment_dir_path = "../../experiments/algorithm_comparison/",
 		filter_ = [],
-		gene_set = "Reactome_2016" #KEGG_2021_Human
+		gene_set = "KEGG_2021_Human" #KEGG_2021_Human
 	)
 
+	gsea.distribution_of_solution()
 	gsea.run_gseapy()
 	gsea.run_gseapy_on_sample()

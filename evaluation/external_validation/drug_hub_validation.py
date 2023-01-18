@@ -158,9 +158,25 @@ class DrugHubValidation():
 		table_2 = []
 		table_3 = []
 		for algorithm, solution in self.map__algorithm__solution.items():
+			table_4 = []
+			
 			phi =  len(solution.intersection(drug_targets))
 			table_1.append([algorithm,phi/len(solution)])
-			print(algorithm,solution.intersection(drug_targets))
+			intersected_targets = solution.intersection(drug_targets)
+
+			for target in intersected_targets:
+				drugs = self.map__target__drugs[target]
+				for drug in drugs:
+					
+					drug_name, disease_area, mou,clinical_phase,indication = drug
+					record = [target,drug_name,mou,clinical_phase]
+					table_4.append(record)
+			if pulmonary:
+				pd.DataFrame(table_4,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase"]).to_csv(self.validation_dir_path +algorithm+ "drug_hub_information_pulmonary.tsv", sep = "\t")
+			else:
+				pd.DataFrame(table_4,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase"]).to_csv(self.validation_dir_path +algorithm+ "drug_hub_information_total.tsv", sep = "\t")
+
+
 
 			counter = 0
 			
