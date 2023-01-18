@@ -98,7 +98,6 @@ class GSEAValidation():
 			result = gseapy.enrichr(gene_list=list(set_),
 				gene_sets=[self.gene_set],
 				organism='Human', # don't forget to set organism to the one you desired! e.g. Yeast
-				description='test_name',
 				outdir='test/enrichr_kegg',
 				no_plot=True,
 				cutoff= 0.05 # test dataset, use lower value from range(0,1)
@@ -170,7 +169,6 @@ class GSEAValidation():
 				
 				gene_sets=[self.gene_set],
 				organism='Human', # don't forget to set organism to the one you desired! e.g. Yeast
-				description='test_name',
 				outdir='test/enrichr_kegg',
 				no_plot=True,
 				cutoff= 0.05 # test dataset, use lower value from range(0,1)
@@ -194,7 +192,7 @@ if __name__ == "__main__":
 		locus_gene_file_path = "../../datasets/GWAS/unbiased_copd_snp_database.txt",
 		disease_experiment_dir_path = "../../experiments/algorithm_comparison/",
 		filter_ = [],
-		gene_set = "KEGG_2021_Human" #KEGG_2021_Human
+		gene_set = "Reactome_2016" #"KEGG_2021_Human"
 	)
 
 	gsea.distribution_of_solution()
