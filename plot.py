@@ -12,7 +12,7 @@ import matplotlib as mpl
 class Plot():
 	def __init__(self,
 		disease_experiment_dir_path,
-		gsea_directory = "gsea_kegg"
+		gsea_directory = "gsea_reactome"
  	):
 		self.gsea_directory = gsea_directory
 		self.reactome_enrichment_dir = disease_experiment_dir_path + "validation/" + gsea_directory + "/"
@@ -401,8 +401,8 @@ p = Plot(disease_experiment_dir_path = "./experiments/algorithm_comparison/")
 p.plot_reactome_enrichment()
 p.plot_sampled_reactome_enrichment()
 
-#p.plot_mouse_phenotypes_and_drug_hub()
-#p.plot_mouse_phenotypes_and_drug_hub_on_randomized_graph()
+p.plot_mouse_phenotypes_and_drug_hub()
+p.plot_mouse_phenotypes_and_drug_hub_on_randomized_graph()
 
-#p = Plot(disease_experiment_dir_path = "./experiments/missing_data/")
-#p.plot_odd_vs_even()
+p = Plot(disease_experiment_dir_path = "./experiments/missing_data/")
+p.plot_odd_vs_even()
