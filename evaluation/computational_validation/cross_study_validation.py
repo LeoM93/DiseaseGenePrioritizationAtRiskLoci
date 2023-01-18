@@ -6,7 +6,6 @@ import random
 import os
 import seaborn as sns
 import matplotlib.pyplot as plt
-import gseapy
 import string
 class CrossStudyValidation():
 
