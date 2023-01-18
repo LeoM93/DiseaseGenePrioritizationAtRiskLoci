@@ -12,15 +12,18 @@ import matplotlib as mpl
 class Plot():
 	def __init__(self,
 		disease_experiment_dir_path,
+		gsea_directory = "gsea_kegg"
  	):
-		
-		self.reactome_enrichment_dir = disease_experiment_dir_path + "validation/gsea_reactome/"
+		self.gsea_directory = gsea_directory
+		self.reactome_enrichment_dir = disease_experiment_dir_path + "validation/" + gsea_directory + "/"
 		try:
-			self.reactome_enrichment_file_paths = [self.reactome_enrichment_dir + file for file in os.listdir(self.reactome_enrichment_dir) if file[0] != "." and ".tsv" in file]
+			self.reactome_enrichment_file_paths = [self.reactome_enrichment_dir +"standard/"+ file for file in os.listdir(self.reactome_enrichment_dir + "standard/") if file[0] != "." and ".tsv" in file]
 			self.reactome_enrichment_alg_file_paths = {}
+
+			print(self.reactome_enrichment_file_paths)
 			
 			for alg in os.listdir(self.reactome_enrichment_dir):
-				if alg[0] != "." and ".tsv" not in alg:
+				if alg[0] != "." and "standard" not in alg:
 
 					if alg not in self.reactome_enrichment_alg_file_paths:
 
@@ -63,10 +66,11 @@ class Plot():
 
 	
 
-	def __load_reactome_enrichment_data_frame__(self, file_paths, str_ = " Homo sapiens"):
+	def __load_reactome_enrichment_data_frame__(self, str_ = " Homo sapiens"):
 		self.map__pathways__algorithm__pval = {}
 		
-		for file_path in file_paths:
+		for file_path in self.reactome_enrichment_file_paths:
+			print(file_path)
 			algorithm_file_path = file_path.split("/")[-1]
 			
 			csv_reader = csv.reader(open(file_path, "r"), delimiter = "\t")
@@ -78,7 +82,6 @@ class Plot():
 				term = row[1]
 				p_value  = float(row[2])
 
-
 				if str_ in term:
 					pathways_name = term.split(str_)[0]
 
@@ -89,6 +92,17 @@ class Plot():
 					
 					if algorithm_name not in self.map__pathways__algorithm__pval[pathways_name]:
 						self.map__pathways__algorithm__pval[pathways_name][algorithm_name] = -math.log10(p_value)
+				elif self.gsea_directory == "gsea_kegg":
+					pathways_name = term
+
+					if pathways_name not in self.map__pathways__algorithm__pval:
+						self.map__pathways__algorithm__pval[pathways_name] = {}
+						
+					algorithm_name = algorithm_file_path.split(".")[0]
+					
+					if algorithm_name not in self.map__pathways__algorithm__pval[pathways_name]:
+						self.map__pathways__algorithm__pval[pathways_name][algorithm_name] = -math.log10(p_value)
+
 
 
 	def __load_sampled_reactome_enrichment_data_frame__(self,str_ = " Homo sapiens"):
@@ -113,9 +127,16 @@ class Plot():
 					p_value  = float(row[2])
 
 
-					if str_ in term:
+					if str_ in term and self.gsea_directory == "gsea_reactome":
 					
 						pathways_name = term.split(str_)[0]
+
+						if pathways_name not in map__pathways__p_val:
+							map__pathways__p_val[pathways_name] = 0
+
+						map__pathways__p_val[pathways_name] += p_value/float(counter)
+					elif self.gsea_directory == "gsea_kegg":
+						pathways_name = term
 
 						if pathways_name not in map__pathways__p_val:
 							map__pathways__p_val[pathways_name] = 0
@@ -139,7 +160,21 @@ class Plot():
 		data_frame = data_frame.fillna(0.0)
 		data_frame = data_frame[(data_frame > threshold).any(1)]
 		data_frame = data_frame[data_frame['RMA'] > threshold] 
-		data_frame.to_csv('./imgs/sampled_Kegg_enrichment_MRA.tsv',sep = "\t")
+		data_frame.to_csv('./imgs/sampled_' + self.gsea_directory + '_enrichment.tsv',sep = "\t")
+
+
+	def plot_reactome_enrichment(self,threshold = -math.log10(0.05)):
+		self.__load_reactome_enrichment_data_frame__()
+
+		data_frame = pd.DataFrame(self.map__pathways__algorithm__pval)
+		data_frame = data_frame.transpose()
+		print(data_frame)
+		data_frame = data_frame.fillna(0.0)
+		data_frame = data_frame[data_frame['RMA'] > threshold] 
+		data_frame = data_frame[(data_frame > threshold).any(1)]
+		data_frame.to_csv('./imgs/' + self.gsea_directory+ '_enrichment.tsv',sep = "\t")
+
+
 
 
 	def __load_df__(self,file_path, is_float = False):
@@ -363,9 +398,11 @@ class Plot():
 
 
 p = Plot(disease_experiment_dir_path = "./experiments/algorithm_comparison/")
+p.plot_reactome_enrichment()
+p.plot_sampled_reactome_enrichment()
 
-p.plot_mouse_phenotypes_and_drug_hub()
-p.plot_mouse_phenotypes_and_drug_hub_on_randomized_graph()
+#p.plot_mouse_phenotypes_and_drug_hub()
+#p.plot_mouse_phenotypes_and_drug_hub_on_randomized_graph()
 
-p = Plot(disease_experiment_dir_path = "./experiments/missing_data/")
-p.plot_odd_vs_even()
+#p = Plot(disease_experiment_dir_path = "./experiments/missing_data/")
+#p.plot_odd_vs_even()
