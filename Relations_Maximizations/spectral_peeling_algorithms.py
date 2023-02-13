@@ -17,6 +17,9 @@ current_milli_time = lambda: int(round(time.time() * 1000))
 
 
 def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=True,
+                     perform_peeling=True,
+                     removing_policy="log",
+                     smooth_landing=False,
                      at_most_one_node_for_each_color_in_the_final_solution=False):
     #
     best_solution = None
@@ -135,8 +138,8 @@ def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=
         if (best_solution is None) or (best_solutions_from_Paired_Sweep_rounding_on_M[2] > best_solution[2]):
             best_solution = best_solutions_from_Paired_Sweep_rounding_on_M
         #
+        print()
         print("Iteration number:", iteration_number)
-        # print("               best solution found so far:", best_solution)
         print("Density of the best solution found so far:", best_solution[-3])
         order = best_solutions_from_Paired_Sweep_rounding_on_M[1]
         if order == 0:
@@ -150,18 +153,20 @@ def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=
         #
         #
         c_set__all_color_ids = set()
+        map__color_id__num_indexes = {}
+        map__index__color_id = {}
         map__color_id__top_index = {}
         map__color_id__bottom_index = {}
-        plus_inf = float("+inf")
-        nega_inf = float("-inf")
         for c_index, c_Meve_index_id__Meve_score in enumerate(sorted_main_eigen_vector_M):
             #
             c_Meve_index_id = c_Meve_index_id__Meve_score[0]
             c_node_id = map__index__node_id[c_Meve_index_id]
             #
             c_color = w_graph.nodes[c_node_id]["color"]
-            map__color_id__top_index[c_color] = min(map__color_id__top_index.get(c_color, plus_inf), c_index)
-            map__color_id__bottom_index[c_color] = max(map__color_id__bottom_index.get(c_color, nega_inf), c_index)
+            #
+            map__index__color_id[c_index] = c_color
+            map__color_id__num_indexes[c_color] = map__color_id__num_indexes.get(c_color, 0) + 1
+            #
             c_set__all_color_ids.add(c_color)
             #
         if not at_most_one_node_for_each_color_in_the_final_solution:
@@ -170,34 +175,49 @@ def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=
                 break
         #
         #
-        index_of_the_node_to_peel_out_id = None
-        if at_most_one_node_for_each_color_in_the_final_solution:
+        nodes_to_remove_in_this_iteration = 1
+        if removing_policy == "log":
+            nodes_to_remove_in_this_iteration = int(1 + len(sorted_main_eigen_vector_M) / 2)
             #
-            if len(sorted_main_eigen_vector_M) <= 2:
-                must_continue_with_peeling = False
+        if removing_policy == "sqrt":
+            nodes_to_remove_in_this_iteration = int(len(sorted_main_eigen_vector_M) ** 0.5)
+            #
+        if removing_policy.isnumeric():
+            nodes_to_remove_in_this_iteration = int(removing_policy)
+            #
+        #
+        if smooth_landing:
+            if len(sorted_main_eigen_vector_M) <= 2 * len(set__all_color_ids):
+                nodes_to_remove_in_this_iteration = 1
+        #
+        list__indexes_to_remove = list()
+        for j in range(len(sorted_main_eigen_vector_M)):
+            #
+            if len(list__indexes_to_remove) == nodes_to_remove_in_this_iteration:
                 break
             #
-            index_of_the_node_to_peel_out_id = -1
-        else:
-            for c_color in c_set__all_color_ids:
-                if map__color_id__bottom_index[c_color] == map__color_id__top_index[c_color]:
-                    continue
-                #
-                if (index_of_the_node_to_peel_out_id is None) or (
-                        map__color_id__bottom_index[c_color] > index_of_the_node_to_peel_out_id):
-                    index_of_the_node_to_peel_out_id = map__color_id__bottom_index[c_color]
+            c_index = len(sorted_main_eigen_vector_M) - j - 1
+            c_color = map__index__color_id[c_index]
             #
-            if index_of_the_node_to_peel_out_id is None:
-                must_continue_with_peeling = False
-                break
+            if map__color_id__num_indexes[c_color] == 1:
+                continue
+            #
+            list__indexes_to_remove.append(c_index)
+            map__color_id__num_indexes[c_color] -= 1
+        #
         #
         #########################
         # remove node from graph
         #########################
-        node_to_peel_out_id = map__index__node_id[sorted_main_eigen_vector_M[index_of_the_node_to_peel_out_id][0]]
-        print("Inner identifier of the node to peel out:", node_to_peel_out_id)
-        print()
-        w_graph.remove_node(node_to_peel_out_id)
+        #
+        if not perform_peeling:
+            must_continue_with_peeling = False
+        #
+        if len(list__indexes_to_remove) == 0:
+            must_continue_with_peeling = False
+        for c_index in list__indexes_to_remove:
+            node_to_peel_out_id = map__index__node_id[sorted_main_eigen_vector_M[c_index][0]]
+            w_graph.remove_node(node_to_peel_out_id)
         #
     #
     return [best_solution]
