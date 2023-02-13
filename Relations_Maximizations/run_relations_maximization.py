@@ -1,5 +1,14 @@
 import sys
 
+perform_peeling = True
+#
+removing_policy = "log"
+# removing_policy = "sqrt"
+# removing_policy = "1"
+#
+smooth_landing = False
+# smooth_landing = True
+
 if len(sys.argv) != 2:
     print()
     print("Wrong number of arguments: provided " + str(len(sys.argv) - 1) + " required 1.")
@@ -22,6 +31,8 @@ from spectral_peeling_algorithms import spectral_peeling
 
 current_milli_time = lambda: int(round(time.time() * 1000))
 
+ts_start = current_milli_time()
+
 c_time = str(datetime.now()).replace("-", "_").replace(" ", "__").replace(":", "_").replace(".", "_")
 output_file_handler = open("output__" + str(c_time) + ".tsv", "w")
 csv_writer = csv.writer(output_file_handler, delimiter='\t', quoting=csv.QUOTE_NONE)
@@ -31,7 +42,10 @@ csv_writer.writerow(
      "algorithm",
      "density of the solution",
      "number of genes in the solution",
-     "set of genes in the solution"])
+     "set of genes in the solution",
+     "total_required_time(sec)",
+     "removing_policy",
+     "smooth_landing"])
 output_file_handler.flush()
 algo_name = "Relations Maximization Algorithm"
 #
@@ -114,8 +128,6 @@ total_time = t_1 - t_0
 print()
 print("Graph file name:", graph_file_name)
 print("Graph with " + str(len(graph)) + " nodes and " + str(nx.number_of_edges(graph)) + " edges")
-print("Graph creation:", total_time, "msec")
-print()
 
 ########################################
 # Run Relations-Maximization Algorithm #
@@ -124,13 +136,16 @@ print()
 t_0 = current_milli_time()
 #
 list_of_solutions_from_Single_Sweep_rounding_on_M = spectral_peeling(graph, map__node__color,
-                                                                     using_fair_projection=True)
+                                                                     using_fair_projection=True,
+                                                                     perform_peeling=perform_peeling,
+                                                                     removing_policy=removing_policy,
+                                                                     smooth_landing=smooth_landing)
 #
 t_1 = current_milli_time()
 total_time = t_1 - t_0
-print()
-print(" " + algo_name + " total_time in msec: ", total_time, "msec")
-print()
+
+if not perform_peeling:
+    algo_name += " NO PEELING"
 #########################
 #########################
 #########################
@@ -138,11 +153,24 @@ density_of_solution = list_of_solutions_from_Single_Sweep_rounding_on_M[0][-3]
 set__original_node_id_in_solution = set()
 for inner_node_id in list_of_solutions_from_Single_Sweep_rounding_on_M[0][0]:
     set__original_node_id_in_solution.add(map__inner_node_id__outer_node_id[inner_node_id])
+set_as_list__original_node_id_in_solution = list(set__original_node_id_in_solution)
+set_as_list__original_node_id_in_solution.sort()
+set_as_string__original_node_id_in_solution = str(set_as_list__original_node_id_in_solution).replace("[", "{").replace(
+    "]", "}")
 #
+ts_end = current_milli_time()
 row = [graph_file_name, len(graph.nodes), len(all_colors), algo_name, density_of_solution,
-       len(set__original_node_id_in_solution), set__original_node_id_in_solution]
+       len(set__original_node_id_in_solution), set_as_string__original_node_id_in_solution,
+       int((ts_end - ts_start) / 1000), removing_policy, smooth_landing]
 csv_writer.writerow(row)
 output_file_handler.flush()
 output_file_handler.close()
 
 print()
+print("Done.")
+print()
+
+# print()
+# print("Final Solution:")
+# print(set_as_string__original_node_id_in_solution)
+# print()
