@@ -16,9 +16,9 @@ class SNPGeneGraph():
 		for index, row in enumerate(csv_reader):
 			if index == 0:
 				continue
-			rs_id = row[0]
-			chr_ = row[1]
-			position = row[2]
+			rs_id = row[2]
+			chr_ = row[0]
+			position = row[1]
 
 			self.map__rs_id__position[rs_id] = (chr_,int(position))
 
@@ -43,7 +43,7 @@ class SNPGeneGraph():
 		self.__load_rs_id__position__()
 		self.__load_genes_overlapping_windows__()
 		gene_snp_graph = []
-		
+		gene_set = []
 		self.map__gene__closest_loci = {}
 		for gene, positions in self.map__gene__positions.items():
 			self.map__gene__closest_loci[gene] = []
@@ -71,9 +71,12 @@ class SNPGeneGraph():
 
 			closest_snp = closest_snps[0]
 			gene_snp_graph.append([gene,closest_snp[0]])
+			gene_set.append(gene)
 
+		if self.output_file_path != "":
+			csv_writer = csv.writer(open(self.output_file_path, "w"),delimiter = "\t")
+			csv_writer.writerows(gene_snp_graph)
 		
-		csv_writer = csv.writer(open(self.output_file_path, "w"),delimiter = "\t")
-		csv_writer.writerows(gene_snp_graph)
+		return gene_set
 
 
