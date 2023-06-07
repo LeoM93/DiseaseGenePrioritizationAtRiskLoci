@@ -34,6 +34,7 @@ class AlgorithmWrapper():
 		self.disease_seed_set_file_paths = [self.disease_genes_dir_path + file for file in os.listdir(self.disease_genes_dir_path) if file[0] != "."]
 		self.GWAS_file_paths = [self.GWAS_dir + file for file in os.listdir(self.GWAS_dir) if file[0] != "."]
 		self.GWAS_config_files = [self.GWAS_config_file + file for file in os.listdir(self.GWAS_config_file) if file[0] != "."]
+	
 	def __load_gene_in_2MB_windows__(self,file_path):
 		
 		bg = SNPGeneGraph(
@@ -105,7 +106,7 @@ class AlgorithmWrapper():
 		subprocess.call(dmGWAS, shell=True,env = os.environ,stdout=subprocess.PIPE)
 	
 	def __run_SigMod__(self,
-	gene_score_file_path, 
+	gene_score_file_path,
 	network_file_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/datasets/networks/STRING_PPI.tsv"):
 		
 		algorithm_path = self.algorithm_dir_path + "SIGMOID"
@@ -209,11 +210,10 @@ class AlgorithmWrapper():
 		
 		
 		for file in file_paths:
-			#self.__run_lean__(file)
-			#self.__run_SigMod__(file)
-			#self.__run_domino__(file)
+			self.__run_lean__(file)
+			self.__run_SigMod__(file)
+			self.__run_domino__(file)
 			
-			self.__run_DmGWAS__(file)
 
 
 
