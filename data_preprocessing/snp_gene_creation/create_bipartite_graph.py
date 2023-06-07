@@ -19,8 +19,9 @@ class SNPGeneGraph():
 			rs_id = row[2]
 			chr_ = row[0]
 			position = row[1]
+			p_val = float(row[3])
 
-			self.map__rs_id__position[rs_id] = (chr_,int(position))
+			self.map__rs_id__position[rs_id] = (chr_,int(position),p_val)
 
 	def __load_genes_overlapping_windows__(self,):
 		csv_reader = csv.reader(open(self.gene_overlap_2mb_windows_file_path, "r"),delimiter = "\t")
@@ -39,12 +40,17 @@ class SNPGeneGraph():
 			self.map__gene__positions[gene_name].add((chr_, start,end))
 
 
-	def run(self, w = 1e6):
+	def run(self, w = 1e06):
 		self.__load_rs_id__position__()
 		self.__load_genes_overlapping_windows__()
+		
 		gene_snp_graph = []
-		gene_set = []
+		
 		self.map__gene__closest_loci = {}
+		self.map__snp__closest_genes = {}
+		
+		map__gene__p_val = {}
+		
 		for gene, positions in self.map__gene__positions.items():
 			self.map__gene__closest_loci[gene] = []
 			
@@ -52,16 +58,19 @@ class SNPGeneGraph():
 				chr_,start,end = position
 
 				for rs_id, snp_position in self.map__rs_id__position.items():
-					snp_chr, snp_locus = snp_position
+					snp_chr, snp_locus, p_val = snp_position
 
 					if snp_chr != chr_:
 						continue
 
+					if rs_id not in self.map__snp__closest_genes:
+						self.map__snp__closest_genes[rs_id] = []
+					
 					distance = min(abs(snp_locus - start),abs(snp_locus - end))
 					
 					if distance < w:
 						self.map__gene__closest_loci[gene].append((rs_id, distance))
-
+						self.map__snp__closest_genes[rs_id].append((gene,distance,p_val))
 		
 		for gene, closest_snps in self.map__gene__closest_loci.items():
 			closest_snps.sort(key = lambda x:x[1], reverse = False)
@@ -71,12 +80,21 @@ class SNPGeneGraph():
 
 			closest_snp = closest_snps[0]
 			gene_snp_graph.append([gene,closest_snp[0]])
-			gene_set.append(gene)
 
+		for rs_id, closest_genes in self.map__snp__closest_genes.items():
+			closest_genes.sort(key = lambda x:x[1], reverse = False)
+
+			if len(closest_genes) == 0:
+				continue
+			
+			closest_gene = closest_genes[0]
+			map__gene__p_val[closest_gene[0]] = p_val
+
+		
 		if self.output_file_path != "":
 			csv_writer = csv.writer(open(self.output_file_path, "w"),delimiter = "\t")
 			csv_writer.writerows(gene_snp_graph)
 		
-		return gene_set
+		return map__gene__p_val
 
 
