@@ -1,0 +1,10 @@
+{
+    
+    "GCST004988": ["oncology", "breast cancer"],
+    "GCST004748": ["oncology", "non-small cell lung cancer (NSCLC)"],
+    "GCST90011813": ["oncology","thyroid cancer|medullary thyroid cancer (MTC)"],
+    "GCST90129505": ["oncology","colorectal cancer"],
+    
+    "GCST007692":["pulmonary","chronic obstructive pulmonary disease (COPD)|asthma|bronchospasm"],
+    "GCST009841": ["pulmonary","chronic obstructive pulmonary disease (COPD)|asthma|bronchospasm"]
+}

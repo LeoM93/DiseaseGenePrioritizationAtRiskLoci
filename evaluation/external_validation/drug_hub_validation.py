@@ -7,32 +7,40 @@ import seaborn as sns
 sns.set_theme(style="whitegrid")
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-
+import json
+  
 class DrugHubValidation():
 	
 	def __init__(
 		
 		self,
 		disease_experiment_dir_path,
-		gene_pool_file_path,
+		seed_dir_path,
 		drug_table_file_path,
 		random_solution_dir,
+		config_file,
+		ensembl_db_file_path,
 		filter_
   		
 		):
+		self.config_file = config_file
+		self.map__trait__disease_info = json.load(open(self.config_file))
+
+		self.ensembl_db = ensembl_db_file_path
+
 		self.random_solution_dir = random_solution_dir
 		self.validation_dir_path = disease_experiment_dir_path + "validation/"
 		
 		self.disease_experiment_dir_path = disease_experiment_dir_path
 		self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
-		self.gene_pool_file_path = gene_pool_file_path
+		self.seed_dir_path = seed_dir_path
 
 		if not os.path.exists(self.validation_dir_path):
 			os.makedirs(self.validation_dir_path)
 
 		self.filter_ = filter_
-		self.map__algorithm__solution = {dir_: self.__load_solution__(self.algorithms_file_path + dir_ + "/solution.txt") for dir_ in os.listdir(self.algorithms_file_path) if dir_[0] != "." and dir_ not in self.filter_}
-
+		self.__load_ensembl_db__()
+		self.map__algorithm__solutions = {dir_: self.__load_solutions__(self.algorithms_file_path + dir_ +"/") for dir_ in os.listdir(self.algorithms_file_path) if dir_[0] != "." and dir_ not in self.filter_}
 
 		self.drug_table_file_path = drug_table_file_path
 
@@ -58,27 +66,53 @@ class DrugHubValidation():
 				solutions.append(solution)
 		return solutions
 
-
-	def __load_solution__(self,file_path):
-
-		csv_reader = csv.reader(open(file_path , "r"),delimiter = "\t")
-		set_ = set()
+	def __load_ensembl_db__(self,):
+		self.map__gene__ensembl_id = {}
+		self. map__ensembl_id__gene = {}
+		csv_reader = csv.reader(open(self.ensembl_db , "r"),delimiter = "\t")
 		
-		for row in csv_reader:
-			set_.add(row[0])
+		for index, row in enumerate(csv_reader):
 
-		return set_
+			if index == 0:
+				continue
 
-	def __load_gene_pool__(self):
+			gene_name = row[1]
+			ensembl_id = row[0]
 
-		csv_reader = csv.reader(open(self.gene_pool_file_path , "r"),delimiter = "\t")
-		self.candidate_set = set()
+			self.map__gene__ensembl_id[gene_name] = ensembl_id
+			self.map__ensembl_id__gene[ensembl_id] = gene_name
+
+	
+	def __load_solutions__(self,directory_path):
 		
-		for row in csv_reader:
-			self.candidate_set.add(row[0])
+		file_paths = [directory_path + file for file in os.listdir(directory_path) if file[0] != "." ]
+		map__disease_name__disease_module = {}
+		
+		for file_path in file_paths:
+			csv_reader = csv.reader(open(file_path , "r"),delimiter = "\t")
+			set_ = set()
+		
+			for row in csv_reader:
+				if row[0] in self.map__ensembl_id__gene:
+					set_.add(self.map__ensembl_id__gene[row[0]])
+			
+			map__disease_name__disease_module[file_path.split("/")[-1].replace(".tsv","")] = set_
 
-		return self.candidate_set
+		return map__disease_name__disease_module
 
+	def __load_disease_seed__(self):
+
+		file_paths = [file for file in os.listdir(self.seed_dir_path) if file[0] != "."]
+		map__disease__seed = {}
+		for file in file_paths:
+			csv_reader = csv.reader(open(self.seed_dir_path +file, "r"),delimiter = "\t")
+			set_ = set()
+			for row in csv_reader:
+				if row[0] in self.map__ensembl_id__gene:
+					set_.add(self.map__ensembl_id__gene[row[0]])
+
+			map__disease__seed[file.split("/")[-1].replace(".tsv","")] = set_
+		return map__disease__seed
 
 	def __load_drug_repurposing_hub__(self,):
 	
@@ -120,6 +154,8 @@ class DrugHubValidation():
 		
 
 		for node in self.map__target__drugs:
+			if node == "":
+				continue
 
 			target_drugs = self.map__target__drugs[node]
 
@@ -142,74 +178,78 @@ class DrugHubValidation():
 
 
 
-	def run(self, trial = 1000000, pulmonary = False):
+	def run(self, trial = 100, validation_dir = "drug_hub/closest_gene/"):
+		drug_hub_validation_dir =self.validation_dir_path + validation_dir
+		
+		if not os.path.exists(drug_hub_validation_dir):
+			os.makedirs(drug_hub_validation_dir)
 
 		self.__load_drug_repurposing_hub__()
 		
-		if pulmonary:
-			drug_targets = self.__compute_drug_targets__(query_disease_area = "pulmonary", query_indications = "chronic obstructive pulmonary disease (COPD)|asthma|bronchospasm")
-		else:
-			drug_targets = self.__compute_drug_targets__()
+		map__disease__seed = self.__load_disease_seed__()
 
-		self.__load_gene_pool__()
-
-
-		table_1 = []
-		table_2 = []
-		table_3 = []
-		for algorithm, solution in self.map__algorithm__solution.items():
-			table_4 = []
-			
-			phi =  len(solution.intersection(drug_targets))
-			table_1.append([algorithm,phi/len(solution)])
-			intersected_targets = solution.intersection(drug_targets)
-
-			for target in intersected_targets:
-				drugs = self.map__target__drugs[target]
-				for drug in drugs:
-					
-					drug_name, disease_area, mou,clinical_phase,indication = drug
-					record = [target,drug_name,mou,clinical_phase]
-					table_4.append(record)
-			if pulmonary:
-				pd.DataFrame(table_4,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase"]).to_csv(self.validation_dir_path +algorithm+ "drug_hub_information_pulmonary.tsv", sep = "\t")
-			else:
-				pd.DataFrame(table_4,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase"]).to_csv(self.validation_dir_path +algorithm+ "drug_hub_information_total.tsv", sep = "\t")
-
-
-
-			counter = 0
-			
-			
-			for i in range(trial):
-				
-				random_solution = set(random.sample(self.candidate_set,len(solution)))
-				phi_random = len(random_solution.intersection(drug_targets))
-				table_2.append([algorithm,phi_random/len(random_solution)])
-
-				if phi < phi_random:
-					counter += 1
-
-			counter_str = ""
-			if counter == 0:
-				counter_str = "p_{val} < 10^{-6}"
-			else:
-				counter_str = "p_{val} ~ " + str(counter/trial) 
-
-
-			table_3.append([algorithm, counter_str])
-
-
-
-		if pulmonary:
-			pd.DataFrame(table_1,columns = ["Algorithm","Score"]).to_csv(self.validation_dir_path + "drug_hub_drug_target_intersection_pulmonary.tsv", sep = "\t")
-			pd.DataFrame(table_2,columns = ["Algorithm","Score"]).to_csv(self.validation_dir_path + "drug_hub_drug_target_intersection_pulmonary_random.tsv", sep = "\t")
-			pd.DataFrame(table_3,columns = ["Algorithm","p_val"]).to_csv(self.validation_dir_path + "drug_hub_drug_target_intersection_pulmonary_p_val.tsv", sep = "\t")
-		else:
-			pd.DataFrame(table_1,columns = ["Algorithm","Score"]).to_csv(self.validation_dir_path + "drug_hub_drug_target_intersection.tsv", sep = "\t")
-			pd.DataFrame(table_2,columns = ["Algorithm","Score"]).to_csv(self.validation_dir_path + "drug_hub_drug_target_intersection_random.tsv", sep = "\t")
-			pd.DataFrame(table_3,columns = ["Algorithm","p_val"]).to_csv(self.validation_dir_path + "drug_hub_drug_target_intersection_p_val.tsv", sep = "\t")
+		precision_table = []
+		drug_indication = []
+		algorithm_pval = []
+		random_distribution = []
+		print(map__disease__seed)
 		
+		for algorithm, solutions in self.map__algorithm__solutions.items():
+			
+			
+			for considered_gwas in self.map__trait__disease_info.keys():
+				if considered_gwas not in solutions:
+					precision_table.append([algorithm,considered_gwas,0.0])
+					continue
+
+				drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = self.map__trait__disease_info[considered_gwas][1])
+				solution = solutions[considered_gwas]
+				phi =  len(solution.intersection(drug_targets))
+				precision_table.append([algorithm,considered_gwas,phi/len(solution)])
+				intersected_targets = solution.intersection(drug_targets)
+
+				for target in intersected_targets:
+					drugs = self.map__target__drugs[target]
+					for drug in drugs:
+						
+						drug_name, disease_area, mou,clinical_phase,indication = drug
+						record = [target,drug_name,mou,clinical_phase, algorithm, considered_gwas]
+						drug_indication.append(record)
+			
+
+
+				
+				counter = 0
+				
+				for i in range(trial):
+
+					
+					
+					random_solution = set(random.sample(map__disease__seed[considered_gwas],len(solution)))
+					phi_random = len(random_solution.intersection(drug_targets))
+					random_distribution.append([algorithm, considered_gwas,phi_random/len(random_solution)])
+
+					if phi <= phi_random:
+						counter += 1
+
+				counter_str = ""
+				if counter == 0:
+					counter_str = "p_{val} < 10^{-3}"
+				else:
+					counter_str = "p_{val} ~ " + str(counter/trial) 
+
+
+
+				algorithm_pval.append([algorithm, considered_gwas,counter_str])
+
+		
+
+
+		pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Score"]).to_csv(drug_hub_validation_dir + "metrics.tsv", sep = "\t")
+		pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Score"]).to_csv(drug_hub_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
+		pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val"]).to_csv(drug_hub_validation_dir + "metrics_p_val.tsv", sep = "\t")
+		pd.DataFrame(drug_indication,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase", "Algorithm", "GWAS"]).to_csv(drug_hub_validation_dir  + "discovered.tsv", sep = "\t")
+
 
 
 	def run_on_randomize_bipartite_graph(self,):
@@ -253,16 +293,16 @@ if __name__ == '__main__':
 	
 	
 	d = DrugHubValidation(
-		disease_experiment_dir_path = "../../experiments/algorithm_comparison/",
-		gene_pool_file_path = "../../datasets/GWAS/unbiased_copd_snp_database.txt",
+		disease_experiment_dir_path = "../../experiments/network_algorithm_comparison/",
+		seed_dir_path = "../../experiments/network_algorithm_comparison/seed/",
 		drug_table_file_path = "../../datasets/curated_db/drug_repurposing_hub.tsv",
 		random_solution_dir = "../../experiments/Robustness_Experiment/",
+		config_file = "config_files/drug_hub.json",
+		ensembl_db_file_path = "../../datasets/curated_db/mart_export.txt",
 		filter_ = []
 		)
 	
-	d.run( trial = 1000, pulmonary = False)
-	d.run( trial = 1000, pulmonary = True)
-	d.run_on_randomize_bipartite_graph()	
+	d.run( trial = 1000)
 	
 
 
