@@ -20,6 +20,8 @@ class AlgorithmWrapper():
 		self.disease_dir_path = disease_dir_path
 		
 		self.input_dir_path = disease_dir_path + "seed/"
+		self.vagas_2_dir = disease_dir_path + "vegas_2/output/"
+		
 		self.input_dir_path_for_RMM_GWAS = disease_dir_path + "seed_RMM-GWAS/"
 		self.ensembl_db = "datasets/curated_db/mart_export.txt"
 		
@@ -35,6 +37,22 @@ class AlgorithmWrapper():
 		self.GWAS_file_paths = [self.GWAS_dir + file for file in os.listdir(self.GWAS_dir) if file[0] != "."]
 		self.GWAS_config_files = [self.GWAS_config_file + file for file in os.listdir(self.GWAS_config_file) if file[0] != "."]
 	
+	def __load_vegas_2__(self,file_name):
+		map__gene__vegas_pval = {}
+		try:
+			csv_reader = csv.reader(open(self.vagas_2_dir + file_name, "r"), delimiter = " ")
+		except:
+			return {}
+
+		for index, row in enumerate(csv_reader):
+			if index == 0:
+				continue
+			row[1]
+			float(row[-1])
+
+			map__gene__vegas_pval[row[1]] = float(row[-1])
+		return map__gene__vegas_pval
+	
 	def __load_gene_in_2MB_windows__(self,file_path):
 		
 		bg = SNPGeneGraph(
@@ -44,20 +62,26 @@ class AlgorithmWrapper():
 				)
 
 		map__gene__pval,map__gene_pool__uniform_pval = bg.run()
-		
+		map__gene__vegas_pval = self.__load_vegas_2__(file_path.split("/")[-1].replace(".tsv", ""))
 		filtered_map__gene__pval = []
 		window_filtered_map__gene__pval = []
 		
 		for g, p_val in map__gene__pval.items():
 			if g in self.map__gene__ensembl_id:
 				if self.map__gene__ensembl_id[g] in self.V:
-					filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
+					if g in map__gene__vegas_pval:
+						filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],map__gene__vegas_pval[g]])
+					else:
+						filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
 		
 		for g, p_val in map__gene_pool__uniform_pval.items():
 			if g in self.map__gene__ensembl_id:
 				if self.map__gene__ensembl_id[g] in self.V:
-					window_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
-
+					if g in map__gene__vegas_pval:
+						window_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],map__gene__vegas_pval[g]])
+					else:
+						window_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
+		
 
 		return filtered_map__gene__pval,window_filtered_map__gene__pval
 	
@@ -227,8 +251,6 @@ class AlgorithmWrapper():
 		for file in window_file_paths:
 			self.__run_SigMod__(file)
 			self.__run_domino__(file)
-			self.self.__run_lean__(file)	
-			
 
 
 
