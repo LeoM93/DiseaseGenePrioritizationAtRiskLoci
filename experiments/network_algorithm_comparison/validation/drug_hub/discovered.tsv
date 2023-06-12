@@ -1,0 +1,386 @@
+	Gene	Drug Name	Mechanism of Action	Drug development phase	Algorithm	GWAS
+0	CDK6	abemaciclib	CDK inhibitor	Launched	LEAN	GCST004988
+1	CDK6	alvocidib	CDK inhibitor	Phase 2	LEAN	GCST004988
+2	CDK6	AMG-925	CDK inhibitor|FLT3 inhibitor	Phase 1	LEAN	GCST004988
+3	CDK6	apigenin	casein kinase inhibitor|cell proliferation inhibitor	Preclinical	LEAN	GCST004988
+4	CDK6	AT-7519	CDK inhibitor	Phase 2	LEAN	GCST004988
+5	CDK6	chrysin	breast cancer resistance protein inhibitor	Phase 1	LEAN	GCST004988
+6	CDK6	fisetin	Aurora kinase inhibitor	Preclinical	LEAN	GCST004988
+7	CDK6	palbociclib	CDK inhibitor	Launched	LEAN	GCST004988
+8	CDK6	RGB-286638	CDK inhibitor	Phase 1	LEAN	GCST004988
+9	CDK6	ribociclib	CDK inhibitor	Launched	LEAN	GCST004988
+10	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	LEAN	GCST004988
+11	ESR1	allylestrenol	steroidal progestin	Launched	LEAN	GCST004988
+12	ESR1	AZD9496	estrogen receptor agonist	Phase 1	LEAN	GCST004988
+13	ESR1	bazedoxifene	selective estrogen receptor modulator (SERM)	Launched	LEAN	GCST004988
+14	ESR1	benfluralin		Phase 3	LEAN	GCST004988
+15	ESR1	bisphenol-A	synthetic estrogen	Phase 1	LEAN	GCST004988
+16	ESR1	bithionol	autotaxin inhibitor	Withdrawn	LEAN	GCST004988
+17	ESR1	chlorotrianisene	estrogenic hormone	Launched	LEAN	GCST004988
+18	ESR1	clomifene	estrogen receptor antagonist	Launched	LEAN	GCST004988
+19	ESR1	danazol	estrogen receptor antagonist|progesterone receptor agonist	Launched	LEAN	GCST004988
+20	ESR1	dehydroepiandrosterone	protein synthesis stimulant	Launched	LEAN	GCST004988
+21	ESR1	dehydroepiandrosterone-sulfate	androgen receptor agonist|estrogen receptor agonist	Launched	LEAN	GCST004988
+22	ESR1	desogestrel	progesterone receptor agonist	Launched	LEAN	GCST004988
+23	ESR1	dienestrol	estrogen receptor agonist	Launched	LEAN	GCST004988
+24	ESR1	diethylstilbestrol	estrogen receptor agonist	Withdrawn	LEAN	GCST004988
+25	ESR1	droloxifene	selective estrogen receptor modulator (SERM)	Phase 3	LEAN	GCST004988
+26	ESR1	endoxifen	estrogen receptor antagonist	Phase 2	LEAN	GCST004988
+27	ESR1	equol	estrogen receptor agonist	Launched	LEAN	GCST004988
+28	ESR1	erteberel	estrogen receptor agonist	Phase 2	LEAN	GCST004988
+29	ESR1	estetrol	selective estrogen receptor modulator (SERM)	Phase 3	LEAN	GCST004988
+30	ESR1	estradiol	estrogen receptor agonist	Launched	LEAN	GCST004988
+31	ESR1	estradiol-acetate	estrogen receptor agonist	Launched	LEAN	GCST004988
+32	ESR1	estradiol-benzoate	contraceptive agent	Preclinical	LEAN	GCST004988
+33	ESR1	estradiol-cypionate	estrogen receptor agonist	Launched	LEAN	GCST004988
+34	ESR1	estradiol-valerate	estrogen receptor agonist	Launched	LEAN	GCST004988
+35	ESR1	estramustine	DNA alkylating agent	Launched	LEAN	GCST004988
+36	ESR1	estramustine-phosphate	DNA synthesis inhibitor|microtubule inhibitor	Launched	LEAN	GCST004988
+37	ESR1	estriol	estrogen receptor agonist	Launched	LEAN	GCST004988
+38	ESR1	estrone	estrogen receptor agonist|estrogenic hormone	Launched	LEAN	GCST004988
+39	ESR1	estropipate	estrogen receptor agonist	Launched	LEAN	GCST004988
+40	ESR1	ethinyl-estradiol	estrogen receptor agonist|estrogenic hormone	Launched	LEAN	GCST004988
+41	ESR1	ethynodiol-diacetate		Launched	LEAN	GCST004988
+42	ESR1	etonogestrel	progesterone receptor agonist	Launched	LEAN	GCST004988
+43	ESR1	fosfestrol	synthetic estrogen	Launched	LEAN	GCST004988
+44	ESR1	fulvestrant	estrogen receptor antagonist	Launched	LEAN	GCST004988
+45	ESR1	GDC-0810	selective estrogen receptor destabilizer	Phase 2	LEAN	GCST004988
+46	ESR1	genistein	tyrosine kinase inhibitor	Phase 2/Phase 3	LEAN	GCST004988
+47	ESR1	gestrinone	progesterone receptor antagonist	Launched	LEAN	GCST004988
+48	ESR1	hexestrol	synthetic estrogen	Launched	LEAN	GCST004988
+49	ESR1	lasofoxifene	selective estrogen receptor modulator (SERM)	Launched	LEAN	GCST004988
+50	ESR1	medroxyprogesterone-acetate	progesterone receptor agonist	Launched	LEAN	GCST004988
+51	ESR1	melatonin	melatonin receptor agonist|nitric oxide synthase inhibitor	Launched	LEAN	GCST004988
+52	ESR1	mestranol	estrogen receptor agonist	Launched	LEAN	GCST004988
+53	ESR1	mitotane	antineoplastic agent	Launched	LEAN	GCST004988
+54	ESR1	naloxone	opioid receptor antagonist	Launched	LEAN	GCST004988
+55	ESR1	norgestimate	progesterone receptor agonist	Launched	LEAN	GCST004988
+56	ESR1	norgestrel	progesterone receptor agonist	Launched	LEAN	GCST004988
+57	ESR1	ospemifene	selective estrogen receptor modulator (SERM)	Launched	LEAN	GCST004988
+58	ESR1	PPT	estrogen receptor agonist	Preclinical	LEAN	GCST004988
+59	ESR1	progesterone	progesterone receptor agonist	Launched	LEAN	GCST004988
+60	ESR1	promestriene	estrogen receptor agonist	Launched	LEAN	GCST004988
+61	ESR1	quinestrol	estrogen receptor agonist	Launched	LEAN	GCST004988
+62	ESR1	raloxifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	LEAN	GCST004988
+63	ESR1	SNG-1153	selective estrogen receptor modulator (SERM)	Preclinical	LEAN	GCST004988
+64	ESR1	tamoxifen	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	LEAN	GCST004988
+65	ESR1	tibolone	androgen receptor agonist|estrogen receptor agonist|progesterone receptor agonist	Launched	LEAN	GCST004988
+66	ESR1	toremifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	LEAN	GCST004988
+67	ESR1	Y-134	estrogen receptor antagonist	Preclinical	LEAN	GCST004988
+68	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	LEAN	GCST004988
+69	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	LEAN	GCST004988
+70	EGFR	AEE788	EGFR inhibitor|VEGFR inhibitor	Phase 1/Phase 2	LEAN	GCST004988
+71	EGFR	afatinib	EGFR inhibitor	Launched	LEAN	GCST004988
+72	EGFR	AG-490	EGFR inhibitor|JAK inhibitor	Preclinical	LEAN	GCST004988
+73	EGFR	alvocidib	CDK inhibitor	Phase 2	LEAN	GCST004988
+74	EGFR	AP26113	ALK tyrosine kinase receptor inhibitor	Phase 2	LEAN	GCST004988
+75	EGFR	AST-1306	EGFR inhibitor	Phase 1	LEAN	GCST004988
+76	EGFR	AV-412	protein tyrosine kinase inhibitor	Phase 1	LEAN	GCST004988
+77	EGFR	AZD3759	EGFR inhibitor	Phase 2/Phase 3	LEAN	GCST004988
+78	EGFR	AZD8931	EGFR inhibitor	Phase 2	LEAN	GCST004988
+79	EGFR	AZ5104	EGFR inhibitor	Preclinical	LEAN	GCST004988
+80	EGFR	BIBU-1361	EGFR inhibitor	Preclinical	LEAN	GCST004988
+81	EGFR	BIBX-1382	EGFR inhibitor	Phase 1	LEAN	GCST004988
+82	EGFR	BMS-599626	EGFR inhibitor|protein tyrosine kinase inhibitor	Phase 1	LEAN	GCST004988
+83	EGFR	BMS-690514	EGFR inhibitor|VEGFR inhibitor	Phase 2	LEAN	GCST004988
+84	EGFR	brigatinib	ALK tyrosine kinase receptor inhibitor|EGFR inhibitor	Launched	LEAN	GCST004988
+85	EGFR	canertinib	EGFR inhibitor	Phase 3	LEAN	GCST004988
+86	EGFR	CGP-52411	EGFR inhibitor	Preclinical	LEAN	GCST004988
+87	EGFR	CGP-53353	EGFR inhibitor|PKC inhibitor	Preclinical	LEAN	GCST004988
+88	EGFR	chrysophanic-acid	EGFR inhibitor	Preclinical	LEAN	GCST004988
+89	EGFR	CNX-2006	EGFR inhibitor	Preclinical	LEAN	GCST004988
+90	EGFR	CUDC-101	EGFR inhibitor	Phase 1	LEAN	GCST004988
+91	EGFR	dacomitinib	EGFR inhibitor	Launched	LEAN	GCST004988
+92	EGFR	dovitinib	EGFR inhibitor|FGFR inhibitor|FLT3 inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	LEAN	GCST004988
+93	EGFR	EGF816	EGFR inhibitor	Phase 2	LEAN	GCST004988
+94	EGFR	erbstatin-analog	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	LEAN	GCST004988
+95	EGFR	erlotinib	EGFR inhibitor	Launched	LEAN	GCST004988
+96	EGFR	gefitinib	EGFR inhibitor	Launched	LEAN	GCST004988
+97	EGFR	GW-583340	EGFR inhibitor	Preclinical	LEAN	GCST004988
+98	EGFR	HKI-357	EGFR inhibitor	Phase 1	LEAN	GCST004988
+99	EGFR	icotinib	EGFR inhibitor	Launched	LEAN	GCST004988
+100	EGFR	lapatinib	EGFR inhibitor	Launched	LEAN	GCST004988
+101	EGFR	lidocaine	histamine receptor agonist	Launched	LEAN	GCST004988
+102	EGFR	mubritinib	protein tyrosine kinase inhibitor	Phase 1	LEAN	GCST004988
+103	EGFR	neratinib	EGFR inhibitor	Launched	LEAN	GCST004988
+104	EGFR	olmutinib	Bruton's tyrosine kinase (BTK) inhibitor|EGFR inhibitor	Launched	LEAN	GCST004988
+105	EGFR	orantinib	FGFR inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	LEAN	GCST004988
+106	EGFR	OSI-420	EGFR inhibitor	Preclinical	LEAN	GCST004988
+107	EGFR	osimertinib	EGFR inhibitor	Launched	LEAN	GCST004988
+108	EGFR	PD-153035	EGFR inhibitor	Phase 1	LEAN	GCST004988
+109	EGFR	PD-158780	EGFR inhibitor	Preclinical	LEAN	GCST004988
+110	EGFR	PD-166285	SRC inhibitor	Preclinical	LEAN	GCST004988
+111	EGFR	PD-168393	EGFR inhibitor	Preclinical	LEAN	GCST004988
+112	EGFR	pelitinib	EGFR inhibitor	Phase 2	LEAN	GCST004988
+113	EGFR	PKI-166	EGFR inhibitor	Phase 1	LEAN	GCST004988
+114	EGFR	poziotinib	EGFR inhibitor	Phase 2	LEAN	GCST004988
+115	EGFR	PP-121	protein tyrosine kinase inhibitor	Preclinical	LEAN	GCST004988
+116	EGFR	rociletinib	EGFR inhibitor	Phase 3	LEAN	GCST004988
+117	EGFR	tyrphostin-AG-1478	EGFR inhibitor	Preclinical	LEAN	GCST004988
+118	EGFR	tyrphostin-AG-18	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	LEAN	GCST004988
+119	EGFR	tyrphostin-AG-494	EGFR inhibitor	Preclinical	LEAN	GCST004988
+120	EGFR	tyrphostin-AG-835	protein tyrosine kinase inhibitor	Preclinical	LEAN	GCST004988
+121	EGFR	tyrphostin-AG-99	tyrosine kinase inhibitor	Preclinical	LEAN	GCST004988
+122	EGFR	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	LEAN	GCST004988
+123	EGFR	vatalanib	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	LEAN	GCST004988
+124	EGFR	WHI-P154	JAK inhibitor	Preclinical	LEAN	GCST004988
+125	EGFR	WZ-3146	EGFR inhibitor	Preclinical	LEAN	GCST004988
+126	EGFR	WZ-4002	EGFR inhibitor	Preclinical	LEAN	GCST004988
+127	EGFR	WZ8040	EGFR inhibitor	Preclinical	LEAN	GCST004988
+128	EGFR	XL647	EGFR inhibitor|VEGFR inhibitor	Phase 3	LEAN	GCST004988
+129	EGFR	ZM-306416	Abl kinase inhibitor|SRC inhibitor|VEGFR inhibitor	Preclinical	LEAN	GCST004988
+130	TLR4	C34	toll-like receptor inhibitor	Preclinical	LEAN	GCST004748
+131	TLR4	lauric-acid	bacterial permeability inducer	Phase 3	LEAN	GCST004748
+132	TLR4	naloxone	opioid receptor antagonist	Launched	LEAN	GCST004748
+133	TLR4	paclitaxel	tubulin polymerization inhibitor	Launched	LEAN	GCST004748
+134	TLR4	resatorvid	toll-like receptor inhibitor	Phase 3	LEAN	GCST004748
+135	TLR4	VGX-1027	tumor necrosis factor receptor antagonist	Phase 1	LEAN	GCST004748
+136	CHRM3	A-987306	histamine receptor antagonist	Preclinical	LEAN	GCST007692
+137	CHRM3	aceclidine	acetylcholine receptor agonist	Launched	LEAN	GCST007692
+138	CHRM3	acetylcholine	acetylcholine receptor agonist	Launched	LEAN	GCST007692
+139	CHRM3	aclidinium	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+140	CHRM3	alcuronium	muscle relaxant	Launched	LEAN	GCST007692
+141	CHRM3	amitriptyline	norepinephrine inhibitor|norepinephrine reuptake inhibitor|serotonin receptor antagonist|serotoninâ€“norepinephrine reuptake inhibitor (SNRI)	Launched	LEAN	GCST007692
+142	CHRM3	amoxapine	norepinephrine reputake inhibitor	Launched	LEAN	GCST007692
+143	CHRM3	arecaidine-propargyl-ester	acetylcholine receptor agonist	Preclinical	LEAN	GCST007692
+144	CHRM3	arecoline	acetylcholine receptor agonist	Phase 1	LEAN	GCST007692
+145	CHRM3	aripiprazole	serotonin receptor agonist|serotonin receptor antagonist	Launched	LEAN	GCST007692
+146	CHRM3	atropine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+147	CHRM3	atropine-oxide	acetylcholine receptor antagonist	Preclinical	LEAN	GCST007692
+148	CHRM3	bethanechol	acetylcholine receptor agonist	Launched	LEAN	GCST007692
+149	CHRM3	biperiden	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+150	CHRM3	brucine	glycine receptor antagonist	Preclinical	LEAN	GCST007692
+151	CHRM3	carbachol	cholinergic receptor agonist	Launched	LEAN	GCST007692
+152	CHRM3	cevimeline	acetylcholine receptor agonist	Launched	LEAN	GCST007692
+153	CHRM3	chlorpromazine	dopamine receptor antagonist	Launched	LEAN	GCST007692
+154	CHRM3	chlorprothixene	dopamine receptor antagonist	Launched	LEAN	GCST007692
+155	CHRM3	clidinium	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+156	CHRM3	clozapine	dopamine receptor antagonist|serotonin receptor antagonist	Launched	LEAN	GCST007692
+157	CHRM3	curcumin	cyclooxygenase inhibitor|histone acetyltransferase inhibitor|lipoxygenase inhibitor|NFkB pathway inhibitor	Launched	LEAN	GCST007692
+158	CHRM3	cyproheptadine	histamine receptor antagonist	Launched	LEAN	GCST007692
+159	CHRM3	darifenacin	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+160	CHRM3	DAU-5884	acetylcholine receptor antagonist	Preclinical	LEAN	GCST007692
+161	CHRM3	desipramine	tricyclic antidepressant	Launched	LEAN	GCST007692
+162	CHRM3	dicycloverine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+163	CHRM3	diphemanil	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+164	CHRM3	diphenidol	acetylcholine receptor agonist	Launched	LEAN	GCST007692
+165	CHRM3	disopyramide	sodium channel blocker	Launched	LEAN	GCST007692
+166	CHRM3	dosulepin	norepinephrine reuptake inhibitor|serotoninâ€“norepinephrine reuptake inhibitor (SNRI)|tricyclic antidepressant	Launched	LEAN	GCST007692
+167	CHRM3	fesoterodine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+168	CHRM3	glycopyrrolate	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+169	CHRM3	hyoscyamine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+170	CHRM3	imidafenacin	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+171	CHRM3	imipramine	norepinephrine reputake inhibitor|serotonin reuptake inhibitor	Launched	LEAN	GCST007692
+172	CHRM3	ipratropium	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+173	CHRM3	isopropamide-iodide	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+174	CHRM3	itopride	dopamine receptor antagonist	Launched	LEAN	GCST007692
+175	CHRM3	levomepromazine	dopamine receptor antagonist	Launched	LEAN	GCST007692
+176	CHRM3	loxapine	dopamine receptor antagonist|serotonin receptor antagonist	Launched	LEAN	GCST007692
+177	CHRM3	methscopolamine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+178	CHRM3	nortriptyline	tricyclic antidepressant	Launched	LEAN	GCST007692
+179	CHRM3	olanzapine	dopamine receptor antagonist|serotonin receptor antagonist	Launched	LEAN	GCST007692
+180	CHRM3	otenzepad	acetylcholine receptor antagonist	Phase 3	LEAN	GCST007692
+181	CHRM3	oxotremorine-M	acetylcholine receptor agonist	Preclinical	LEAN	GCST007692
+182	CHRM3	oxotremorine-sesquifumarate	cholinergic receptor agonist	Preclinical	LEAN	GCST007692
+183	CHRM3	oxybutynin	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+184	CHRM3	oxyphenonium	cholinergic receptor antagonist	Launched	LEAN	GCST007692
+185	CHRM3	pancuronium	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+186	CHRM3	paroxetine	selective serotonin reuptake inhibitor (SSRI)	Launched	LEAN	GCST007692
+187	CHRM3	pilocarpine	acetylcholine receptor agonist	Launched	LEAN	GCST007692
+188	CHRM3	pipecuronium	neuromuscular blocker	Launched	LEAN	GCST007692
+189	CHRM3	pirenzepine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+190	CHRM3	promazine	dopamine receptor antagonist	Launched	LEAN	GCST007692
+191	CHRM3	propantheline	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+192	CHRM3	quetiapine	dopamine receptor antagonist|serotonin receptor antagonist	Launched	LEAN	GCST007692
+193	CHRM3	scopolamine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+194	CHRM3	scopolamine-N-oxide	acetylcholine receptor antagonist	Preclinical	LEAN	GCST007692
+195	CHRM3	solifenacin-succinate	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+196	CHRM3	strychnine	acetylcholine receptor antagonist	Preclinical	LEAN	GCST007692
+197	CHRM3	succinylcholine-chloride		Launched	LEAN	GCST007692
+198	CHRM3	tarafenacin	acetylcholine receptor antagonist	Phase 2	LEAN	GCST007692
+199	CHRM3	tiotropium	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+200	CHRM3	tolterodine	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+201	CHRM3	trepibutone	cholinergic receptor antagonist	Launched	LEAN	GCST007692
+202	CHRM3	tropicamide	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+203	CHRM3	umeclidinium	acetylcholine receptor antagonist	Launched	LEAN	GCST007692
+204	CHRM3	vinburnine	adrenergic receptor antagonist	Launched	LEAN	GCST007692
+205	CHRM3	vincamine	adrenergic receptor antagonist	Withdrawn	LEAN	GCST007692
+206	CHRM3	xanomeline	acetylcholine receptor agonist	Phase 3	LEAN	GCST007692
+207	CHRM3	zamifenacin	acetylcholine receptor antagonist	Phase 3	LEAN	GCST007692
+208	CHRM3	ziprasidone	dopamine receptor antagonist|serotonin receptor antagonist	Launched	LEAN	GCST007692
+209	CHRM3	4-DAMP	cholinergic receptor antagonist	Preclinical	LEAN	GCST007692
+210	CHRM3	5-hydroxymethyl-tolterodine	acetylcholine receptor antagonist	Phase 1	LEAN	GCST007692
+211	CHRM3	5-methylfurmethiodide	acetylcholine receptor agonist	Preclinical	LEAN	GCST007692
+212	METAP2	AGM-1470	cell cycle inhibitor	Phase 2	LEAN	GCST007692
+213	METAP2	fumagillin	methionine aminopeptidase inhibitor	Launched	LEAN	GCST007692
+214	METAP2	L-methionine	voltage-gated calcium channel ligand	Launched	LEAN	GCST007692
+215	METAP2	methionine		Launched	LEAN	GCST007692
+216	METAP2	nitroxoline	cathepsin inhibitor	Launched	LEAN	GCST007692
+217	METAP2	oxyquinoline	chelating agent	Launched	LEAN	GCST007692
+218	METAP2	TNP-470	methionine aminopeptidase inhibitor	Phase 2	LEAN	GCST007692
+219	ADORA1	A-987306	histamine receptor antagonist	Preclinical	LEAN	GCST009841
+220	ADORA1	acefylline	adenosine receptor agonist	Launched	LEAN	GCST009841
+221	ADORA1	adenosine	adenosine receptor agonist	Launched	LEAN	GCST009841
+222	ADORA1	aminophylline	adenosine receptor antagonist	Launched	LEAN	GCST009841
+223	ADORA1	BAY-60-6583	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+224	ADORA1	caffeine	adenosine receptor antagonist|phosphodiesterase inhibitor	Launched	LEAN	GCST009841
+225	ADORA1	capadenoson	adenosine receptor agonist	Phase 2	LEAN	GCST009841
+226	ADORA1	CF102	adenosine receptor agonist	Phase 2	LEAN	GCST009841
+227	ADORA1	CGH2466	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+228	ADORA1	CGS-15943	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+229	ADORA1	CGS-21680	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+230	ADORA1	cyproterone-acetate	androgen receptor antagonist	Launched	LEAN	GCST009841
+231	ADORA1	doxofylline	adenosine receptor antagonist	Launched	LEAN	GCST009841
+232	ADORA1	DPCPX	adenosine receptor antagonist	Phase 1	LEAN	GCST009841
+233	ADORA1	enprofylline	phosphodiesterase inhibitor	Phase 3	LEAN	GCST009841
+234	ADORA1	etofylline	adenosine receptor antagonist	Launched	LEAN	GCST009841
+235	ADORA1	gabapentin	calcium channel blocker	Launched	LEAN	GCST009841
+236	ADORA1	GR-79236	adenosine receptor agonist	Phase 1	LEAN	GCST009841
+237	ADORA1	GS-6201	adenosine receptor antagonist	Phase 1	LEAN	GCST009841
+238	ADORA1	HEMADO	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+239	ADORA1	IB-MECA	adenosine receptor agonist	Phase 3	LEAN	GCST009841
+240	ADORA1	IBMX	phosphodiesterase inhibitor	Preclinical	LEAN	GCST009841
+241	ADORA1	istradefylline	adenosine receptor antagonist	Launched	LEAN	GCST009841
+242	ADORA1	KW-3902	adenosine receptor antagonist	Phase 3	LEAN	GCST009841
+243	ADORA1	MRS-3777	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+244	ADORA1	NECA	adenosine receptor agonist	Launched	LEAN	GCST009841
+245	ADORA1	N6-cyclopentyladenosine	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+246	ADORA1	PD-81723	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+247	ADORA1	pentoxifylline	phosphodiesterase inhibitor	Launched	LEAN	GCST009841
+248	ADORA1	preladenant	adenosine receptor antagonist	Phase 3	LEAN	GCST009841
+249	ADORA1	PSB-11	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+250	ADORA1	PSB-1115	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+251	ADORA1	PSB-36	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+252	ADORA1	PSB-603	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+253	ADORA1	regadenoson	adenosine receptor agonist	Launched	LEAN	GCST009841
+254	ADORA1	SCH-58261	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+255	ADORA1	SDZ-WAG-994	adenosine receptor agonist	Phase 2	LEAN	GCST009841
+256	ADORA1	SLV-320	adenosine receptor antagonist	Phase 2	LEAN	GCST009841
+257	ADORA1	tecadenoson	adenosine receptor agonist	Phase 2	LEAN	GCST009841
+258	ADORA1	theobromine	phosphodiesterase inhibitor	Launched	LEAN	GCST009841
+259	ADORA1	vipadenant	adenosine receptor antagonist	Phase 1	LEAN	GCST009841
+260	ADORA1	ZM-241385	adenosine receptor antagonist	Preclinical	LEAN	GCST009841
+261	ADORA1	2'-MeCCPA	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+262	ADORA1	2-chloro-N6-cyclopentyladenosine	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+263	ADORA1	2-chloroadenosine	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+264	ADORA1	5'-chloro-5'-deoxy-ENBA-(+/-)	adenosine receptor agonist	Preclinical	LEAN	GCST009841
+265	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	SIGMOID	GCST004988
+266	ESR1	allylestrenol	steroidal progestin	Launched	SIGMOID	GCST004988
+267	ESR1	AZD9496	estrogen receptor agonist	Phase 1	SIGMOID	GCST004988
+268	ESR1	bazedoxifene	selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+269	ESR1	benfluralin		Phase 3	SIGMOID	GCST004988
+270	ESR1	bisphenol-A	synthetic estrogen	Phase 1	SIGMOID	GCST004988
+271	ESR1	bithionol	autotaxin inhibitor	Withdrawn	SIGMOID	GCST004988
+272	ESR1	chlorotrianisene	estrogenic hormone	Launched	SIGMOID	GCST004988
+273	ESR1	clomifene	estrogen receptor antagonist	Launched	SIGMOID	GCST004988
+274	ESR1	danazol	estrogen receptor antagonist|progesterone receptor agonist	Launched	SIGMOID	GCST004988
+275	ESR1	dehydroepiandrosterone	protein synthesis stimulant	Launched	SIGMOID	GCST004988
+276	ESR1	dehydroepiandrosterone-sulfate	androgen receptor agonist|estrogen receptor agonist	Launched	SIGMOID	GCST004988
+277	ESR1	desogestrel	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+278	ESR1	dienestrol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+279	ESR1	diethylstilbestrol	estrogen receptor agonist	Withdrawn	SIGMOID	GCST004988
+280	ESR1	droloxifene	selective estrogen receptor modulator (SERM)	Phase 3	SIGMOID	GCST004988
+281	ESR1	endoxifen	estrogen receptor antagonist	Phase 2	SIGMOID	GCST004988
+282	ESR1	equol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+283	ESR1	erteberel	estrogen receptor agonist	Phase 2	SIGMOID	GCST004988
+284	ESR1	estetrol	selective estrogen receptor modulator (SERM)	Phase 3	SIGMOID	GCST004988
+285	ESR1	estradiol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+286	ESR1	estradiol-acetate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+287	ESR1	estradiol-benzoate	contraceptive agent	Preclinical	SIGMOID	GCST004988
+288	ESR1	estradiol-cypionate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+289	ESR1	estradiol-valerate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+290	ESR1	estramustine	DNA alkylating agent	Launched	SIGMOID	GCST004988
+291	ESR1	estramustine-phosphate	DNA synthesis inhibitor|microtubule inhibitor	Launched	SIGMOID	GCST004988
+292	ESR1	estriol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+293	ESR1	estrone	estrogen receptor agonist|estrogenic hormone	Launched	SIGMOID	GCST004988
+294	ESR1	estropipate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+295	ESR1	ethinyl-estradiol	estrogen receptor agonist|estrogenic hormone	Launched	SIGMOID	GCST004988
+296	ESR1	ethynodiol-diacetate		Launched	SIGMOID	GCST004988
+297	ESR1	etonogestrel	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+298	ESR1	fosfestrol	synthetic estrogen	Launched	SIGMOID	GCST004988
+299	ESR1	fulvestrant	estrogen receptor antagonist	Launched	SIGMOID	GCST004988
+300	ESR1	GDC-0810	selective estrogen receptor destabilizer	Phase 2	SIGMOID	GCST004988
+301	ESR1	genistein	tyrosine kinase inhibitor	Phase 2/Phase 3	SIGMOID	GCST004988
+302	ESR1	gestrinone	progesterone receptor antagonist	Launched	SIGMOID	GCST004988
+303	ESR1	hexestrol	synthetic estrogen	Launched	SIGMOID	GCST004988
+304	ESR1	lasofoxifene	selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+305	ESR1	medroxyprogesterone-acetate	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+306	ESR1	melatonin	melatonin receptor agonist|nitric oxide synthase inhibitor	Launched	SIGMOID	GCST004988
+307	ESR1	mestranol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+308	ESR1	mitotane	antineoplastic agent	Launched	SIGMOID	GCST004988
+309	ESR1	naloxone	opioid receptor antagonist	Launched	SIGMOID	GCST004988
+310	ESR1	norgestimate	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+311	ESR1	norgestrel	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+312	ESR1	ospemifene	selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+313	ESR1	PPT	estrogen receptor agonist	Preclinical	SIGMOID	GCST004988
+314	ESR1	progesterone	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+315	ESR1	promestriene	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+316	ESR1	quinestrol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+317	ESR1	raloxifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+318	ESR1	SNG-1153	selective estrogen receptor modulator (SERM)	Preclinical	SIGMOID	GCST004988
+319	ESR1	tamoxifen	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+320	ESR1	tibolone	androgen receptor agonist|estrogen receptor agonist|progesterone receptor agonist	Launched	SIGMOID	GCST004988
+321	ESR1	toremifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+322	ESR1	Y-134	estrogen receptor antagonist	Preclinical	SIGMOID	GCST004988
+323	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	SIGMOID	GCST004988
+324	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+325	EGFR	AEE788	EGFR inhibitor|VEGFR inhibitor	Phase 1/Phase 2	SIGMOID	GCST004988
+326	EGFR	afatinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+327	EGFR	AG-490	EGFR inhibitor|JAK inhibitor	Preclinical	SIGMOID	GCST004988
+328	EGFR	alvocidib	CDK inhibitor	Phase 2	SIGMOID	GCST004988
+329	EGFR	AP26113	ALK tyrosine kinase receptor inhibitor	Phase 2	SIGMOID	GCST004988
+330	EGFR	AST-1306	EGFR inhibitor	Phase 1	SIGMOID	GCST004988
+331	EGFR	AV-412	protein tyrosine kinase inhibitor	Phase 1	SIGMOID	GCST004988
+332	EGFR	AZD3759	EGFR inhibitor	Phase 2/Phase 3	SIGMOID	GCST004988
+333	EGFR	AZD8931	EGFR inhibitor	Phase 2	SIGMOID	GCST004988
+334	EGFR	AZ5104	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+335	EGFR	BIBU-1361	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+336	EGFR	BIBX-1382	EGFR inhibitor	Phase 1	SIGMOID	GCST004988
+337	EGFR	BMS-599626	EGFR inhibitor|protein tyrosine kinase inhibitor	Phase 1	SIGMOID	GCST004988
+338	EGFR	BMS-690514	EGFR inhibitor|VEGFR inhibitor	Phase 2	SIGMOID	GCST004988
+339	EGFR	brigatinib	ALK tyrosine kinase receptor inhibitor|EGFR inhibitor	Launched	SIGMOID	GCST004988
+340	EGFR	canertinib	EGFR inhibitor	Phase 3	SIGMOID	GCST004988
+341	EGFR	CGP-52411	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+342	EGFR	CGP-53353	EGFR inhibitor|PKC inhibitor	Preclinical	SIGMOID	GCST004988
+343	EGFR	chrysophanic-acid	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+344	EGFR	CNX-2006	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+345	EGFR	CUDC-101	EGFR inhibitor	Phase 1	SIGMOID	GCST004988
+346	EGFR	dacomitinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+347	EGFR	dovitinib	EGFR inhibitor|FGFR inhibitor|FLT3 inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	SIGMOID	GCST004988
+348	EGFR	EGF816	EGFR inhibitor	Phase 2	SIGMOID	GCST004988
+349	EGFR	erbstatin-analog	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	SIGMOID	GCST004988
+350	EGFR	erlotinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+351	EGFR	gefitinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+352	EGFR	GW-583340	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+353	EGFR	HKI-357	EGFR inhibitor	Phase 1	SIGMOID	GCST004988
+354	EGFR	icotinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+355	EGFR	lapatinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+356	EGFR	lidocaine	histamine receptor agonist	Launched	SIGMOID	GCST004988
+357	EGFR	mubritinib	protein tyrosine kinase inhibitor	Phase 1	SIGMOID	GCST004988
+358	EGFR	neratinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+359	EGFR	olmutinib	Bruton's tyrosine kinase (BTK) inhibitor|EGFR inhibitor	Launched	SIGMOID	GCST004988
+360	EGFR	orantinib	FGFR inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	SIGMOID	GCST004988
+361	EGFR	OSI-420	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+362	EGFR	osimertinib	EGFR inhibitor	Launched	SIGMOID	GCST004988
+363	EGFR	PD-153035	EGFR inhibitor	Phase 1	SIGMOID	GCST004988
+364	EGFR	PD-158780	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+365	EGFR	PD-166285	SRC inhibitor	Preclinical	SIGMOID	GCST004988
+366	EGFR	PD-168393	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+367	EGFR	pelitinib	EGFR inhibitor	Phase 2	SIGMOID	GCST004988
+368	EGFR	PKI-166	EGFR inhibitor	Phase 1	SIGMOID	GCST004988
+369	EGFR	poziotinib	EGFR inhibitor	Phase 2	SIGMOID	GCST004988
+370	EGFR	PP-121	protein tyrosine kinase inhibitor	Preclinical	SIGMOID	GCST004988
+371	EGFR	rociletinib	EGFR inhibitor	Phase 3	SIGMOID	GCST004988
+372	EGFR	tyrphostin-AG-1478	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+373	EGFR	tyrphostin-AG-18	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	SIGMOID	GCST004988
+374	EGFR	tyrphostin-AG-494	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+375	EGFR	tyrphostin-AG-835	protein tyrosine kinase inhibitor	Preclinical	SIGMOID	GCST004988
+376	EGFR	tyrphostin-AG-99	tyrosine kinase inhibitor	Preclinical	SIGMOID	GCST004988
+377	EGFR	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	SIGMOID	GCST004988
+378	EGFR	vatalanib	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	SIGMOID	GCST004988
+379	EGFR	WHI-P154	JAK inhibitor	Preclinical	SIGMOID	GCST004988
+380	EGFR	WZ-3146	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+381	EGFR	WZ-4002	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+382	EGFR	WZ8040	EGFR inhibitor	Preclinical	SIGMOID	GCST004988
+383	EGFR	XL647	EGFR inhibitor|VEGFR inhibitor	Phase 3	SIGMOID	GCST004988
+384	EGFR	ZM-306416	Abl kinase inhibitor|SRC inhibitor|VEGFR inhibitor	Preclinical	SIGMOID	GCST004988

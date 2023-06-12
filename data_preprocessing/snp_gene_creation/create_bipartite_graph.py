@@ -65,7 +65,7 @@ class SNPGeneGraph():
 
 					if rs_id not in self.map__snp__closest_genes:
 						self.map__snp__closest_genes[rs_id] = []
-					
+										
 					distance = min(abs(snp_locus - start),abs(snp_locus - end))
 					
 					if distance < w:
@@ -81,6 +81,8 @@ class SNPGeneGraph():
 			closest_snp = closest_snps[0]
 			gene_snp_graph.append([gene,closest_snp[0]])
 
+		
+		map__gene_pool__uniform_pval = {}
 		for rs_id, closest_genes in self.map__snp__closest_genes.items():
 			closest_genes.sort(key = lambda x:x[1], reverse = False)
 
@@ -90,11 +92,14 @@ class SNPGeneGraph():
 			closest_gene = closest_genes[0]
 			map__gene__p_val[closest_gene[0]] = p_val
 
+			for gene in closest_genes:
+				map__gene_pool__uniform_pval[gene[0]] = 0.05
+		
 		
 		if self.output_file_path != "":
 			csv_writer = csv.writer(open(self.output_file_path, "w"),delimiter = "\t")
 			csv_writer.writerows(gene_snp_graph)
 		
-		return map__gene__p_val
+		return map__gene__p_val,map__gene_pool__uniform_pval
 
 

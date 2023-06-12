@@ -1,0 +1,8 @@
+	Algorithm	GWAS	p_val
+0	DOMINO	GCST009841	p_{val} ~ 1.0
+1	DOMINO	GCST007692	p_{val} ~ 0.968
+2	DOMINO	GCST004748	p_{val} ~ 1.0
+3	LEAN	GCST009841	p_{val} ~ 1.0
+4	LEAN	GCST007692	p_{val} ~ 1.0
+5	LEAN	GCST004748	p_{val} ~ 1.0
+6	SIGMOID	GCST009841	p_{val} ~ 0.229

@@ -43,15 +43,23 @@ class AlgorithmWrapper():
 				output_file_path = self.input_dir_path_for_RMM_GWAS + file_path.split("/")[-1]
 				)
 
-		map__gene__pval = bg.run()
+		map__gene__pval,map__gene_pool__uniform_pval = bg.run()
+		
 		filtered_map__gene__pval = []
+		window_filtered_map__gene__pval = []
 		
 		for g, p_val in map__gene__pval.items():
 			if g in self.map__gene__ensembl_id:
 				if self.map__gene__ensembl_id[g] in self.V:
 					filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
+		
+		for g, p_val in map__gene_pool__uniform_pval.items():
+			if g in self.map__gene__ensembl_id:
+				if self.map__gene__ensembl_id[g] in self.V:
+					window_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
 
-		return filtered_map__gene__pval
+
+		return filtered_map__gene__pval,window_filtered_map__gene__pval
 	
 	
 	def __load_node_PPI_network__(self, network_file_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/datasets/networks/STRING_PPI.tsv"):
@@ -83,16 +91,23 @@ class AlgorithmWrapper():
 
 	def __compute_input_data_for_network_based_approach__(self,):
 		file_paths = []
-		
+		window_file_paths = []
 		for file in self.GWAS_file_paths:
-			print(file)
-			filtered_map__gene__pval = self.__load_gene_in_2MB_windows__(file)
+			
+			filtered_map__gene__pval,window_filtered_map__gene__pval = self.__load_gene_in_2MB_windows__(file)
+
+			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1] + "__closest_genes","w"),delimiter = "\t")
+			csv_writer.writerows(filtered_map__gene__pval)
+			
+			file_paths.append(self.input_dir_path + file.split("/")[-1] + "__closest_genes")
 
 			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1],"w"),delimiter = "\t")
-			csv_writer.writerows(filtered_map__gene__pval)
-			file_paths.append(self.input_dir_path + file.split("/")[-1])
+			csv_writer.writerows(window_filtered_map__gene__pval)
+
+			window_file_paths.append(self.input_dir_path + file.split("/")[-1])
+
 		
-		return file_paths
+		return file_paths,window_file_paths
 
 
 	def __run_DmGWAS__(self, file,
@@ -206,19 +221,19 @@ class AlgorithmWrapper():
 		self.__load_node_PPI_network__()
 		self.__load_ensembl_db__()
 
-		file_paths = self.__compute_input_data_for_network_based_approach__()
+		file_paths,window_file_paths = self.__compute_input_data_for_network_based_approach__()
 		
 		
-		for file in file_paths:
-			self.__run_lean__(file)
+		for file in window_file_paths:
 			self.__run_SigMod__(file)
 			self.__run_domino__(file)
+			self.self.__run_lean__(file)	
 			
 
 
 
 aw = AlgorithmWrapper(
-	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/algorithm_comparison/",
+	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/network_algorithm_comparison/",
 	)
 
 aw.run()
