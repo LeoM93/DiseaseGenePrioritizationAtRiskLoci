@@ -240,7 +240,7 @@ class AlgorithmWrapper():
 		subprocess.call(command, shell=True,env = os.environ,stdout=subprocess.PIPE)
 
 
-	def run(self,):
+	def run(self,closest_gene):
 				
 		self.__load_node_PPI_network__()
 		self.__load_ensembl_db__()
@@ -248,9 +248,15 @@ class AlgorithmWrapper():
 		file_paths,window_file_paths = self.__compute_input_data_for_network_based_approach__()
 		
 		
-		for file in window_file_paths:
-			self.__run_SigMod__(file)
-			self.__run_domino__(file)
+		if not closest_gene:
+			for file in window_file_paths:
+				self.__run_SigMod__(file)
+				self.__run_domino__(file)
+		else:
+			for file in file_paths:
+				self.__run_SigMod__(file)
+				self.__run_domino__(file)
+				
 
 
 
@@ -258,4 +264,4 @@ aw = AlgorithmWrapper(
 	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/network_algorithm_comparison/",
 	)
 
-aw.run()
+aw.run(closest_gene = True)
