@@ -64,7 +64,7 @@ class OpenTarget():
 				if row[0] in self.map__ensembl_id__gene:
 					set_.add(self.map__ensembl_id__gene[row[0]])
 			
-			map__disease_name__disease_module[file_path.split("/")[-1].replace(".tsv","")] = set_
+			map__disease_name__disease_module[file_path.split("/")[-1].split("__")[0].replace(".tsv","")] = set_
 
 		return map__disease_name__disease_module
 

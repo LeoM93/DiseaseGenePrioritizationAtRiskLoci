@@ -11,18 +11,21 @@ class AlgorithmWrapper():
 	
 	def __init__(self, 
 		disease_dir_path,
+		GWAS_dir_path,
 
 	):
-		self.disease_genes_dir_path = disease_dir_path + "vegas_2/"
-		self.GWAS_dir = disease_dir_path + "GWAS/"
+		self.GWAS_dir = GWAS_dir_path + "GWAS/"
 		self.GWAS_config_file = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/sota/DEPICT/GWAS/"
 		
 		self.disease_dir_path = disease_dir_path
+
+		if not os.path.exists(self.disease_dir_path):
+			os.makedirs(self.disease_dir_path)
 		
-		self.input_dir_path = disease_dir_path + "seed/"
-		self.vagas_2_dir = disease_dir_path + "vegas_2/output/"
+		self.input_dir_path = GWAS_dir_path + "seed/"
+		self.vagas_2_dir = GWAS_dir_path + "vegas_2/output/"
 		
-		self.input_dir_path_for_RMM_GWAS = disease_dir_path + "seed_RMM-GWAS/"
+		self.input_dir_path_for_RMM_GWAS = GWAS_dir_path + "seed_RMM-GWAS/"
 		self.ensembl_db = "datasets/curated_db/mart_export.txt"
 		
 		self.algorithm_dir_path = self.disease_dir_path + "algorithms/"
@@ -30,10 +33,12 @@ class AlgorithmWrapper():
 		if not os.path.exists(self.input_dir_path_for_RMM_GWAS):
 			os.makedirs(self.input_dir_path_for_RMM_GWAS)
 		
+		if not os.path.exists(self.input_dir_path):
+			os.makedirs(self.input_dir_path)
+		
 		if not os.path.exists(self.algorithm_dir_path):
 			os.makedirs(self.algorithm_dir_path)
 		
-		self.disease_seed_set_file_paths = [self.disease_genes_dir_path + file for file in os.listdir(self.disease_genes_dir_path) if file[0] != "."]
 		self.GWAS_file_paths = [self.GWAS_dir + file for file in os.listdir(self.GWAS_dir) if file[0] != "."]
 		self.GWAS_config_files = [self.GWAS_config_file + file for file in os.listdir(self.GWAS_config_file) if file[0] != "."]
 	
@@ -65,7 +70,7 @@ class AlgorithmWrapper():
 		map__gene__vegas_pval = self.__load_vegas_2__(file_path.split("/")[-1].replace(".tsv", ""))
 		filtered_map__gene__pval = []
 		window_filtered_map__gene__pval = []
-		
+		vegas_filtered_map__gene__pval = []
 		for g, p_val in map__gene__pval.items():
 			if g in self.map__gene__ensembl_id:
 				if self.map__gene__ensembl_id[g] in self.V:
@@ -82,8 +87,13 @@ class AlgorithmWrapper():
 					else:
 						window_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
 		
+		for g, p_val in map__gene__vegas_pval.items():
+			if g in self.map__gene__ensembl_id:
+				if self.map__gene__ensembl_id[g] in self.V:
+					vegas_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
 
-		return filtered_map__gene__pval,window_filtered_map__gene__pval
+
+		return filtered_map__gene__pval,window_filtered_map__gene__pval,vegas_filtered_map__gene__pval
 	
 	
 	def __load_node_PPI_network__(self, network_file_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/datasets/networks/STRING_PPI.tsv"):
@@ -116,22 +126,30 @@ class AlgorithmWrapper():
 	def __compute_input_data_for_network_based_approach__(self,):
 		file_paths = []
 		window_file_paths = []
+		vegas_2_file_paths =[] 
 		for file in self.GWAS_file_paths:
 			
-			filtered_map__gene__pval,window_filtered_map__gene__pval = self.__load_gene_in_2MB_windows__(file)
+			filtered_map__gene__pval,window_filtered_map__gene__pval,vegas_filtered_map__gene__pval = self.__load_gene_in_2MB_windows__(file)
 
-			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1] + "__closest_genes","w"),delimiter = "\t")
+			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__closest_genes.tsv","w"),delimiter = "\t")
 			csv_writer.writerows(filtered_map__gene__pval)
 			
-			file_paths.append(self.input_dir_path + file.split("/")[-1] + "__closest_genes")
+			file_paths.append(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__closest_genes.tsv")
 
+			
 			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1],"w"),delimiter = "\t")
 			csv_writer.writerows(window_filtered_map__gene__pval)
 
 			window_file_paths.append(self.input_dir_path + file.split("/")[-1])
 
+			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__vegas_2.tsv","w"),delimiter = "\t")
+			csv_writer.writerows(vegas_filtered_map__gene__pval)
+			
+			vegas_2_file_paths.append(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__vegas_2.tsv")
+			
+
 		
-		return file_paths,window_file_paths
+		return file_paths,window_file_paths,vegas_2_file_paths
 
 
 	def __run_DmGWAS__(self, file,
@@ -245,23 +263,28 @@ class AlgorithmWrapper():
 		self.__load_node_PPI_network__()
 		self.__load_ensembl_db__()
 
-		file_paths,window_file_paths = self.__compute_input_data_for_network_based_approach__()
+		file_paths,window_file_paths,vegas_2_file_paths = self.__compute_input_data_for_network_based_approach__()
 		
-		
-		if not closest_gene:
+		if closest_gene == 0:
 			for file in window_file_paths:
 				self.__run_SigMod__(file)
 				self.__run_domino__(file)
-		else:
+		elif closest_gene == 1:
 			for file in file_paths:
 				self.__run_SigMod__(file)
 				self.__run_domino__(file)
+		else:
+			for file in vegas_2_file_paths:
+				self.__run_SigMod__(file)
+				self.__run_domino__(file)
+
 				
 
 
 
 aw = AlgorithmWrapper(
-	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/network_algorithm_comparison/",
+	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/algorithm_comparison_GWAS_vegas_2/",
+	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/input/"
 	)
 
-aw.run(closest_gene = True)
+aw.run(closest_gene = 2)
