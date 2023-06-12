@@ -178,7 +178,7 @@ class DrugHubValidation():
 
 
 
-	def run(self, trial = 100, validation_dir = "drug_hub/closest_gene/"):
+	def run(self, trial = 100, validation_dir = "drug_hub/"):
 		drug_hub_validation_dir =self.validation_dir_path + validation_dir
 		
 		if not os.path.exists(drug_hub_validation_dir):
