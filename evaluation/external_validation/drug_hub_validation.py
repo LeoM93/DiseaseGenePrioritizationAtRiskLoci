@@ -40,7 +40,7 @@ class DrugHubValidation():
 
 		self.filter_ = filter_
 		self.__load_ensembl_db__()
-		self.map__algorithm__solutions = {dir_: self.__load_solutions__(self.algorithms_file_path + dir_ +"/") for dir_ in os.listdir(self.algorithms_file_path) if dir_[0] != "." and dir_ not in self.filter_}
+		self.map__algorithm__solutions = {dir_: self.__load_solutions__(self.algorithms_file_path + dir_ +"/", algorithm_name = dir_) for dir_ in os.listdir(self.algorithms_file_path) if dir_[0] != "." and dir_ not in self.filter_}
 
 		self.drug_table_file_path = drug_table_file_path
 
@@ -83,7 +83,7 @@ class DrugHubValidation():
 			self.map__ensembl_id__gene[ensembl_id] = gene_name
 
 	
-	def __load_solutions__(self,directory_path):
+	def __load_solutions__(self,directory_path, algorithm_name):
 		
 		file_paths = [directory_path + file for file in os.listdir(directory_path) if file[0] != "." ]
 		map__disease_name__disease_module = {}
@@ -93,8 +93,11 @@ class DrugHubValidation():
 			set_ = set()
 		
 			for row in csv_reader:
-				if row[0] in self.map__ensembl_id__gene:
-					set_.add(self.map__ensembl_id__gene[row[0]])
+				if algorithm_name != "RMM-GWAS":
+					if row[0] in self.map__ensembl_id__gene:
+						set_.add(self.map__ensembl_id__gene[row[0]])
+				else:
+					set_.add(row[0])
 			
 			map__disease_name__disease_module[file_path.split("/")[-1].split("__")[0].replace(".tsv","")] = set_
 
@@ -203,9 +206,11 @@ class DrugHubValidation():
 					continue
 
 				drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = self.map__trait__disease_info[considered_gwas][1])
+				drug_targets = drug_targets.intersection(map__disease__seed[considered_gwas])
+				
 				solution = solutions[considered_gwas]
 				phi =  len(solution.intersection(drug_targets))
-				precision_table.append([algorithm,considered_gwas,phi/len(solution)])
+				precision_table.append([algorithm,considered_gwas,phi/len(drug_targets)])
 				intersected_targets = solution.intersection(drug_targets)
 
 				for target in intersected_targets:
@@ -227,7 +232,7 @@ class DrugHubValidation():
 					
 					random_solution = set(random.sample(map__disease__seed[considered_gwas],len(solution)))
 					phi_random = len(random_solution.intersection(drug_targets))
-					random_distribution.append([algorithm, considered_gwas,phi_random/len(random_solution)])
+					random_distribution.append([algorithm, considered_gwas,phi_random/len(drug_targets)])
 
 					if phi <= phi_random:
 						counter += 1
@@ -293,8 +298,8 @@ if __name__ == '__main__':
 	
 	
 	d = DrugHubValidation(
-		disease_experiment_dir_path = "../../experiments/network_algorithm_comparison/",
-		seed_dir_path = "../../experiments/network_algorithm_comparison/seed/",
+		disease_experiment_dir_path = "../../experiments/algorithm_comparison_GWAS_2Mb/",
+		seed_dir_path = "../../experiments/input/seed/",
 		drug_table_file_path = "../../datasets/curated_db/drug_repurposing_hub.tsv",
 		random_solution_dir = "../../experiments/Robustness_Experiment/",
 		config_file = "config_files/drug_hub.json",

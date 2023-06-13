@@ -23,14 +23,14 @@ class OpenTarget():
 		self.disease_experiment_dir_path = disease_experiment_dir_path
 		self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
 		self.validation_dir_path = disease_experiment_dir_path + "validation/"
-		self.seed_dir_path = disease_experiment_dir_path + "seed/"
+		self.seed_dir_path =  "../../experiments/input/seed/"
 		if not os.path.exists(self.validation_dir_path):
 			os.makedirs(self.validation_dir_path)
 
 		self.filter_ = filter_
 		self.ensembl_db = ensembl_db_file_path
 		self.__load_ensembl_db__()
-		self.map__algorithm__solutions = {dir_: self.__load_solutions__(self.algorithms_file_path + dir_ +"/") for dir_ in os.listdir(self.algorithms_file_path) if dir_[0] != "." and dir_ not in self.filter_}
+		self.map__algorithm__solutions = {dir_: self.__load_solutions__(self.algorithms_file_path + dir_ +"/",dir_) for dir_ in os.listdir(self.algorithms_file_path) if dir_[0] != "." and dir_ not in self.filter_}
 		
 
 		self.mouse_phenotype_db = mouse_phenotype_db
@@ -51,7 +51,7 @@ class OpenTarget():
 			self.map__gene__ensembl_id[gene_name] = ensembl_id
 			self.map__ensembl_id__gene[ensembl_id] = gene_name
 	
-	def __load_solutions__(self,directory_path):
+	def __load_solutions__(self,directory_path, algorithm_name):
 		
 		file_paths = [directory_path + file for file in os.listdir(directory_path) if file[0] != "." ]
 		map__disease_name__disease_module = {}
@@ -61,8 +61,11 @@ class OpenTarget():
 			set_ = set()
 		
 			for row in csv_reader:
-				if row[0] in self.map__ensembl_id__gene:
-					set_.add(self.map__ensembl_id__gene[row[0]])
+				if algorithm_name != "RMM-GWAS":
+					if row[0] in self.map__ensembl_id__gene:
+						set_.add(self.map__ensembl_id__gene[row[0]])
+				else:
+					set_.add(row[0])
 			
 			map__disease_name__disease_module[file_path.split("/")[-1].split("__")[0].replace(".tsv","")] = set_
 
@@ -151,7 +154,6 @@ class OpenTarget():
 			os.makedirs(open_target_validation_dir)
 		
 		self.__load_mouse_phenotype_db__()
-		target_nodes = self.__compute_number_of_gene_in_phenotype_class__()
 		
 		map__disease__seed = self.__load_disease_seed__()
 
@@ -164,6 +166,8 @@ class OpenTarget():
 		for algorithm, solutions in self.map__algorithm__solutions.items():
 			for gwas, solution in solutions.items():
 				if gwas in ["GCST009841", "GCST007692","GCST004748"]:
+					target_nodes = self.__compute_number_of_gene_in_phenotype_class__()
+					target_nodes = target_nodes.intersection(map__disease__seed[gwas])
 					phi =  len(solution.intersection(target_nodes))
 					precision_table.append([algorithm,gwas,phi/len(solution)])
 
@@ -224,7 +228,7 @@ class OpenTarget():
 
 
 op = OpenTarget(
-	disease_experiment_dir_path = "../../experiments/network_algorithm_comparison/", 
+	disease_experiment_dir_path = "../../experiments/algorithm_comparison_GWAS_2Mb/", 
 	random_solution_dir = "../../experiments/Robustness_Experiment/",
 	mouse_phenotype_db = "../../datasets/curated_db/mouse_phenotype_COPD.tsv",
 	ensembl_db_file_path = "../../datasets/curated_db/mart_export.txt",
