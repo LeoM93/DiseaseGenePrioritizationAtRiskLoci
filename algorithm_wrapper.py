@@ -285,7 +285,7 @@ class AlgorithmWrapper():
 		print(run_rmm_gwas)
 		subprocess.call(run_rmm_gwas, shell=True,env = os.environ,stdout=subprocess.PIPE)
 
-	def run(self,closest_gene):
+	def run(self,closest_gene, only_our_framework = True):
 				
 		self.__load_node_PPI_network__()
 		self.__load_ensembl_db__()
@@ -295,7 +295,8 @@ class AlgorithmWrapper():
 		for file_path in self.rmm_gwas_bipartite_input_graph:
 			self.__run__RMM_GWAS__(file_path)
 		
-		exit(1)
+		if only_our_framework:
+			return
 		
 		if closest_gene == 0:
 			for file in window_file_paths:
@@ -315,8 +316,8 @@ class AlgorithmWrapper():
 
 
 aw = AlgorithmWrapper(
-	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/algorithm_comparison_GWAS_vegas_2/",
-	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/Data/exps/RMM-GWAS/input/"
+	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/only_rmm/",
+	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_associations/"
 	)
 
 aw.run(closest_gene = 2)
