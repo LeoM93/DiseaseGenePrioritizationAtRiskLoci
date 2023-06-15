@@ -2,7 +2,6 @@ import os
 import math
 import csv
 
-from utils.utility import print_progress_bar
 
 class ResnikSimilarity():
 	
@@ -54,7 +53,6 @@ class ResnikSimilarity():
 
 		for node in H:
 			iteration += 1
-			print_progress_bar(iteration,total)
 			
 			freq = len(self.__get_sub_concept__(node,H)) + 1
 			
@@ -70,7 +68,6 @@ class ResnikSimilarity():
 		map__term__ancestors = {}
 		for node in H:
 			iteration += 1
-			print_progress_bar(iteration,total)
 			
 			map__term__ancestors[node] = self.__get_ancestor_concepts__(node,H)
 
@@ -110,7 +107,6 @@ class ResnikSimilarity():
 			
 			for i in range(N):
 				iteration += 1
-				print_progress_bar(iteration,total)
 				
 				for j in range(i+1,N):
 						

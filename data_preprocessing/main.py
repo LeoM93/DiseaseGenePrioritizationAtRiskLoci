@@ -16,9 +16,14 @@ class Main():
 		):
 
 		self.network_file_path = network_file_path
+		self.network_dir_path = [item for index,item in enumerate(network_file_path.split("/")) if index != len(network_file_path.split("/")) -1 ]
+		
+		
 		self.gene_to_locus_file_path = gene_to_locus_file_path
-		self.weighted_network_resnik_sim = network_file_path.split(".")[-1] + "weighted_resnik_sim.tsv"
+		self.weighted_network_resnik_sim = "/".join(self.network_dir_path) + "/biologically_weighted_"+ network_file_path.split("/")[-1]
 		self.output_file_path = output_file_path
+
+		print(self.weighted_network_resnik_sim)
 
 	def __load_map_gene_locus__(self,delimiter = "\t"):
 
@@ -60,7 +65,7 @@ class Main():
 		
 
 		csv_reader = csv.reader(open(self.weighted_network_resnik_sim,"r"),delimiter = "\t")
-		weighted_network = [["gene_name_1","gene_name_2","snip_gene_1", "snip_gene_2", "weight"]]
+		weighted_network = [["gene_name_1","gene_name_2","snp_gene_1", "snp_gene_2", "weight"]]
 		column_index = -1
 			
 		for index, row in enumerate(csv_reader):

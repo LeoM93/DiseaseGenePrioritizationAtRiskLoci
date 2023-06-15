@@ -2,5 +2,6 @@
     "GCST004988": "breast",
     "GCST004748": "lung",
     "GCST90011813": "thyroid",
-    "GCST90129505": "colorectal"
+    "GCST90129505": "colorectal",
+    "GCST012016": "gastric"
 }

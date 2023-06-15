@@ -15,7 +15,6 @@ class DrugHubValidation():
 		
 		self,
 		disease_experiment_dir_path,
-		seed_dir_path,
 		drug_table_file_path,
 		random_solution_dir,
 		config_file,
@@ -33,7 +32,9 @@ class DrugHubValidation():
 		
 		self.disease_experiment_dir_path = disease_experiment_dir_path
 		self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
-		self.seed_dir_path = seed_dir_path
+		
+		self.seed_dir_path = "../../experiments/input/seed/"
+		self.seed_dir_rmm_gwas_path = "../../experiments/input/seed_RMM-GWAS/"
 
 		if not os.path.exists(self.validation_dir_path):
 			os.makedirs(self.validation_dir_path)
@@ -108,11 +109,24 @@ class DrugHubValidation():
 		file_paths = [file for file in os.listdir(self.seed_dir_path) if file[0] != "."]
 		map__disease__seed = {}
 		for file in file_paths:
-			csv_reader = csv.reader(open(self.seed_dir_path +file, "r"),delimiter = "\t")
+			csv_reader = csv.reader(open(self.seed_dir_rmm_gwas_path +file, "r"),delimiter = "\t")
 			set_ = set()
 			for row in csv_reader:
 				if row[0] in self.map__ensembl_id__gene:
 					set_.add(self.map__ensembl_id__gene[row[0]])
+
+			map__disease__seed[file.split("/")[-1].replace(".tsv","")] = set_
+		return map__disease__seed
+
+	def __load_disease_seed_for_RMM_GWAS__(self):
+
+		file_paths = [file for file in os.listdir(self.seed_dir_rmm_gwas_path) if file[0] != "."]
+		map__disease__seed = {}
+		for file in file_paths:
+			csv_reader = csv.reader(open(self.seed_dir_path +file, "r"),delimiter = "\t")
+			set_ = set()
+			for row in csv_reader:
+				set_.add(row[0])
 
 			map__disease__seed[file.split("/")[-1].replace(".tsv","")] = set_
 		return map__disease__seed
@@ -190,6 +204,7 @@ class DrugHubValidation():
 		self.__load_drug_repurposing_hub__()
 		
 		map__disease__seed = self.__load_disease_seed__()
+		map__disease__seed_RMM_GWAS = self.__load_disease_seed_for_RMM_GWAS__()
 
 		precision_table = []
 		drug_indication = []
@@ -221,19 +236,17 @@ class DrugHubValidation():
 						record = [target,drug_name,mou,clinical_phase, algorithm, considered_gwas]
 						drug_indication.append(record)
 			
-
-
-				
 				counter = 0
 				
 				for i in range(trial):
 
-					
-					
 					random_solution = set(random.sample(map__disease__seed[considered_gwas],len(solution)))
+					if algorithm == 'RMM-GWAS':
+						random_solution = set(random.sample(map__disease__seed_RMM_GWAS[considered_gwas],len(solution)))
 					phi_random = len(random_solution.intersection(drug_targets))
+					
 					random_distribution.append([algorithm, considered_gwas,phi_random/len(drug_targets)])
-
+					
 					if phi <= phi_random:
 						counter += 1
 
@@ -299,7 +312,6 @@ if __name__ == '__main__':
 	
 	d = DrugHubValidation(
 		disease_experiment_dir_path = "../../experiments/algorithm_comparison_GWAS_2Mb/",
-		seed_dir_path = "../../experiments/input/seed/",
 		drug_table_file_path = "../../datasets/curated_db/drug_repurposing_hub.tsv",
 		random_solution_dir = "../../experiments/Robustness_Experiment/",
 		config_file = "config_files/drug_hub.json",

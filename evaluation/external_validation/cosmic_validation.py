@@ -5,13 +5,14 @@ import pandas as pd
 import random
 import json
 
-class Cosmic():
+class CosmicOncoKb():
 
     def __init__(self, 
         
         disease_experiment_dir_path,
         ensembl_db_file_path,
         cosmic_db,
+        oncokb_db,
         config_file,
         filter_
         ):
@@ -22,7 +23,9 @@ class Cosmic():
         self.disease_experiment_dir_path = disease_experiment_dir_path
         self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
         self.validation_dir_path = disease_experiment_dir_path + "validation/"
+        
         self.seed_dir_path =  "../../experiments/input/seed/"
+        self.seed_dir_rmm_gwas_path = "../../experiments/input/seed_RMM-GWAS/"
         self.cosmic_db = cosmic_db
         
         if not os.path.exists(self.validation_dir_path):
@@ -87,6 +90,29 @@ class Cosmic():
             map__disease__seed[file.split("/")[-1].replace(".tsv","")] = set_
         return map__disease__seed
     
+    def __load_disease_seed_for_RMM_GWAS__(self):
+
+        file_paths = [file for file in os.listdir(self.seed_dir_rmm_gwas_path) if file[0] != "."]
+        map__disease__seed = {}
+        for file in file_paths:
+            csv_reader = csv.reader(open(self.seed_dir_rmm_gwas_path +file, "r"),delimiter = "\t")
+            set_ = set()
+            for row in csv_reader:
+                set_.add(row[0])
+
+            map__disease__seed[file.split("/")[-1].replace(".tsv","")] = set_
+        return map__disease__seed
+    
+    def __load_onco_bk__(self,):
+        csv_reader = csv.reader(open(self.cosmic_db,"r"),delimiter = "\t")
+        target_nodes = set()
+        for index, row in enumerate(csv_reader):
+            
+            target_nodes.add(row[0])
+        
+        return target_nodes
+
+    
     def __load_cosmic_db__(self,):
 
         csv_reader = csv.reader(open(self.cosmic_db,"r"),delimiter = "\t")
@@ -105,14 +131,14 @@ class Cosmic():
                 if value in somatic_type or value in germline_type:
                     self.map__phenotype__groundtruth[value].add(row[0])
 
-    def run(self, trial = 100, validation_dir = "cosmic/"):
+    def run(self, trial = 100, validation_dir = "cosmic/", cosmic = True):
         cosmic_validation_dir =self.validation_dir_path + validation_dir
         
         if not os.path.exists(cosmic_validation_dir):
             os.makedirs(cosmic_validation_dir)
         
         map__disease__seed = self.__load_disease_seed__()
-
+        map__disease__seed_RMM_GWAS = self.__load_disease_seed_for_RMM_GWAS__()
         precision_table = []
         drug_indication = []
         algorithm_pval = []
@@ -121,20 +147,26 @@ class Cosmic():
         for algorithm, solutions in self.map__algorithm__solutions.items():
             for gwas, solution in solutions.items():
                 if gwas in self.map__trait__disease_info:
-                    target_nodes = self.map__phenotype__groundtruth[self.map__trait__disease_info[gwas]]
-                    target_nodes = target_nodes.intersection(map__disease__seed[gwas])
+                    if cosmic:
+                        target_nodes = self.map__phenotype__groundtruth[self.map__trait__disease_info[gwas]]
+                        target_nodes = target_nodes.intersection(map__disease__seed_RMM_GWAS[gwas])
+                    else:
+                        target_nodes = self.__load_onco_bk__() 
                     
                     if len(target_nodes) == 0:
                         continue
                     
                     phi =  len(solution.intersection(target_nodes))
-                    precision_table.append([algorithm,gwas,phi/len(target_nodes)])
+                    precision_table.append([algorithm,gwas,phi])
 
                     counter = 0
 
                     for i in range(trial):
                 
                         random_solution = set(random.sample(map__disease__seed[gwas],len(solution)))
+                        if algorithm == 'RMM-GWAS':
+                            random_solution = set(random.sample(map__disease__seed_RMM_GWAS[gwas],len(solution)))
+                            
                         phi_random = len(random_solution.intersection(target_nodes))
                         random_distribution.append([algorithm, gwas,phi_random/len(target_nodes)])
 
@@ -157,12 +189,14 @@ class Cosmic():
 
 
 
-co = Cosmic(
+co = CosmicOncoKb(
     disease_experiment_dir_path = "../../experiments/algorithm_comparison_GWAS_2Mb/",
     cosmic_db = "../../datasets/curated_db/cosmic_census.tsv",
+    oncokb_db = "../../datasets/curated_db/onco_kb.tsv",
     config_file = "config_files/cosmic.json",
     ensembl_db_file_path = "../../datasets/curated_db/mart_export.txt",
     filter_ = []
 )
 
 co.run()
+co.run( validation_dir = "onco/", cosmic = False)

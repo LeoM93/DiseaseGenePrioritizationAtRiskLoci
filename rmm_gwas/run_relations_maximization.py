@@ -9,16 +9,17 @@ removing_policy = "log"
 smooth_landing = False
 # smooth_landing = True
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
     print()
     print("Wrong number of arguments: provided " + str(len(sys.argv) - 1) + " required 1.")
     print()
     print("Correct usage:")
-    print(" python3 run_relations_maximization.py graph_input_file_name")
+    print(" python3 run_relations_maximization.py graph_input_file_name output_file_path")
     print()
     exit(-1)
 
 graph_file_name = sys.argv[1]
+output_file_path = sys.argv[2]
 
 import networkx as nx
 from networkx import *
@@ -33,19 +34,8 @@ current_milli_time = lambda: int(round(time.time() * 1000))
 
 ts_start = current_milli_time()
 
-c_time = str(datetime.now()).replace("-", "_").replace(" ", "__").replace(":", "_").replace(".", "_")
-output_file_handler = open("output__" + str(c_time) + ".tsv", "w")
+output_file_handler = open(output_file_path,"w")
 csv_writer = csv.writer(output_file_handler, delimiter='\t', quoting=csv.QUOTE_NONE)
-csv_writer.writerow(
-    ["input graph name",
-     "total number of genes", "total number of loci",
-     "algorithm",
-     "density of the solution",
-     "number of genes in the solution",
-     "set of genes in the solution",
-     "total_required_time(sec)",
-     "removing_policy",
-     "smooth_landing"])
 output_file_handler.flush()
 algo_name = "Relations Maximization Algorithm"
 #
@@ -159,10 +149,9 @@ set_as_string__original_node_id_in_solution = str(set_as_list__original_node_id_
     "]", "}")
 #
 ts_end = current_milli_time()
-row = [graph_file_name, len(graph.nodes), len(all_colors), algo_name, density_of_solution,
-       len(set__original_node_id_in_solution), set_as_string__original_node_id_in_solution,
-       int((ts_end - ts_start) / 1000), removing_policy, smooth_landing]
-csv_writer.writerow(row)
+
+csv_writer.writerows([[node] for node in set_as_list__original_node_id_in_solution])
+
 output_file_handler.flush()
 output_file_handler.close()
 

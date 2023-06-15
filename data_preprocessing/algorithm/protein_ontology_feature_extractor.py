@@ -1,8 +1,7 @@
 import csv
 import networkx as nx
-
+import os
 from algorithm.ontology_similarity_measures.resnik_sim import ResnikSimilarity
-from utils.utility import print_progress_bar
 
 class ProteinOntologyFeatureExtractor():
 	
@@ -292,7 +291,6 @@ class ProteinOntologyFeatureExtractor():
 		for p, q in E:
 			
 			iteration += 1
-			print_progress_bar(iteration, total = n_of_pairs)
 			
 			record = [p,q]
 			
@@ -315,7 +313,10 @@ class ProteinOntologyFeatureExtractor():
 
 
 	def run(self,):
-
+		print(self.output_file_path)
+		if os.path.exists(self.output_file_path):
+			return
+		print(self.output_file_path)
 		G_ontology, V_ontology = self.__load_acyclic_network__()
 		E,V = self.__load_V__()
 
@@ -328,7 +329,7 @@ class ProteinOntologyFeatureExtractor():
 			rs = ResnikSimilarity(
 				map__ontology_domain__ontologies = map__ontology_domain__ontologies,
 				G = G_ontology,
-				output_directory_path = "./datasets/ontology/"
+				output_directory_path = "../datasets/ontology/"
 				)
 			
 			resnik_sim_file_paths,ontology_domains = rs.run()

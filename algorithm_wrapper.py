@@ -26,12 +26,18 @@ class AlgorithmWrapper():
 		self.vagas_2_dir = GWAS_dir_path + "vegas_2/output/"
 		
 		self.input_dir_path_for_RMM_GWAS = GWAS_dir_path + "seed_RMM-GWAS/"
+		self.input_network_dir_path_for_RMM_GWAS = GWAS_dir_path + "newtork_RMM-GWAS/"
+		self.rmm_gwas_bipartite_input_graph = []
+		
 		self.ensembl_db = "datasets/curated_db/mart_export.txt"
 		
 		self.algorithm_dir_path = self.disease_dir_path + "algorithms/"
 
 		if not os.path.exists(self.input_dir_path_for_RMM_GWAS):
 			os.makedirs(self.input_dir_path_for_RMM_GWAS)
+		
+		if not os.path.exists(self.input_network_dir_path_for_RMM_GWAS):
+			os.makedirs(self.input_network_dir_path_for_RMM_GWAS)
 		
 		if not os.path.exists(self.input_dir_path):
 			os.makedirs(self.input_dir_path)
@@ -71,6 +77,8 @@ class AlgorithmWrapper():
 		filtered_map__gene__pval = []
 		window_filtered_map__gene__pval = []
 		vegas_filtered_map__gene__pval = []
+		self.rmm_gwas_bipartite_input_graph.append(self.input_dir_path_for_RMM_GWAS + file_path.split("/")[-1])
+		
 		for g, p_val in map__gene__pval.items():
 			if g in self.map__gene__ensembl_id:
 				if self.map__gene__ensembl_id[g] in self.V:
@@ -258,12 +266,36 @@ class AlgorithmWrapper():
 		subprocess.call(command, shell=True,env = os.environ,stdout=subprocess.PIPE)
 
 
+	def __run__RMM_GWAS__(self,
+	file_path, 
+	network_file_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/datasets/networks/co_regulated_network_1e-5_thresholded.txt"):
+		algorithm_name = "RMM-GWAS"
+		current_algorithm_dir = self.algorithm_dir_path + algorithm_name + "/"
+		disease_name = file_path.split("/")[-1]
+		if not os.path.exists(current_algorithm_dir):
+			os.makedirs(current_algorithm_dir)
+		
+		preprocessing = 'cd data_preprocessing; python3 main.py'
+		command = f'{preprocessing} {network_file_path} {self.input_network_dir_path_for_RMM_GWAS + disease_name} {file_path}'
+		
+		print(command)
+		subprocess.call(command, shell=True,env = os.environ,stdout=subprocess.PIPE)
+
+		run_rmm_gwas =  f'cd rmm_gwas; python3 run_relations_maximization.py {self.input_network_dir_path_for_RMM_GWAS + disease_name} {current_algorithm_dir + disease_name}'
+		print(run_rmm_gwas)
+		subprocess.call(run_rmm_gwas, shell=True,env = os.environ,stdout=subprocess.PIPE)
+
 	def run(self,closest_gene):
 				
 		self.__load_node_PPI_network__()
 		self.__load_ensembl_db__()
 
 		file_paths,window_file_paths,vegas_2_file_paths = self.__compute_input_data_for_network_based_approach__()
+		
+		for file_path in self.rmm_gwas_bipartite_input_graph:
+			self.__run__RMM_GWAS__(file_path)
+		
+		exit(1)
 		
 		if closest_gene == 0:
 			for file in window_file_paths:
