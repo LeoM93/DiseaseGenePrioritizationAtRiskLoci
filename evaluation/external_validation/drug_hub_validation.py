@@ -33,8 +33,8 @@ class DrugHubValidation():
 		self.disease_experiment_dir_path = disease_experiment_dir_path
 		self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
 		
-		self.seed_dir_path = "../../experiments/input/seed/"
-		self.seed_dir_rmm_gwas_path = "../../experiments/input/seed_RMM-GWAS/"
+		self.seed_dir_path = "../../experiments/GWAS_studies/seed/"
+		self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_studies/seed_RMM-GWAS/"
 
 		if not os.path.exists(self.validation_dir_path):
 			os.makedirs(self.validation_dir_path)
@@ -109,7 +109,8 @@ class DrugHubValidation():
 		file_paths = [file for file in os.listdir(self.seed_dir_path) if file[0] != "."]
 		map__disease__seed = {}
 		for file in file_paths:
-			csv_reader = csv.reader(open(self.seed_dir_rmm_gwas_path +file, "r"),delimiter = "\t")
+			print()
+			csv_reader = csv.reader(open(self.seed_dir_path +file, "r"),delimiter = "\t")
 			set_ = set()
 			for row in csv_reader:
 				if row[0] in self.map__ensembl_id__gene:
@@ -122,14 +123,17 @@ class DrugHubValidation():
 
 		file_paths = [file for file in os.listdir(self.seed_dir_rmm_gwas_path) if file[0] != "."]
 		map__disease__seed = {}
+		map__disease__gene__locus = {}
 		for file in file_paths:
-			csv_reader = csv.reader(open(self.seed_dir_path +file, "r"),delimiter = "\t")
+			map__disease__gene__locus[file.split("/")[-1].replace(".tsv","")] = {}
+			csv_reader = csv.reader(open(self.seed_dir_rmm_gwas_path +file, "r"),delimiter = "\t")
 			set_ = set()
 			for row in csv_reader:
 				set_.add(row[0])
+				map__disease__gene__locus[file.split("/")[-1].replace(".tsv","")][row[0]] = row[1]
 
 			map__disease__seed[file.split("/")[-1].replace(".tsv","")] = set_
-		return map__disease__seed
+		return map__disease__seed,map__disease__gene__locus
 
 	def __load_drug_repurposing_hub__(self,):
 	
@@ -204,20 +208,19 @@ class DrugHubValidation():
 		self.__load_drug_repurposing_hub__()
 		
 		map__disease__seed = self.__load_disease_seed__()
-		map__disease__seed_RMM_GWAS = self.__load_disease_seed_for_RMM_GWAS__()
+		map__disease__seed_RMM_GWAS, map__disease__gene__locus = self.__load_disease_seed_for_RMM_GWAS__()
 
 		precision_table = []
 		drug_indication = []
 		algorithm_pval = []
 		random_distribution = []
-		print(map__disease__seed)
 		
 		for algorithm, solutions in self.map__algorithm__solutions.items():
 			
 			
 			for considered_gwas in self.map__trait__disease_info.keys():
 				if considered_gwas not in solutions:
-					precision_table.append([algorithm,considered_gwas,0.0])
+					precision_table.append([algorithm,considered_gwas,0.0,0.0])
 					continue
 
 				drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = self.map__trait__disease_info[considered_gwas][1])
@@ -225,7 +228,9 @@ class DrugHubValidation():
 				
 				solution = solutions[considered_gwas]
 				phi =  len(solution.intersection(drug_targets))
-				precision_table.append([algorithm,considered_gwas,phi/len(drug_targets)])
+				phi_locus = len(set([map__disease__gene__locus[considered_gwas][item] for item in solution.intersection(drug_targets) if item in map__disease__gene__locus[considered_gwas]]))
+				print(set([map__disease__gene__locus[considered_gwas][item] for item in solution.intersection(drug_targets) if item in map__disease__gene__locus[considered_gwas]]))
+				precision_table.append([algorithm,considered_gwas,phi,phi_locus])
 				intersected_targets = solution.intersection(drug_targets)
 
 				for target in intersected_targets:
@@ -263,7 +268,7 @@ class DrugHubValidation():
 		
 
 
-		pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Score"]).to_csv(drug_hub_validation_dir + "metrics.tsv", sep = "\t")
+		pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Numeratore", "Numeratore Locus"]).to_csv(drug_hub_validation_dir + "metrics.tsv", sep = "\t")
 		pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Score"]).to_csv(drug_hub_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
 		pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val"]).to_csv(drug_hub_validation_dir + "metrics_p_val.tsv", sep = "\t")
 		pd.DataFrame(drug_indication,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase", "Algorithm", "GWAS"]).to_csv(drug_hub_validation_dir  + "discovered.tsv", sep = "\t")
