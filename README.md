@@ -10,3 +10,6 @@ Martini, Leonardo, et al. "Network Based Approach to Gene Prioritization at Geno
 3. Run External Validation: from the main directory, go to evaluation/external_validation and run on the terminal python3 drug_hub_validation.py and python3 GSEA_validation.py python3 open_target_validation.py
 4. Create plots: run on the terminal python3 plot.py
 
+## Usefull notes
+1. url ld: https://ldlink.nih.gov/?tab=snpclip
+
