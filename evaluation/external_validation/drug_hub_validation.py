@@ -33,8 +33,8 @@ class DrugHubValidation():
 		self.disease_experiment_dir_path = disease_experiment_dir_path
 		self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
 		
-		self.seed_dir_path = "../../experiments/GWAS_studies/seed/"
-		self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_studies/seed_RMM-GWAS/"
+		self.seed_dir_path = "../../experiments/GWAS_associations/seed/"
+		self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_associations/seed_RMM-GWAS/"
 
 		if not os.path.exists(self.validation_dir_path):
 			os.makedirs(self.validation_dir_path)
@@ -225,12 +225,18 @@ class DrugHubValidation():
 
 				drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = self.map__trait__disease_info[considered_gwas][1])
 				drug_targets = drug_targets.intersection(map__disease__seed[considered_gwas])
-				
+				drug_target_locus = len(set([map__disease__gene__locus[considered_gwas][item] for item in drug_targets if item in map__disease__gene__locus[considered_gwas]]))
+
+				if len(drug_targets) == 0:
+					print(considered_gwas)
+					print(map__disease__seed[considered_gwas])
+					continue
+
 				solution = solutions[considered_gwas]
 				phi =  len(solution.intersection(drug_targets))
 				phi_locus = len(set([map__disease__gene__locus[considered_gwas][item] for item in solution.intersection(drug_targets) if item in map__disease__gene__locus[considered_gwas]]))
 				print(set([map__disease__gene__locus[considered_gwas][item] for item in solution.intersection(drug_targets) if item in map__disease__gene__locus[considered_gwas]]))
-				precision_table.append([algorithm,considered_gwas,phi,phi_locus])
+				precision_table.append([algorithm,considered_gwas,drug_target_locus,phi_locus])
 				intersected_targets = solution.intersection(drug_targets)
 
 				for target in intersected_targets:
@@ -316,7 +322,7 @@ if __name__ == '__main__':
 	
 	
 	d = DrugHubValidation(
-		disease_experiment_dir_path = "../../experiments/algorithm_comparison_GWAS_2Mb/",
+		disease_experiment_dir_path = "../../experiments/GWAS_association_exp/",
 		drug_table_file_path = "../../datasets/curated_db/drug_repurposing_hub.tsv",
 		random_solution_dir = "../../experiments/Robustness_Experiment/",
 		config_file = "config_files/drug_hub.json",

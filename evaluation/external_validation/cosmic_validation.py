@@ -24,8 +24,8 @@ class CosmicOncoKb():
         self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
         self.validation_dir_path = disease_experiment_dir_path + "validation/"
         
-        self.seed_dir_path =  "../../experiments/GWAS_studies/seed/"
-        self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_studies/seed_RMM-GWAS/"
+        self.seed_dir_path =  "../../experiments/GWAS_associations/seed/"
+        self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_associations/seed_RMM-GWAS/"
         self.cosmic_db = cosmic_db
         
         if not os.path.exists(self.validation_dir_path):
@@ -94,14 +94,17 @@ class CosmicOncoKb():
 
         file_paths = [file for file in os.listdir(self.seed_dir_rmm_gwas_path) if file[0] != "."]
         map__disease__seed = {}
+        map__disease__gene__locus = {}
         for file in file_paths:
+            map__disease__gene__locus[file.split("/")[-1].replace(".tsv","")] = {}
             csv_reader = csv.reader(open(self.seed_dir_rmm_gwas_path +file, "r"),delimiter = "\t")
             set_ = set()
             for row in csv_reader:
                 set_.add(row[0])
+                map__disease__gene__locus[file.split("/")[-1].replace(".tsv","")][row[0]] = row[1]
 
             map__disease__seed[file.split("/")[-1].replace(".tsv","")] = set_
-        return map__disease__seed
+        return map__disease__seed,map__disease__gene__locus
     
     def __load_onco_bk__(self,):
         csv_reader = csv.reader(open(self.cosmic_db,"r"),delimiter = "\t")
@@ -138,7 +141,8 @@ class CosmicOncoKb():
             os.makedirs(cosmic_validation_dir)
         
         map__disease__seed = self.__load_disease_seed__()
-        map__disease__seed_RMM_GWAS = self.__load_disease_seed_for_RMM_GWAS__()
+        map__disease__seed_RMM_GWAS,map__disease__gene__locus = self.__load_disease_seed_for_RMM_GWAS__()
+        print(map__disease__seed_RMM_GWAS.keys())
         precision_table = []
         drug_indication = []
         algorithm_pval = []
@@ -151,13 +155,18 @@ class CosmicOncoKb():
                         target_nodes = self.map__phenotype__groundtruth[self.map__trait__disease_info[gwas]]
                         target_nodes = target_nodes.intersection(map__disease__seed_RMM_GWAS[gwas])
                     else:
-                        target_nodes = self.__load_onco_bk__() 
+                        target_nodes = self.__load_onco_bk__()
+                        target_nodes = target_nodes.intersection(map__disease__seed_RMM_GWAS[gwas])
                     
                     if len(target_nodes) == 0:
                         continue
                     
+                    target_nodes_locus = len(set([map__disease__gene__locus[gwas][item] for item in target_nodes if item in map__disease__gene__locus[gwas]]))
+
                     phi =  len(solution.intersection(target_nodes))
-                    precision_table.append([algorithm,gwas,phi])
+                    phi_locus = len(set([map__disease__gene__locus[gwas][item] for item in solution.intersection(target_nodes) if item in map__disease__gene__locus[gwas]]))
+
+                    precision_table.append([algorithm,gwas,phi/target_nodes_locus])
 
                     counter = 0
 
@@ -190,7 +199,7 @@ class CosmicOncoKb():
 
 
 co = CosmicOncoKb(
-    disease_experiment_dir_path = "../../experiments/algorithm_comparison_GWAS_2Mb/",
+    disease_experiment_dir_path = "../../experiments/GWAS_association_exp/",
     cosmic_db = "../../datasets/curated_db/cosmic_census.tsv",
     oncokb_db = "../../datasets/curated_db/onco_kb.tsv",
     config_file = "config_files/cosmic.json",
