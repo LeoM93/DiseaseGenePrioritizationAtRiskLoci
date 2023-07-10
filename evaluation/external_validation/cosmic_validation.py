@@ -165,8 +165,11 @@ class CosmicOncoKb():
 
                     phi =  len(solution.intersection(target_nodes))
                     phi_locus = len(set([map__disease__gene__locus[gwas][item] for item in solution.intersection(target_nodes) if item in map__disease__gene__locus[gwas]]))
+                    ld = "Not filtered"    
+                    if "ld" in gwas:
+                        ld = "LD filtered"
 
-                    precision_table.append([algorithm,gwas,phi/target_nodes_locus])
+                    precision_table.append([algorithm,gwas.split("_")[0],phi_locus/len(solution),ld])
 
                     counter = 0
 
@@ -177,7 +180,8 @@ class CosmicOncoKb():
                             random_solution = set(random.sample(map__disease__seed_RMM_GWAS[gwas],len(solution)))
                             
                         phi_random = len(random_solution.intersection(target_nodes))
-                        random_distribution.append([algorithm, gwas,phi_random/len(target_nodes)])
+
+                        random_distribution.append([algorithm, gwas.split("_")[0],phi_random/len(random_solution),ld])
 
                         if phi <= phi_random:
                             counter += 1
@@ -187,11 +191,11 @@ class CosmicOncoKb():
                         counter_str = "p_{val} ~ " + str(counter/trial) 
 
 
-                    algorithm_pval.append([algorithm, gwas,counter_str])
+                    algorithm_pval.append([algorithm, gwas.split("_")[0],counter_str,ld])
         
-        pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Score"]).to_csv(cosmic_validation_dir + "metrics.tsv", sep = "\t")
-        pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Score"]).to_csv(cosmic_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
-        pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val"]).to_csv(cosmic_validation_dir + "metrics_p_val.tsv", sep = "\t")
+        pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Recall", "filter"]).to_csv(cosmic_validation_dir + "metrics.tsv", sep = "\t")
+        pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Recall", "filter"]).to_csv(cosmic_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
+        pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val", "filter"]).to_csv(cosmic_validation_dir + "metrics_p_val.tsv", sep = "\t")
 
 
 
