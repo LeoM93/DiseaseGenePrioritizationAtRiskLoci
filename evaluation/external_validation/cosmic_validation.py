@@ -66,8 +66,7 @@ class CosmicOncoKb():
             set_ = set()
         
             for row in csv_reader:
-                
-                if algorithm_name != 'RMM-GWAS':
+                if algorithm_name != 'RMM-GWAS' and algorithm_name != 'RMM-GWAS-OLD' and algorithm_name != 'DSG':
                     if row[0] in self.map__ensembl_id__gene:
                         set_.add(self.map__ensembl_id__gene[row[0]])
                 else:
@@ -142,12 +141,10 @@ class CosmicOncoKb():
         
         map__disease__seed = self.__load_disease_seed__()
         map__disease__seed_RMM_GWAS,map__disease__gene__locus = self.__load_disease_seed_for_RMM_GWAS__()
-        print(map__disease__seed_RMM_GWAS.keys())
         precision_table = []
         drug_indication = []
         algorithm_pval = []
         random_distribution = []
-
         for algorithm, solutions in self.map__algorithm__solutions.items():
             for gwas, solution in solutions.items():
                 if gwas in self.map__trait__disease_info:
@@ -168,8 +165,8 @@ class CosmicOncoKb():
                     ld = "Not filtered"    
                     if "ld" in gwas:
                         ld = "LD filtered"
-
                     precision_table.append([algorithm,gwas.split("_")[0],phi_locus/len(solution),ld])
+                    
 
                     counter = 0
 
