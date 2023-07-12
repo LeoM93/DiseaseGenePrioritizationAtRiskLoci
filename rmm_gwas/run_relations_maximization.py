@@ -9,9 +9,12 @@ removing_policy = "log"
 smooth_landing = False
 # smooth_landing = True
 
+at_most_one_node_for_each_color_in_the_final_solution = True
+# at_most_one_node_for_each_color_in_the_final_solution = False
+
 if len(sys.argv) != 3:
     print()
-    print("Wrong number of arguments: provided " + str(len(sys.argv) - 1) + " required 1.")
+    print("Wrong number of arguments: provided " + str(len(sys.argv) - 1) + " required 2.")
     print()
     print("Correct usage:")
     print(" python3 run_relations_maximization.py graph_input_file_name output_file_path")
@@ -34,7 +37,7 @@ current_milli_time = lambda: int(round(time.time() * 1000))
 
 ts_start = current_milli_time()
 
-output_file_handler = open(output_file_path,"w")
+output_file_handler = open(output_file_path, "w")
 csv_writer = csv.writer(output_file_handler, delimiter='\t', quoting=csv.QUOTE_NONE)
 output_file_handler.flush()
 algo_name = "Relations Maximization Algorithm"
@@ -129,7 +132,8 @@ list_of_solutions_from_Single_Sweep_rounding_on_M = spectral_peeling(graph, map_
                                                                      using_fair_projection=True,
                                                                      perform_peeling=perform_peeling,
                                                                      removing_policy=removing_policy,
-                                                                     smooth_landing=smooth_landing)
+                                                                     smooth_landing=smooth_landing,
+                                                                     at_most_one_node_for_each_color_in_the_final_solution=at_most_one_node_for_each_color_in_the_final_solution)
 #
 t_1 = current_milli_time()
 total_time = t_1 - t_0

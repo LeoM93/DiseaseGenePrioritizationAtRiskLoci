@@ -7,6 +7,7 @@ from spectral_algorithms import make_the_weighed_graph_connected
 from spectral_algorithms import compute_main_eigenvector__scipy
 from spectral_algorithms import compute_main_eigenvector_fairified_matrix__scipy__MORE_THAN_TWO_COLORS
 from rounding import perform_paired_sweep_on_sorted_main_eigen_vector
+from combinatorial_algorithms import Goldberg_Algorithm, compute_density_of_the_induced_subgraph
 
 current_milli_time = lambda: int(round(time.time() * 1000))
 
@@ -52,9 +53,13 @@ def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=
             map__node_id__index[c_node] = c_index
         #
         # create the adjacency matrix
-        scipy_sparse_adj_matrix = nx.convert_matrix.to_scipy_sparse_matrix(w_graph,
-                                                                           nodelist=list_of_nodes_representing_the_mapping_index_node,
-                                                                           dtype=None, weight='weight', format='csc')
+        # scipy_sparse_adj_matrix = nx.convert_matrix.to_scipy_sparse_matrix(w_graph,
+        #                           nodelist=list_of_nodes_representing_the_mapping_index_node,
+        #                           dtype=None, weight='weight', format='csc')
+
+        scipy_sparse_adj_matrix = \
+            nx.convert_matrix.to_scipy_sparse_array(w_graph, nodelist=list_of_nodes_representing_the_mapping_index_node,
+                                                    dtype=None, weight='weight', format='csc')
 
         ########################################################
         # Compute EigenValues and EigenVectors
@@ -72,8 +77,10 @@ def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=
         absence_of_convergence = False
         try:
             if using_fair_projection:
-                main_eve_M__w_power__scipy, num_iterations_meve_M_sp = compute_main_eigenvector_fairified_matrix__scipy__MORE_THAN_TWO_COLORS(
-                    scipy_sparse_adj_matrix, map__index__color_id, max_number_of_iterations=100000, tollerance=1e-08)
+                main_eve_M__w_power__scipy, num_iterations_meve_M_sp = \
+                    compute_main_eigenvector_fairified_matrix__scipy__MORE_THAN_TWO_COLORS(
+                        scipy_sparse_adj_matrix, map__index__color_id, max_number_of_iterations=100000,
+                        tollerance=1e-08)
             else:
                 main_eve_M__w_power__scipy, num_iterations_meve_M_sp = compute_main_eigenvector__scipy(
                     scipy_sparse_adj_matrix, max_number_of_iterations=100000, tollerance=1e-08)
@@ -123,7 +130,7 @@ def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=
             set__all_color_ids,
             only_densest_fair_solutions=True,
             exactly_one_node_for_each_color_in_the_final_solution=True,
-            at_most_one_node_for_each_color_in_the_final_solution=at_most_one_node_for_each_color_in_the_final_solution)
+            at_most_one_node_for_each_color_in_the_final_solution=False)
         #
         if len(list_of_solutions_from_Paired_Sweep_rounding_on_M) == 0:
             must_continue_with_peeling = False
@@ -135,12 +142,30 @@ def spectral_peeling(input_graph, map__node_id__color_id, using_fair_projection=
         #
         best_solutions_from_Paired_Sweep_rounding_on_M = max(list_of_solutions_from_Paired_Sweep_rounding_on_M,
                                                              key=lambda x: (x[3], x[2]))
-        if (best_solution is None) or (best_solutions_from_Paired_Sweep_rounding_on_M[2] > best_solution[2]):
-            best_solution = best_solutions_from_Paired_Sweep_rounding_on_M
+        #
+        if at_most_one_node_for_each_color_in_the_final_solution:
+            #
+            subgraph_of_w_graph = w_graph.subgraph(best_solutions_from_Paired_Sweep_rounding_on_M[0])
+            #print("subgraph_of_w_graph", subgraph_of_w_graph)
+            best_Vs, total_exec_time_msec, total_exec_time_WITHOUT_GRAPH_CONSTRUCTION_msec = \
+                Goldberg_Algorithm(subgraph_of_w_graph)
+            c_best_solution = [frozenset(best_Vs),
+                               best_solutions_from_Paired_Sweep_rounding_on_M[1],
+                               compute_density_of_the_induced_subgraph(best_Vs, subgraph_of_w_graph),
+                               None,
+                               len(best_Vs)]
+            #
+            if (best_solution is None) or (c_best_solution[2] > best_solution[2]):
+                best_solution = c_best_solution
+        else:
+            if (best_solution is None) or (best_solutions_from_Paired_Sweep_rounding_on_M[2] > best_solution[2]):
+                best_solution = best_solutions_from_Paired_Sweep_rounding_on_M
         #
         print()
         print("Iteration number:", iteration_number)
         print("Density of the best solution found so far:", best_solution[-3])
+        print("best_solution", best_solution)
+        #
         order = best_solutions_from_Paired_Sweep_rounding_on_M[1]
         if order == 0:
             sorted_main_eigen_vector_M.sort(key=lambda x: (+1. * x[1], x[0]))
