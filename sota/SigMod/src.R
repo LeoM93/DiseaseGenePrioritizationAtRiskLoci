@@ -25,6 +25,6 @@ weight_index = NULL
 ## construct a scored-network
 scored_net = construct_scored_net(network_data,
 interaction_indices= interaction_indices, gene_ps=gene_ps)
-res_info = SigMod_bisection( net=scored_net)
+res_info = SigMod_bisection( net=scored_net, maxjump=6)
 data_frame <- rbind(V(res_info$opt_module$selected)$name, V(res_info$opt_module$selected_next)$name)
 write.table(V(res_info$opt_module$selected_next)$name, file=args[3], quote=FALSE, row.names=FALSE, col.names=FALSE, sep='\t')

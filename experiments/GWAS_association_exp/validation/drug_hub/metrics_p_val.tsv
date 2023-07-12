@@ -1,0 +1,16 @@
+	Algorithm	GWAS	p_val
+0	DOMINO	0000305_ld	p_{val} ~ 1.0
+1	DOMINO	0000305	p_{val} ~ 1.0
+2	DOMINO	0008903	p_{val} ~ 1.0
+3	DOMINO	0008903_ld	p_{val} ~ 1.0
+4	DOMINO	0002892	p_{val} ~ 1.0
+5	RMM-GWAS	0000305_ld	p_{val} ~ 0.032
+6	RMM-GWAS	0000305	p_{val} ~ 0.126
+7	RMM-GWAS	0008903	p_{val} ~ 0.009
+8	RMM-GWAS	0008903_ld	p_{val} ~ 0.028
+9	RMM-GWAS	0002892	p_{val} ~ 1.0
+10	SIGMOID	0000305_ld	p_{val} ~ 1.0
+11	SIGMOID	0000305	p_{val} ~ 1.0
+12	SIGMOID	0008903	p_{val} ~ 1.0
+13	SIGMOID	0008903_ld	p_{val} ~ 1.0
+14	SIGMOID	0002892	p_{val} ~ 1.0

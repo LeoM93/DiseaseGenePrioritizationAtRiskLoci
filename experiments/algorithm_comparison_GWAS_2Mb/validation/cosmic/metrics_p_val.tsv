@@ -1,9 +1,1 @@
-	Algorithm	GWAS	p_val
-0	DOMINO	GCST004988	p_{val} ~ 1.0
-1	DOMINO	GCST90129505	p_{val} ~ 1.0
-2	dmGWAS	GCST004988	p_{val} ~ 1.0
-3	dmGWAS	GCST90129505	p_{val} ~ 0.57
-4	RMM-GWAS	GCST004988	p_{val} < 10^{-6}
-5	RMM-GWAS	GCST90129505	p_{val} ~ 0.06
-6	SIGMOID	GCST004988	p_{val} ~ 0.33
-7	SIGMOID	GCST90129505	p_{val} ~ 1.0
+	Algorithm	GWAS	p_val	filter

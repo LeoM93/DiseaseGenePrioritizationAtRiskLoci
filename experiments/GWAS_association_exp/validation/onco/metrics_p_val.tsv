@@ -1,0 +1,25 @@
+	Algorithm	GWAS	p_val	filter
+0	DOMINO	0002892	p_{val} ~ 0.69	LD filtered
+1	DOMINO	0000305	p_{val} ~ 1.0	LD filtered
+2	DOMINO	0000305	p_{val} ~ 0.86	Not filtered
+3	DOMINO	0002892	p_{val} ~ 0.73	Not filtered
+4	DOMINO	0008903	p_{val} ~ 1.0	Not filtered
+5	DOMINO	0008903	p_{val} ~ 1.0	LD filtered
+6	dmGWAS	0002892	p_{val} ~ 0.12	LD filtered
+7	dmGWAS	0000305	p_{val} < 10^{-6}	LD filtered
+8	dmGWAS	0000305	p_{val} < 10^{-6}	Not filtered
+9	dmGWAS	0002892	p_{val} ~ 0.12	Not filtered
+10	dmGWAS	0008903	p_{val} < 10^{-6}	Not filtered
+11	dmGWAS	0008903	p_{val} < 10^{-6}	LD filtered
+12	RMM-GWAS	0002892	p_{val} ~ 0.04	LD filtered
+13	RMM-GWAS	0000305	p_{val} < 10^{-6}	LD filtered
+14	RMM-GWAS	0000305	p_{val} < 10^{-6}	Not filtered
+15	RMM-GWAS	0002892	p_{val} ~ 0.05	Not filtered
+16	RMM-GWAS	0008903	p_{val} < 10^{-6}	Not filtered
+17	RMM-GWAS	0008903	p_{val} < 10^{-6}	LD filtered
+18	SIGMOID	0002892	p_{val} ~ 0.48	LD filtered
+19	SIGMOID	0000305	p_{val} ~ 0.68	LD filtered
+20	SIGMOID	0000305	p_{val} ~ 0.35	Not filtered
+21	SIGMOID	0002892	p_{val} ~ 0.57	Not filtered
+22	SIGMOID	0008903	p_{val} ~ 0.69	Not filtered
+23	SIGMOID	0008903	p_{val} ~ 0.68	LD filtered

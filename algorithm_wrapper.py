@@ -269,7 +269,7 @@ class AlgorithmWrapper():
 	def __run__RMM_GWAS__(self,
 	file_path, 
 	network_file_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/datasets/networks/co_regulated_network_1e-5_thresholded.txt"):
-		algorithm_name = "RMM-GWAS"
+		algorithm_name = "RMM-GWAS-ALMOST"
 		current_algorithm_dir = self.algorithm_dir_path + algorithm_name + "/"
 		disease_name = file_path.split("/")[-1]
 		if not os.path.exists(current_algorithm_dir):
@@ -316,8 +316,8 @@ class AlgorithmWrapper():
 
 
 aw = AlgorithmWrapper(
-	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/only_rmm/",
+	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_association_exp/",
 	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_associations/"
 	)
 
-aw.run(closest_gene = 2)
+aw.run(closest_gene = 0)
