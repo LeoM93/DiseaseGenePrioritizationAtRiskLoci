@@ -285,7 +285,7 @@ class AlgorithmWrapper():
 		print(run_rmm_gwas)
 		subprocess.call(run_rmm_gwas, shell=True,env = os.environ,stdout=subprocess.PIPE)
 
-	def run(self,closest_gene, only_our_framework = True):
+	def run(self,closest_gene, only_our_framework = False):
 				
 		self.__load_node_PPI_network__()
 		self.__load_ensembl_db__()
@@ -320,4 +320,4 @@ aw = AlgorithmWrapper(
 	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_associations/"
 	)
 
-aw.run(closest_gene = 0)
+aw.run(closest_gene = 1)

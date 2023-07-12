@@ -1,17 +1,17 @@
-	Algorithm	GWAS	p_val	filter
-0	DOMINO	0000305	p_{val} ~ 1.0	LD filtered
-1	DOMINO	0000305	p_{val} ~ 1.0	Not filtered
-2	DOMINO	0008903	p_{val} ~ 1.0	Not filtered
-3	DOMINO	0008903	p_{val} ~ 1.0	LD filtered
-4	dmGWAS	0000305	p_{val} ~ 0.01	LD filtered
-5	dmGWAS	0000305	p_{val} ~ 0.02	Not filtered
-6	dmGWAS	0008903	p_{val} ~ 0.14	Not filtered
-7	dmGWAS	0008903	p_{val} ~ 0.12	LD filtered
-8	RMM-GWAS	0000305	p_{val} < 10^{-6}	LD filtered
-9	RMM-GWAS	0000305	p_{val} < 10^{-6}	Not filtered
-10	RMM-GWAS	0008903	p_{val} ~ 0.03	Not filtered
-11	RMM-GWAS	0008903	p_{val} < 10^{-6}	LD filtered
-12	SIGMOID	0000305	p_{val} ~ 1.0	LD filtered
-13	SIGMOID	0000305	p_{val} ~ 1.0	Not filtered
-14	SIGMOID	0008903	p_{val} ~ 0.17	Not filtered
-15	SIGMOID	0008903	p_{val} ~ 0.1	LD filtered
+	Algorithm	GWAS	p_val	filter	input type
+0	DOMINO	0008903	p_{val} ~ 1.0	LD filtered	closest_genes
+1	DOMINO	0000305	p_{val} ~ 0.54	LD filtered	closest_genes
+2	DOMINO	0008903	p_{val} ~ 1.0	Not filtered	closest_genes
+3	DOMINO	0000305	p_{val} < 10^{-6}	Not filtered	closest_genes
+4	dmGWAS	0008903	p_{val} ~ 1.0	LD filtered	closest_genes
+5	dmGWAS	0000305	p_{val} ~ 0.12	LD filtered	closest_genes
+6	dmGWAS	0008903	p_{val} ~ 1.0	Not filtered	closest_genes
+7	dmGWAS	0000305	p_{val} ~ 0.38	Not filtered	closest_genes
+8	RMM-GWAS	0000305	p_{val} < 10^{-6}	LD filtered	0000305_ld
+9	RMM-GWAS	0000305	p_{val} < 10^{-6}	Not filtered	0000305
+10	RMM-GWAS	0008903	p_{val} ~ 0.05	Not filtered	0008903
+11	RMM-GWAS	0008903	p_{val} < 10^{-6}	LD filtered	0008903_ld
+12	SIGMOID	0008903	p_{val} ~ 1.0	LD filtered	closest_genes
+13	SIGMOID	0000305	p_{val} ~ 0.23	LD filtered	closest_genes
+14	SIGMOID	0008903	p_{val} ~ 1.0	Not filtered	closest_genes
+15	SIGMOID	0000305	p_{val} ~ 0.02	Not filtered	closest_genes

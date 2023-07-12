@@ -9,7 +9,7 @@ removing_policy = "log"
 smooth_landing = False
 # smooth_landing = True
 
-at_most_one_node_for_each_color_in_the_final_solution = True
+at_most_one_node_for_each_color_in_the_final_solution = False
 # at_most_one_node_for_each_color_in_the_final_solution = False
 
 if len(sys.argv) != 3:
