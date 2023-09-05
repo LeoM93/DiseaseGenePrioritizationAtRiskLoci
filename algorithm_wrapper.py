@@ -14,7 +14,7 @@ class AlgorithmWrapper():
 		GWAS_dir_path,
 
 	):
-		self.GWAS_dir = GWAS_dir_path + "GWAS/"
+		self.GWAS_dir = GWAS_dir_path + "studies/"
 		self.GWAS_config_file = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/sota/DEPICT/GWAS/"
 		
 		self.disease_dir_path = disease_dir_path
@@ -71,37 +71,16 @@ class AlgorithmWrapper():
 				gene_overlap_2mb_windows_file_path = "datasets/GWAS/refSeqGenes_hg19.txt",
 				output_file_path = self.input_dir_path_for_RMM_GWAS + file_path.split("/")[-1]
 				)
-
-		map__gene__pval,map__gene_pool__uniform_pval = bg.run()
-		map__gene__vegas_pval = self.__load_vegas_2__(file_path.split("/")[-1].replace(".tsv", ""))
-		filtered_map__gene__pval = []
-		window_filtered_map__gene__pval = []
-		vegas_filtered_map__gene__pval = []
 		self.rmm_gwas_bipartite_input_graph.append(self.input_dir_path_for_RMM_GWAS + file_path.split("/")[-1])
+		map__gene__pval = bg.run()
+		table = []
+		for k,v in map__gene__pval.items():
+			table.append([k,v])
 		
-		for g, p_val in map__gene__pval.items():
-			if g in self.map__gene__ensembl_id:
-				if self.map__gene__ensembl_id[g] in self.V:
-					if g in map__gene__vegas_pval:
-						filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],map__gene__vegas_pval[g]])
-					else:
-						filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
-		
-		for g, p_val in map__gene_pool__uniform_pval.items():
-			if g in self.map__gene__ensembl_id:
-				if self.map__gene__ensembl_id[g] in self.V:
-					if g in map__gene__vegas_pval:
-						window_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],map__gene__vegas_pval[g]])
-					else:
-						window_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
-		
-		for g, p_val in map__gene__vegas_pval.items():
-			if g in self.map__gene__ensembl_id:
-				if self.map__gene__ensembl_id[g] in self.V:
-					vegas_filtered_map__gene__pval.append([self.map__gene__ensembl_id[g],p_val])
+		return table
 
 
-		return filtered_map__gene__pval,window_filtered_map__gene__pval,vegas_filtered_map__gene__pval
+		
 	
 	
 	def __load_node_PPI_network__(self, network_file_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/datasets/networks/STRING_PPI.tsv"):
@@ -137,27 +116,13 @@ class AlgorithmWrapper():
 		vegas_2_file_paths =[] 
 		for file in self.GWAS_file_paths:
 			
-			filtered_map__gene__pval,window_filtered_map__gene__pval,vegas_filtered_map__gene__pval = self.__load_gene_in_2MB_windows__(file)
-
+			filtered_map__gene__pval = self.__load_gene_in_2MB_windows__(file)
 			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__closest_genes.tsv","w"),delimiter = "\t")
 			csv_writer.writerows(filtered_map__gene__pval)
 			
 			file_paths.append(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__closest_genes.tsv")
 
-			
-			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1],"w"),delimiter = "\t")
-			csv_writer.writerows(window_filtered_map__gene__pval)
-
-			window_file_paths.append(self.input_dir_path + file.split("/")[-1])
-
-			csv_writer = csv.writer(open(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__vegas_2.tsv","w"),delimiter = "\t")
-			csv_writer.writerows(vegas_filtered_map__gene__pval)
-			
-			vegas_2_file_paths.append(self.input_dir_path + file.split("/")[-1].replace(".tsv","") + "__vegas_2.tsv")
-			
-
-		
-		return file_paths,window_file_paths,vegas_2_file_paths
+		return file_paths
 
 
 	def __run_DmGWAS__(self, file,
@@ -269,7 +234,7 @@ class AlgorithmWrapper():
 	def __run__RMM_GWAS__(self,
 	file_path, 
 	network_file_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/datasets/networks/co_regulated_network_1e-5_thresholded.txt"):
-		algorithm_name = "RMM-GWAS-ALMOST"
+		algorithm_name = "RMM-GWAS"
 		current_algorithm_dir = self.algorithm_dir_path + algorithm_name + "/"
 		disease_name = file_path.split("/")[-1]
 		if not os.path.exists(current_algorithm_dir):
@@ -285,12 +250,12 @@ class AlgorithmWrapper():
 		print(run_rmm_gwas)
 		subprocess.call(run_rmm_gwas, shell=True,env = os.environ,stdout=subprocess.PIPE)
 
-	def run(self,closest_gene, only_our_framework = False):
+	def run(self, only_our_framework = False):
 				
 		self.__load_node_PPI_network__()
 		self.__load_ensembl_db__()
 
-		file_paths,window_file_paths,vegas_2_file_paths = self.__compute_input_data_for_network_based_approach__()
+		file_paths = self.__compute_input_data_for_network_based_approach__()
 		
 		for file_path in self.rmm_gwas_bipartite_input_graph:
 			self.__run__RMM_GWAS__(file_path)
@@ -298,26 +263,17 @@ class AlgorithmWrapper():
 		if only_our_framework:
 			return
 		
-		if closest_gene == 0:
-			for file in window_file_paths:
-				self.__run_SigMod__(file)
-				self.__run_domino__(file)
-		elif closest_gene == 1:
-			for file in file_paths:
-				self.__run_SigMod__(file)
-				self.__run_domino__(file)
-		else:
-			for file in vegas_2_file_paths:
-				self.__run_SigMod__(file)
-				self.__run_domino__(file)
-
+		for file in file_paths:
+			self.__run_SigMod__(file)
+			self.__run_domino__(file)
+	
 				
 
 
 
 aw = AlgorithmWrapper(
-	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_association_exp/",
-	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_associations/"
+	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_study_exp/",
+	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_studies/"
 	)
 
-aw.run(closest_gene = 1)
+aw.run()

@@ -1,0 +1,264 @@
+	Gene	Drug Name	Mechanism of Action	Drug development phase	Algorithm	GWAS
+0	BCL2	ABT-737	BCL inhibitor	Phase 1/Phase 2	DOMINO	GCST004988
+1	BCL2	docetaxel	tubulin polymerization inhibitor	Launched	DOMINO	GCST004988
+2	BCL2	edaravone	nootropic agent	Launched	DOMINO	GCST004988
+3	BCL2	gambogic-acid	caspase activator	Phase 2	DOMINO	GCST004988
+4	BCL2	gossypol	BCL inhibitor|MCL1 inhibitor	Phase 2	DOMINO	GCST004988
+5	BCL2	HA14-1	BCL inhibitor	Preclinical	DOMINO	GCST004988
+6	BCL2	navitoclax	BCL inhibitor	Phase 2	DOMINO	GCST004988
+7	BCL2	obatoclax	BCL inhibitor	Phase 3	DOMINO	GCST004988
+8	BCL2	oridonin	BCL inhibitor	Preclinical	DOMINO	GCST004988
+9	BCL2	paclitaxel	tubulin polymerization inhibitor	Launched	DOMINO	GCST004988
+10	BCL2	rasagiline	monoamine oxidase inhibitor	Launched	DOMINO	GCST004988
+11	BCL2	TW-37	BCL inhibitor	Preclinical	DOMINO	GCST004988
+12	BCL2	venetoclax	BCL inhibitor	Launched	DOMINO	GCST004988
+13	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	DOMINO	GCST004988
+14	ESR1	allylestrenol	steroidal progestin	Launched	DOMINO	GCST004988
+15	ESR1	AZD9496	estrogen receptor agonist	Phase 1	DOMINO	GCST004988
+16	ESR1	bazedoxifene	selective estrogen receptor modulator (SERM)	Launched	DOMINO	GCST004988
+17	ESR1	benfluralin		Phase 3	DOMINO	GCST004988
+18	ESR1	bisphenol-A	synthetic estrogen	Phase 1	DOMINO	GCST004988
+19	ESR1	bithionol	autotaxin inhibitor	Withdrawn	DOMINO	GCST004988
+20	ESR1	chlorotrianisene	estrogenic hormone	Launched	DOMINO	GCST004988
+21	ESR1	clomifene	estrogen receptor antagonist	Launched	DOMINO	GCST004988
+22	ESR1	danazol	estrogen receptor antagonist|progesterone receptor agonist	Launched	DOMINO	GCST004988
+23	ESR1	dehydroepiandrosterone	protein synthesis stimulant	Launched	DOMINO	GCST004988
+24	ESR1	dehydroepiandrosterone-sulfate	androgen receptor agonist|estrogen receptor agonist	Launched	DOMINO	GCST004988
+25	ESR1	desogestrel	progesterone receptor agonist	Launched	DOMINO	GCST004988
+26	ESR1	dienestrol	estrogen receptor agonist	Launched	DOMINO	GCST004988
+27	ESR1	diethylstilbestrol	estrogen receptor agonist	Withdrawn	DOMINO	GCST004988
+28	ESR1	droloxifene	selective estrogen receptor modulator (SERM)	Phase 3	DOMINO	GCST004988
+29	ESR1	endoxifen	estrogen receptor antagonist	Phase 2	DOMINO	GCST004988
+30	ESR1	equol	estrogen receptor agonist	Launched	DOMINO	GCST004988
+31	ESR1	erteberel	estrogen receptor agonist	Phase 2	DOMINO	GCST004988
+32	ESR1	estetrol	selective estrogen receptor modulator (SERM)	Phase 3	DOMINO	GCST004988
+33	ESR1	estradiol	estrogen receptor agonist	Launched	DOMINO	GCST004988
+34	ESR1	estradiol-acetate	estrogen receptor agonist	Launched	DOMINO	GCST004988
+35	ESR1	estradiol-benzoate	contraceptive agent	Preclinical	DOMINO	GCST004988
+36	ESR1	estradiol-cypionate	estrogen receptor agonist	Launched	DOMINO	GCST004988
+37	ESR1	estradiol-valerate	estrogen receptor agonist	Launched	DOMINO	GCST004988
+38	ESR1	estramustine	DNA alkylating agent	Launched	DOMINO	GCST004988
+39	ESR1	estramustine-phosphate	DNA synthesis inhibitor|microtubule inhibitor	Launched	DOMINO	GCST004988
+40	ESR1	estriol	estrogen receptor agonist	Launched	DOMINO	GCST004988
+41	ESR1	estrone	estrogen receptor agonist|estrogenic hormone	Launched	DOMINO	GCST004988
+42	ESR1	estropipate	estrogen receptor agonist	Launched	DOMINO	GCST004988
+43	ESR1	ethinyl-estradiol	estrogen receptor agonist|estrogenic hormone	Launched	DOMINO	GCST004988
+44	ESR1	ethynodiol-diacetate		Launched	DOMINO	GCST004988
+45	ESR1	etonogestrel	progesterone receptor agonist	Launched	DOMINO	GCST004988
+46	ESR1	fosfestrol	synthetic estrogen	Launched	DOMINO	GCST004988
+47	ESR1	fulvestrant	estrogen receptor antagonist	Launched	DOMINO	GCST004988
+48	ESR1	GDC-0810	selective estrogen receptor destabilizer	Phase 2	DOMINO	GCST004988
+49	ESR1	genistein	tyrosine kinase inhibitor	Phase 2/Phase 3	DOMINO	GCST004988
+50	ESR1	gestrinone	progesterone receptor antagonist	Launched	DOMINO	GCST004988
+51	ESR1	hexestrol	synthetic estrogen	Launched	DOMINO	GCST004988
+52	ESR1	lasofoxifene	selective estrogen receptor modulator (SERM)	Launched	DOMINO	GCST004988
+53	ESR1	medroxyprogesterone-acetate	progesterone receptor agonist	Launched	DOMINO	GCST004988
+54	ESR1	melatonin	melatonin receptor agonist|nitric oxide synthase inhibitor	Launched	DOMINO	GCST004988
+55	ESR1	mestranol	estrogen receptor agonist	Launched	DOMINO	GCST004988
+56	ESR1	mitotane	antineoplastic agent	Launched	DOMINO	GCST004988
+57	ESR1	naloxone	opioid receptor antagonist	Launched	DOMINO	GCST004988
+58	ESR1	norgestimate	progesterone receptor agonist	Launched	DOMINO	GCST004988
+59	ESR1	norgestrel	progesterone receptor agonist	Launched	DOMINO	GCST004988
+60	ESR1	ospemifene	selective estrogen receptor modulator (SERM)	Launched	DOMINO	GCST004988
+61	ESR1	PPT	estrogen receptor agonist	Preclinical	DOMINO	GCST004988
+62	ESR1	progesterone	progesterone receptor agonist	Launched	DOMINO	GCST004988
+63	ESR1	promestriene	estrogen receptor agonist	Launched	DOMINO	GCST004988
+64	ESR1	quinestrol	estrogen receptor agonist	Launched	DOMINO	GCST004988
+65	ESR1	raloxifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	DOMINO	GCST004988
+66	ESR1	SNG-1153	selective estrogen receptor modulator (SERM)	Preclinical	DOMINO	GCST004988
+67	ESR1	tamoxifen	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	DOMINO	GCST004988
+68	ESR1	tibolone	androgen receptor agonist|estrogen receptor agonist|progesterone receptor agonist	Launched	DOMINO	GCST004988
+69	ESR1	toremifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	DOMINO	GCST004988
+70	ESR1	Y-134	estrogen receptor antagonist	Preclinical	DOMINO	GCST004988
+71	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	DOMINO	GCST004988
+72	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	DOMINO	GCST004988
+73	CYP2A6	coumarin	vitamin K antagonist	Launched	DOMINO	GCST004748
+74	CYP2A6	cyclophosphamide	DNA alkylating agent	Launched	DOMINO	GCST004748
+75	CYP2A6	ifosfamide	DNA alkylating agent	Launched	DOMINO	GCST004748
+76	CYP2A6	methoxsalen	DNA synthesis inhibitor	Launched	DOMINO	GCST004748
+77	CYP2A6	nevirapine	non-nucleoside reverse transcriptase inhibitor	Launched	DOMINO	GCST004748
+78	EGFR	AEE788	EGFR inhibitor|VEGFR inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST004988
+79	EGFR	afatinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+80	EGFR	AG-490	EGFR inhibitor|JAK inhibitor	Preclinical	RMM-GWAS	GCST004988
+81	EGFR	alvocidib	CDK inhibitor	Phase 2	RMM-GWAS	GCST004988
+82	EGFR	AP26113	ALK tyrosine kinase receptor inhibitor	Phase 2	RMM-GWAS	GCST004988
+83	EGFR	AST-1306	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+84	EGFR	AV-412	protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
+85	EGFR	AZD3759	EGFR inhibitor	Phase 2/Phase 3	RMM-GWAS	GCST004988
+86	EGFR	AZD8931	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+87	EGFR	AZ5104	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+88	EGFR	BIBU-1361	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+89	EGFR	BIBX-1382	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+90	EGFR	BMS-599626	EGFR inhibitor|protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
+91	EGFR	BMS-690514	EGFR inhibitor|VEGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+92	EGFR	brigatinib	ALK tyrosine kinase receptor inhibitor|EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+93	EGFR	canertinib	EGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+94	EGFR	CGP-52411	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+95	EGFR	CGP-53353	EGFR inhibitor|PKC inhibitor	Preclinical	RMM-GWAS	GCST004988
+96	EGFR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+97	EGFR	CNX-2006	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+98	EGFR	CUDC-101	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+99	EGFR	dacomitinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+100	EGFR	dovitinib	EGFR inhibitor|FGFR inhibitor|FLT3 inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+101	EGFR	EGF816	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+102	EGFR	erbstatin-analog	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+103	EGFR	erlotinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+104	EGFR	gefitinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+105	EGFR	GW-583340	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+106	EGFR	HKI-357	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+107	EGFR	icotinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+108	EGFR	lapatinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+109	EGFR	lidocaine	histamine receptor agonist	Launched	RMM-GWAS	GCST004988
+110	EGFR	mubritinib	protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
+111	EGFR	neratinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+112	EGFR	olmutinib	Bruton's tyrosine kinase (BTK) inhibitor|EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+113	EGFR	orantinib	FGFR inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+114	EGFR	OSI-420	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+115	EGFR	osimertinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+116	EGFR	PD-153035	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+117	EGFR	PD-158780	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+118	EGFR	PD-166285	SRC inhibitor	Preclinical	RMM-GWAS	GCST004988
+119	EGFR	PD-168393	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+120	EGFR	pelitinib	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+121	EGFR	PKI-166	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+122	EGFR	poziotinib	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+123	EGFR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+124	EGFR	rociletinib	EGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+125	EGFR	tyrphostin-AG-1478	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+126	EGFR	tyrphostin-AG-18	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+127	EGFR	tyrphostin-AG-494	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+128	EGFR	tyrphostin-AG-835	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+129	EGFR	tyrphostin-AG-99	tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+130	EGFR	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004988
+131	EGFR	vatalanib	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+132	EGFR	WHI-P154	JAK inhibitor	Preclinical	RMM-GWAS	GCST004988
+133	EGFR	WZ-3146	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+134	EGFR	WZ-4002	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+135	EGFR	WZ8040	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+136	EGFR	XL647	EGFR inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+137	EGFR	ZM-306416	Abl kinase inhibitor|SRC inhibitor|VEGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+138	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	RMM-GWAS	GCST004988
+139	ESR1	allylestrenol	steroidal progestin	Launched	RMM-GWAS	GCST004988
+140	ESR1	AZD9496	estrogen receptor agonist	Phase 1	RMM-GWAS	GCST004988
+141	ESR1	bazedoxifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+142	ESR1	benfluralin		Phase 3	RMM-GWAS	GCST004988
+143	ESR1	bisphenol-A	synthetic estrogen	Phase 1	RMM-GWAS	GCST004988
+144	ESR1	bithionol	autotaxin inhibitor	Withdrawn	RMM-GWAS	GCST004988
+145	ESR1	chlorotrianisene	estrogenic hormone	Launched	RMM-GWAS	GCST004988
+146	ESR1	clomifene	estrogen receptor antagonist	Launched	RMM-GWAS	GCST004988
+147	ESR1	danazol	estrogen receptor antagonist|progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+148	ESR1	dehydroepiandrosterone	protein synthesis stimulant	Launched	RMM-GWAS	GCST004988
+149	ESR1	dehydroepiandrosterone-sulfate	androgen receptor agonist|estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+150	ESR1	desogestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+151	ESR1	dienestrol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+152	ESR1	diethylstilbestrol	estrogen receptor agonist	Withdrawn	RMM-GWAS	GCST004988
+153	ESR1	droloxifene	selective estrogen receptor modulator (SERM)	Phase 3	RMM-GWAS	GCST004988
+154	ESR1	endoxifen	estrogen receptor antagonist	Phase 2	RMM-GWAS	GCST004988
+155	ESR1	equol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+156	ESR1	erteberel	estrogen receptor agonist	Phase 2	RMM-GWAS	GCST004988
+157	ESR1	estetrol	selective estrogen receptor modulator (SERM)	Phase 3	RMM-GWAS	GCST004988
+158	ESR1	estradiol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+159	ESR1	estradiol-acetate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+160	ESR1	estradiol-benzoate	contraceptive agent	Preclinical	RMM-GWAS	GCST004988
+161	ESR1	estradiol-cypionate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+162	ESR1	estradiol-valerate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+163	ESR1	estramustine	DNA alkylating agent	Launched	RMM-GWAS	GCST004988
+164	ESR1	estramustine-phosphate	DNA synthesis inhibitor|microtubule inhibitor	Launched	RMM-GWAS	GCST004988
+165	ESR1	estriol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+166	ESR1	estrone	estrogen receptor agonist|estrogenic hormone	Launched	RMM-GWAS	GCST004988
+167	ESR1	estropipate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+168	ESR1	ethinyl-estradiol	estrogen receptor agonist|estrogenic hormone	Launched	RMM-GWAS	GCST004988
+169	ESR1	ethynodiol-diacetate		Launched	RMM-GWAS	GCST004988
+170	ESR1	etonogestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+171	ESR1	fosfestrol	synthetic estrogen	Launched	RMM-GWAS	GCST004988
+172	ESR1	fulvestrant	estrogen receptor antagonist	Launched	RMM-GWAS	GCST004988
+173	ESR1	GDC-0810	selective estrogen receptor destabilizer	Phase 2	RMM-GWAS	GCST004988
+174	ESR1	genistein	tyrosine kinase inhibitor	Phase 2/Phase 3	RMM-GWAS	GCST004988
+175	ESR1	gestrinone	progesterone receptor antagonist	Launched	RMM-GWAS	GCST004988
+176	ESR1	hexestrol	synthetic estrogen	Launched	RMM-GWAS	GCST004988
+177	ESR1	lasofoxifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+178	ESR1	medroxyprogesterone-acetate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+179	ESR1	melatonin	melatonin receptor agonist|nitric oxide synthase inhibitor	Launched	RMM-GWAS	GCST004988
+180	ESR1	mestranol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+181	ESR1	mitotane	antineoplastic agent	Launched	RMM-GWAS	GCST004988
+182	ESR1	naloxone	opioid receptor antagonist	Launched	RMM-GWAS	GCST004988
+183	ESR1	norgestimate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+184	ESR1	norgestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+185	ESR1	ospemifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+186	ESR1	PPT	estrogen receptor agonist	Preclinical	RMM-GWAS	GCST004988
+187	ESR1	progesterone	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+188	ESR1	promestriene	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+189	ESR1	quinestrol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+190	ESR1	raloxifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+191	ESR1	SNG-1153	selective estrogen receptor modulator (SERM)	Preclinical	RMM-GWAS	GCST004988
+192	ESR1	tamoxifen	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+193	ESR1	tibolone	androgen receptor agonist|estrogen receptor agonist|progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+194	ESR1	toremifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+195	ESR1	Y-134	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST004988
+196	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST004988
+197	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+198	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	SIGMOID	GCST004988
+199	ESR1	allylestrenol	steroidal progestin	Launched	SIGMOID	GCST004988
+200	ESR1	AZD9496	estrogen receptor agonist	Phase 1	SIGMOID	GCST004988
+201	ESR1	bazedoxifene	selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+202	ESR1	benfluralin		Phase 3	SIGMOID	GCST004988
+203	ESR1	bisphenol-A	synthetic estrogen	Phase 1	SIGMOID	GCST004988
+204	ESR1	bithionol	autotaxin inhibitor	Withdrawn	SIGMOID	GCST004988
+205	ESR1	chlorotrianisene	estrogenic hormone	Launched	SIGMOID	GCST004988
+206	ESR1	clomifene	estrogen receptor antagonist	Launched	SIGMOID	GCST004988
+207	ESR1	danazol	estrogen receptor antagonist|progesterone receptor agonist	Launched	SIGMOID	GCST004988
+208	ESR1	dehydroepiandrosterone	protein synthesis stimulant	Launched	SIGMOID	GCST004988
+209	ESR1	dehydroepiandrosterone-sulfate	androgen receptor agonist|estrogen receptor agonist	Launched	SIGMOID	GCST004988
+210	ESR1	desogestrel	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+211	ESR1	dienestrol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+212	ESR1	diethylstilbestrol	estrogen receptor agonist	Withdrawn	SIGMOID	GCST004988
+213	ESR1	droloxifene	selective estrogen receptor modulator (SERM)	Phase 3	SIGMOID	GCST004988
+214	ESR1	endoxifen	estrogen receptor antagonist	Phase 2	SIGMOID	GCST004988
+215	ESR1	equol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+216	ESR1	erteberel	estrogen receptor agonist	Phase 2	SIGMOID	GCST004988
+217	ESR1	estetrol	selective estrogen receptor modulator (SERM)	Phase 3	SIGMOID	GCST004988
+218	ESR1	estradiol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+219	ESR1	estradiol-acetate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+220	ESR1	estradiol-benzoate	contraceptive agent	Preclinical	SIGMOID	GCST004988
+221	ESR1	estradiol-cypionate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+222	ESR1	estradiol-valerate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+223	ESR1	estramustine	DNA alkylating agent	Launched	SIGMOID	GCST004988
+224	ESR1	estramustine-phosphate	DNA synthesis inhibitor|microtubule inhibitor	Launched	SIGMOID	GCST004988
+225	ESR1	estriol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+226	ESR1	estrone	estrogen receptor agonist|estrogenic hormone	Launched	SIGMOID	GCST004988
+227	ESR1	estropipate	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+228	ESR1	ethinyl-estradiol	estrogen receptor agonist|estrogenic hormone	Launched	SIGMOID	GCST004988
+229	ESR1	ethynodiol-diacetate		Launched	SIGMOID	GCST004988
+230	ESR1	etonogestrel	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+231	ESR1	fosfestrol	synthetic estrogen	Launched	SIGMOID	GCST004988
+232	ESR1	fulvestrant	estrogen receptor antagonist	Launched	SIGMOID	GCST004988
+233	ESR1	GDC-0810	selective estrogen receptor destabilizer	Phase 2	SIGMOID	GCST004988
+234	ESR1	genistein	tyrosine kinase inhibitor	Phase 2/Phase 3	SIGMOID	GCST004988
+235	ESR1	gestrinone	progesterone receptor antagonist	Launched	SIGMOID	GCST004988
+236	ESR1	hexestrol	synthetic estrogen	Launched	SIGMOID	GCST004988
+237	ESR1	lasofoxifene	selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+238	ESR1	medroxyprogesterone-acetate	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+239	ESR1	melatonin	melatonin receptor agonist|nitric oxide synthase inhibitor	Launched	SIGMOID	GCST004988
+240	ESR1	mestranol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+241	ESR1	mitotane	antineoplastic agent	Launched	SIGMOID	GCST004988
+242	ESR1	naloxone	opioid receptor antagonist	Launched	SIGMOID	GCST004988
+243	ESR1	norgestimate	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+244	ESR1	norgestrel	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+245	ESR1	ospemifene	selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+246	ESR1	PPT	estrogen receptor agonist	Preclinical	SIGMOID	GCST004988
+247	ESR1	progesterone	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+248	ESR1	promestriene	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+249	ESR1	quinestrol	estrogen receptor agonist	Launched	SIGMOID	GCST004988
+250	ESR1	raloxifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+251	ESR1	SNG-1153	selective estrogen receptor modulator (SERM)	Preclinical	SIGMOID	GCST004988
+252	ESR1	tamoxifen	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+253	ESR1	tibolone	androgen receptor agonist|estrogen receptor agonist|progesterone receptor agonist	Launched	SIGMOID	GCST004988
+254	ESR1	toremifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	SIGMOID	GCST004988
+255	ESR1	Y-134	estrogen receptor antagonist	Preclinical	SIGMOID	GCST004988
+256	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	SIGMOID	GCST004988
+257	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	SIGMOID	GCST004988
+258	CYP2A6	coumarin	vitamin K antagonist	Launched	SIGMOID	GCST004748
+259	CYP2A6	cyclophosphamide	DNA alkylating agent	Launched	SIGMOID	GCST004748
+260	CYP2A6	ifosfamide	DNA alkylating agent	Launched	SIGMOID	GCST004748
+261	CYP2A6	methoxsalen	DNA synthesis inhibitor	Launched	SIGMOID	GCST004748
+262	CYP2A6	nevirapine	non-nucleoside reverse transcriptase inhibitor	Launched	SIGMOID	GCST004748

@@ -24,8 +24,8 @@ class CosmicOncoKb():
         self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
         self.validation_dir_path = disease_experiment_dir_path + "validation/"
         
-        self.seed_dir_path =  "../../experiments/GWAS_associations/seed/"
-        self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_associations/seed_RMM-GWAS/"
+        self.seed_dir_path =  "../../experiments/GWAS_studies/seed/"
+        self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_studies/seed_RMM-GWAS/"
         self.cosmic_db = cosmic_db
         
         if not os.path.exists(self.validation_dir_path):
@@ -164,18 +164,19 @@ class CosmicOncoKb():
                     phi =  len(solution.intersection(target_nodes))
                     phi_locus = len(set([map__disease__gene__locus[gwas.split("__")[0]][item] for item in solution.intersection(target_nodes) if item in map__disease__gene__locus[gwas.split("__")[0]]]))
                     ld = "Not filtered"    
-                    if "ld" in gwas:
-                        ld = "LD filtered"
                     precision_table.append([algorithm,gwas.split("_")[0],phi/len(target_nodes),ld, gwas.split("__")[-1]])
                     
 
                     counter = 0
                     for i in range(trial):
-                        print(gwas, map__disease__seed[gwas],(solution),algorithm)
-                        random_solution = set(random.sample(map__disease__seed[gwas],len(solution.intersection(map__disease__seed[gwas]))))
+                        print(gwas,algorithm)
+                        
                         if algorithm == 'RMM-GWAS':
                             random_solution = set(random.sample(map__disease__seed_RMM_GWAS[gwas],len(solution)))
-                            
+                        else:
+                            random_solution = set(random.sample(map__disease__seed[gwas],len(solution.intersection(map__disease__seed[gwas]))))
+
+                        
                         phi_random = len(random_solution.intersection(target_nodes))
 
                         random_distribution.append([algorithm, gwas.split("_")[0],phi_random/len(random_solution),ld,gwas.split("__")[-1]])
@@ -200,7 +201,7 @@ class CosmicOncoKb():
 
 
 co = CosmicOncoKb(
-    disease_experiment_dir_path = "../../experiments/GWAS_association_exp/",
+    disease_experiment_dir_path = "../../experiments/GWAS_study_exp/",
     cosmic_db = "../../datasets/curated_db/cosmic_census.tsv",
     oncokb_db = "../../datasets/curated_db/onco_kb.tsv",
     config_file = "config_files/cosmic.json",

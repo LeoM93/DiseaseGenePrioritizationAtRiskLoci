@@ -33,8 +33,8 @@ class DrugHubValidation():
 		self.disease_experiment_dir_path = disease_experiment_dir_path
 		self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
 		
-		self.seed_dir_path = "../../experiments/GWAS_associations/seed/"
-		self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_associations/seed_RMM-GWAS/"
+		self.seed_dir_path = "../../experiments/GWAS_studies/seed/"
+		self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_studies/seed_RMM-GWAS/"
 
 		if not os.path.exists(self.validation_dir_path):
 			os.makedirs(self.validation_dir_path)
@@ -183,14 +183,19 @@ class DrugHubValidation():
 			for drug_name, disease_area, mou,clinical_phase,indication in target_drugs:
 
 
-				if query_disease_area is not None and query_indications is not None:
+				if query_disease_area is not None:
 					
 					if query_disease_area in disease_area:
-						query_indications_vector = query_indications.split("|")
+						
 
-						for query_indication in query_indications_vector:
-							if query_indication in indication:
-								target_nodes.add(node)
+						if query_indications is not None:
+							query_indications_vector = query_indications.split("|")
+							for query_indication in query_indications_vector:
+								if query_indication in indication:
+									target_nodes.add(node)
+						else:
+							target_nodes.add(node)
+
 				else:
 					target_nodes.add(node)
 
@@ -219,12 +224,17 @@ class DrugHubValidation():
 			
 			
 			for considered_gwas in self.map__trait__disease_info.keys():
+				print(algorithm,solutions.keys())
 				if considered_gwas not in solutions:
-					precision_table.append([algorithm,considered_gwas,0.0,0.0])
+					precision_table.append([algorithm,considered_gwas,0.0])
 					continue
 
-				drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = self.map__trait__disease_info[considered_gwas][1])
-				drug_targets = drug_targets.intersection(map__disease__seed[considered_gwas])
+				drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = None)
+				
+				if considered_gwas in map__disease__seed:
+					drug_targets = drug_targets.intersection(map__disease__seed[considered_gwas])
+				else:
+					drug_targets = drug_targets.intersection(map__disease__seed_RMM_GWAS[considered_gwas])
 				drug_target_locus = len(set([map__disease__gene__locus[considered_gwas][item] for item in drug_targets if item in map__disease__gene__locus[considered_gwas]]))
 
 				if len(drug_targets) == 0:
@@ -236,7 +246,7 @@ class DrugHubValidation():
 				phi =  len(solution.intersection(drug_targets))
 				phi_locus = len(set([map__disease__gene__locus[considered_gwas][item] for item in solution.intersection(drug_targets) if item in map__disease__gene__locus[considered_gwas]]))
 				print(set([map__disease__gene__locus[considered_gwas][item] for item in solution.intersection(drug_targets) if item in map__disease__gene__locus[considered_gwas]]))
-				precision_table.append([algorithm,considered_gwas,drug_target_locus,phi_locus])
+				precision_table.append([algorithm,considered_gwas,phi_locus/drug_target_locus])
 				intersected_targets = solution.intersection(drug_targets)
 
 				for target in intersected_targets:
@@ -251,9 +261,14 @@ class DrugHubValidation():
 				
 				for i in range(trial):
 
-					random_solution = set(random.sample(map__disease__seed[considered_gwas],len(solution)))
+					
 					if algorithm == 'RMM-GWAS':
 						random_solution = set(random.sample(map__disease__seed_RMM_GWAS[considered_gwas],len(solution)))
+					else:
+
+						print(algorithm)
+						random_solution = set(random.sample(map__disease__seed[considered_gwas],len(solution)))
+					
 					phi_random = len(random_solution.intersection(drug_targets))
 					
 					random_distribution.append([algorithm, considered_gwas,phi_random/len(drug_targets)])
@@ -274,8 +289,8 @@ class DrugHubValidation():
 		
 
 
-		pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Numeratore", "Numeratore Locus"]).to_csv(drug_hub_validation_dir + "metrics.tsv", sep = "\t")
-		pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Score"]).to_csv(drug_hub_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
+		pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Recall"]).to_csv(drug_hub_validation_dir + "metrics.tsv", sep = "\t")
+		pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Recall"]).to_csv(drug_hub_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
 		pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val"]).to_csv(drug_hub_validation_dir + "metrics_p_val.tsv", sep = "\t")
 		pd.DataFrame(drug_indication,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase", "Algorithm", "GWAS"]).to_csv(drug_hub_validation_dir  + "discovered.tsv", sep = "\t")
 
@@ -322,7 +337,7 @@ if __name__ == '__main__':
 	
 	
 	d = DrugHubValidation(
-		disease_experiment_dir_path = "../../experiments/GWAS_association_exp/",
+		disease_experiment_dir_path = "../../experiments/GWAS_study_exp/",
 		drug_table_file_path = "../../datasets/curated_db/drug_repurposing_hub.tsv",
 		random_solution_dir = "../../experiments/Robustness_Experiment/",
 		config_file = "config_files/drug_hub.json",

@@ -13,16 +13,36 @@ class SNPGeneGraph():
 	def __load_rs_id__position__(self,):
 		csv_reader = csv.reader(open(self.rs_id_position_file_path, "r"),delimiter = "\t")
 		self.map__rs_id__position = {}
+		self.map__gene__pval = {}
 		for index, row in enumerate(csv_reader):
 			if index == 0:
 				continue
-			rs_id = row[2]
-			chr_ = row[0]
-			position = row[1]
-			p_val = float(row[3])
+			
+			try:
+				rs_id = row[2]
+				chr_ = row[0]
+				position = row[1]
+				p_val = float(row[3])
+				up_stream_gene = row[4]
+				down_stream_gene = row[5]
+				mapped_genes = row[6].split(',')
 
-			self.map__rs_id__position[rs_id] = (chr_,int(position),p_val)
+				if up_stream_gene != '':
+					self.map__gene__pval[up_stream_gene] = p_val
+				
+				if down_stream_gene != '':
+					self.map__gene__pval[down_stream_gene] = p_val
+				
+				for mapped_gene in mapped_genes:
+					if mapped_gene != '':
+						self.map__gene__pval[mapped_gene.replace(' ','')] = p_val
 
+
+				self.map__rs_id__position[rs_id] = (chr_,int(position),p_val)
+			except:
+				pass
+		
+		
 	def __load_genes_overlapping_windows__(self,):
 		csv_reader = csv.reader(open(self.gene_overlap_2mb_windows_file_path, "r"),delimiter = "\t")
 		self.map__gene__positions = {}
@@ -49,7 +69,6 @@ class SNPGeneGraph():
 		self.map__gene__closest_loci = {}
 		self.map__snp__closest_genes = {}
 		
-		map__gene__p_val = {}
 		
 		for gene, positions in self.map__gene__positions.items():
 			self.map__gene__closest_loci[gene] = []
@@ -81,25 +100,11 @@ class SNPGeneGraph():
 			closest_snp = closest_snps[0]
 			gene_snp_graph.append([gene,closest_snp[0]])
 
-		
-		map__gene_pool__uniform_pval = {}
-		for rs_id, closest_genes in self.map__snp__closest_genes.items():
-			closest_genes.sort(key = lambda x:x[1], reverse = False)
-
-			if len(closest_genes) == 0:
-				continue
-			
-			closest_gene = closest_genes[0]
-			map__gene__p_val[closest_gene[0]] = p_val
-
-			for gene in closest_genes:
-				map__gene_pool__uniform_pval[gene[0]] = 0.05
-		
-		
 		if self.output_file_path != "":
 			csv_writer = csv.writer(open(self.output_file_path, "w"),delimiter = "\t")
 			csv_writer.writerows(gene_snp_graph)
 		
-		return map__gene__p_val,map__gene_pool__uniform_pval
+		
+		return self.map__gene__pval
 
 

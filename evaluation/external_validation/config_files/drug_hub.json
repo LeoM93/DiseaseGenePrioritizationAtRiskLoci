@@ -1,11 +1,8 @@
 {
     
-    "0000305_ld": ["oncology", "breast cancer"],
-    "0000305": ["oncology", "breast cancer"],
+    "GCST004988": ["oncology", "breast cancer"],
 
-    "0008903": ["oncology", "non-small cell lung cancer (NSCLC)"],
-    "0008903_ld": ["oncology", "non-small cell lung cancer (NSCLC)"],
-    
-    "0002892_ld": ["oncology","thyroid cancer|medullary thyroid cancer (MTC)"],
-    "0002892": ["oncology","thyroid cancer|medullary thyroid cancer (MTC)"]
+    "GCST004748": ["oncology", "non-small cell lung cancer (NSCLC)"],
+
+    "GCST90129505":["oncology", "colorectal cancer"]
 }

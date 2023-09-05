@@ -1,7 +1,7 @@
 	##	this function used the bisection algorithm to find the optimal module
 	##	updated 02-01-2018
 	
-	SigMod_bisection <- function( net, lambda_min=0, lambda_max=1, eta_max=1E7, size_diff=1, size_min=0, nmax=20, maxjump=20, epsilon=1E-5, cp=1000, silent=1 )
+	SigMod_bisection <- function( net, lambda_min=0, lambda_max=1, eta_max=1E7, size_diff=1, size_min=0, nmax=20, maxjump=2, epsilon=1E-5, cp=1000, silent=1 )
 	{
 		if( max( size_diff, size_min, nmax, maxjump ) > vcount(net) ) stop(paste('Non of the parameters size_diff, size_min, nmax, maxjump should not be greater than the total number of nodes in the whole network:', vcount(net)))
 		# edge_limit = min(1e5, ecount(net)) ## 1e5 to 5e5

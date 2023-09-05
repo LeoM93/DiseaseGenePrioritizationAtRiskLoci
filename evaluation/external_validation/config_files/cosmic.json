@@ -1,16 +1,11 @@
 {
-    "0000305":"breast",
-    "0000305_ld": "breast",
-    "0000305__closest_genes": "breast",
-    "0000305_ld__closest_genes": "breast",
+    "GCST004988":"breast",
+    "GCST004988__closest_genes": "breast",
     
-    "0008903":"lung",
-    "0008903_ld":"lung",
-    "0008903__closest_genes": "lung",
-    "0008903_ld__closest_genes": "lung",
-     
-    "0002892_ld": "thyroid",
-    "0002892":"thyroid",
-    "0002892__closest_genes":"thyroid"
- 
+    "GCST004748":"lung",
+    "GCST004748__closest_genes": "lung",
+
+    "GCST90129505":"colorectal",
+    "GCST90129505__closest_genes":"colorectal"
+      
 }
