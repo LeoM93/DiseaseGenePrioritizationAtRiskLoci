@@ -24,7 +24,7 @@ class Plot():
     def __load_random_distribution__(self, file_name = "metrics_random_distribution.tsv"):
         return pd.read_csv(self.current_validation_path + file_name, sep = "\t", index_col = 0)
     
-    def run(self,dir_ = "cosmic"):
+    def run(self,dir_ = "drug_hub"):
         
         self.current_validation_path = self.validation_path + dir_ + "/"
         
