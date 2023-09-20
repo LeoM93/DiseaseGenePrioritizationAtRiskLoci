@@ -2,10 +2,35 @@
     "GCST004988":"breast",
     "GCST004988__closest_genes": "breast",
     
+    "GCST90090980":"breast",
+    "GCST90090980__closest_genes": "breast",
+    
     "GCST004748":"lung",
     "GCST004748__closest_genes": "lung",
+    
+    "GCST004749":"lung",
+    "GCST004749__closest_genes": "lung",
+
+    "GCST006085":"prostate",
+    "GCST006085__closest_genes": "prostate",
+
+    "GCST011049":"prostate",
+    "GCST011049__closest_genes": "prostate",
+
+    "GCST012213":"oral squamous cell",
+    "GCST012213__closest_genes": "oral squamous cell",
+
+    "GCST90027058":"skin",
+    "GCST90027058__closest_genes": "skin",
+
+    "GCST007856":"colorectal",
+    "GCST007856__closest_genes":"colorectal",
+
+    "GCST007728":"ovarian",
+    "GCST007728__closest_genes":"ovarian",
 
     "GCST90129505":"colorectal",
     "GCST90129505__closest_genes":"colorectal"
+
       
 }

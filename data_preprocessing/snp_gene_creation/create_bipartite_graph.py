@@ -21,8 +21,8 @@ class SNPGeneGraph():
 			try:
 				
 				rs_id = row[2]
-				chr_ = row[0]
-				position = row[1]
+				chr_ = row[0].split('.')[0]
+				position = row[1].split('.')[0]
 				p_val = float(row[3])
 				up_stream_gene = row[4]
 				down_stream_gene = row[5]
@@ -76,22 +76,23 @@ class SNPGeneGraph():
 			
 			for position in positions:
 				chr_,start,end = position
-
+				
 				for rs_id, snp_position in self.map__rs_id__position.items():
 					snp_chr, snp_locus, p_val = snp_position
-
+					
 					if snp_chr != chr_:
 						continue
 
 					if rs_id not in self.map__snp__closest_genes:
 						self.map__snp__closest_genes[rs_id] = []
-										
+								
 					distance = min(abs(snp_locus - start),abs(snp_locus - end))
 					
 					if distance < w:
+							
 						self.map__gene__closest_loci[gene].append((rs_id, distance))
 						self.map__snp__closest_genes[rs_id].append((gene,distance,p_val))
-		
+					
 		for gene, closest_snps in self.map__gene__closest_loci.items():
 			closest_snps.sort(key = lambda x:x[1], reverse = False)
 			

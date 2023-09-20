@@ -257,7 +257,7 @@ class AlgorithmWrapper():
 
 		file_paths = self.__compute_input_data_for_network_based_approach__()
 		
-		exit(1)
+		
 		for file_path in self.rmm_gwas_bipartite_input_graph:
 			self.__run__RMM_GWAS__(file_path)
 		

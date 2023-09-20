@@ -24,8 +24,8 @@ class CosmicOncoKb():
         self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
         self.validation_dir_path = disease_experiment_dir_path + "validation/"
         
-        self.seed_dir_path =  "../../experiments/GWAS_studies/seed/"
-        self.seed_dir_rmm_gwas_path = "../../experiments/GWAS_studies/seed_RMM-GWAS/"
+        self.seed_dir_path =  "../../experiments/GWAS/seed/"
+        self.seed_dir_rmm_gwas_path = "../../experiments/GWAS/seed_RMM-GWAS/"
         self.cosmic_db = cosmic_db
         
         if not os.path.exists(self.validation_dir_path):
@@ -201,7 +201,7 @@ class CosmicOncoKb():
 
 
 co = CosmicOncoKb(
-    disease_experiment_dir_path = "../../experiments/GWAS_study_exp/",
+    disease_experiment_dir_path = "../../experiments/algorithm_comparison/",
     cosmic_db = "../../datasets/curated_db/cosmic_census.tsv",
     oncokb_db = "../../datasets/curated_db/onco_kb.tsv",
     config_file = "config_files/cosmic.json",
