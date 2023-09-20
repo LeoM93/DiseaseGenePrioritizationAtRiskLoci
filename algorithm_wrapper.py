@@ -257,6 +257,7 @@ class AlgorithmWrapper():
 
 		file_paths = self.__compute_input_data_for_network_based_approach__()
 		
+		exit(1)
 		for file_path in self.rmm_gwas_bipartite_input_graph:
 			self.__run__RMM_GWAS__(file_path)
 		
@@ -272,8 +273,8 @@ class AlgorithmWrapper():
 
 
 aw = AlgorithmWrapper(
-	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_study_exp/",
-	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS_studies/"
+	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/algorithm_comparison/",
+	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS/"
 	)
 
 aw.run()

@@ -1,7 +1,0 @@
-	Algorithm	GWAS	p_val	filter	input type
-0	DOMINO	GCST004988	p_{val} < 10^{-6}	Not filtered	closest_genes
-1	DOMINO	GCST90129505	p_{val} ~ 0.05	Not filtered	closest_genes
-2	RMM-GWAS	GCST004988	p_{val} < 10^{-6}	Not filtered	GCST004988
-3	RMM-GWAS	GCST90129505	p_{val} ~ 0.04	Not filtered	GCST90129505
-4	SIGMOID	GCST004988	p_{val} < 10^{-6}	Not filtered	closest_genes
-5	SIGMOID	GCST90129505	p_{val} ~ 0.11	Not filtered	closest_genes

@@ -19,6 +19,7 @@ class SNPGeneGraph():
 				continue
 			
 			try:
+				
 				rs_id = row[2]
 				chr_ = row[0]
 				position = row[1]
