@@ -77,20 +77,20 @@
 75	CYP2A6	ifosfamide	DNA alkylating agent	Launched	DOMINO	GCST004748__closest_genes
 76	CYP2A6	methoxsalen	DNA synthesis inhibitor	Launched	DOMINO	GCST004748__closest_genes
 77	CYP2A6	nevirapine	non-nucleoside reverse transcriptase inhibitor	Launched	DOMINO	GCST004748__closest_genes
-78	AHR	atorvastatin	HMGCR inhibitor	Launched	DOMINO	GCST004749__closest_genes
-79	AHR	CH223191	aryl hydrocarbon receptor antagonist	Preclinical	DOMINO	GCST004749__closest_genes
-80	AHR	diosmin	aryl hydrocarbon receptor agonist|capillary stabilizing agent	Launched	DOMINO	GCST004749__closest_genes
-81	AHR	flutamide	androgen receptor antagonist	Launched	DOMINO	GCST004749__closest_genes
-82	AHR	indole-3-carbinol	aryl hydrocarbon receptor agonist|indoleamine 2,3-dioxygenase inhibitor	Phase 2/Phase 3	DOMINO	GCST004749__closest_genes
-83	AHR	ITE	aryl hydrocarbon receptor agonist	Preclinical	DOMINO	GCST004749__closest_genes
-84	AHR	leflunomide	dihydroorotate dehydrogenase inhibitor|PDGFR tyrosine kinase receptor inhibitor	Launched	DOMINO	GCST004749__closest_genes
-85	AHR	phortress	aryl hydrocarbon receptor ligand	Phase 1	DOMINO	GCST004749__closest_genes
-86	AHR	stemregenin-1	aryl hydrocarbon receptor antagonist	Preclinical	DOMINO	GCST004749__closest_genes
-87	CYP2A6	coumarin	vitamin K antagonist	Launched	DOMINO	GCST004749__closest_genes
-88	CYP2A6	cyclophosphamide	DNA alkylating agent	Launched	DOMINO	GCST004749__closest_genes
-89	CYP2A6	ifosfamide	DNA alkylating agent	Launched	DOMINO	GCST004749__closest_genes
-90	CYP2A6	methoxsalen	DNA synthesis inhibitor	Launched	DOMINO	GCST004749__closest_genes
-91	CYP2A6	nevirapine	non-nucleoside reverse transcriptase inhibitor	Launched	DOMINO	GCST004749__closest_genes
+78	CYP2A6	coumarin	vitamin K antagonist	Launched	DOMINO	GCST004749__closest_genes
+79	CYP2A6	cyclophosphamide	DNA alkylating agent	Launched	DOMINO	GCST004749__closest_genes
+80	CYP2A6	ifosfamide	DNA alkylating agent	Launched	DOMINO	GCST004749__closest_genes
+81	CYP2A6	methoxsalen	DNA synthesis inhibitor	Launched	DOMINO	GCST004749__closest_genes
+82	CYP2A6	nevirapine	non-nucleoside reverse transcriptase inhibitor	Launched	DOMINO	GCST004749__closest_genes
+83	AHR	atorvastatin	HMGCR inhibitor	Launched	DOMINO	GCST004749__closest_genes
+84	AHR	CH223191	aryl hydrocarbon receptor antagonist	Preclinical	DOMINO	GCST004749__closest_genes
+85	AHR	diosmin	aryl hydrocarbon receptor agonist|capillary stabilizing agent	Launched	DOMINO	GCST004749__closest_genes
+86	AHR	flutamide	androgen receptor antagonist	Launched	DOMINO	GCST004749__closest_genes
+87	AHR	indole-3-carbinol	aryl hydrocarbon receptor agonist|indoleamine 2,3-dioxygenase inhibitor	Phase 2/Phase 3	DOMINO	GCST004749__closest_genes
+88	AHR	ITE	aryl hydrocarbon receptor agonist	Preclinical	DOMINO	GCST004749__closest_genes
+89	AHR	leflunomide	dihydroorotate dehydrogenase inhibitor|PDGFR tyrosine kinase receptor inhibitor	Launched	DOMINO	GCST004749__closest_genes
+90	AHR	phortress	aryl hydrocarbon receptor ligand	Phase 1	DOMINO	GCST004749__closest_genes
+91	AHR	stemregenin-1	aryl hydrocarbon receptor antagonist	Preclinical	DOMINO	GCST004749__closest_genes
 92	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	DOMINO	GCST90090980__closest_genes
 93	ESR1	allylestrenol	steroidal progestin	Launched	DOMINO	GCST90090980__closest_genes
 94	ESR1	AZD9496	estrogen receptor agonist	Phase 1	DOMINO	GCST90090980__closest_genes
@@ -191,205 +191,205 @@
 189	AR	2-hydroxyflutamide	androgen receptor antagonist	Phase 2	DOMINO	GCST011049__closest_genes
 190	AR	3,3'-diindolylmethane	CHK inhibitor|cytochrome P450 activator|indoleamine 2,3-dioxygenase inhibitor	Phase 3	DOMINO	GCST011049__closest_genes
 191	CHD1	epirubicin	topoisomerase inhibitor	Launched	DOMINO	GCST007856__closest_genes
-192	EPHA5	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004988
-193	ATIC	pemetrexed	dihydrofolate reductase inhibitor|thymidylate synthase inhibitor	Launched	RMM-GWAS	GCST004988
-194	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	RMM-GWAS	GCST004988
-195	ESR1	allylestrenol	steroidal progestin	Launched	RMM-GWAS	GCST004988
-196	ESR1	AZD9496	estrogen receptor agonist	Phase 1	RMM-GWAS	GCST004988
-197	ESR1	bazedoxifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
-198	ESR1	benfluralin		Phase 3	RMM-GWAS	GCST004988
-199	ESR1	bisphenol-A	synthetic estrogen	Phase 1	RMM-GWAS	GCST004988
-200	ESR1	bithionol	autotaxin inhibitor	Withdrawn	RMM-GWAS	GCST004988
-201	ESR1	chlorotrianisene	estrogenic hormone	Launched	RMM-GWAS	GCST004988
-202	ESR1	clomifene	estrogen receptor antagonist	Launched	RMM-GWAS	GCST004988
-203	ESR1	danazol	estrogen receptor antagonist|progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-204	ESR1	dehydroepiandrosterone	protein synthesis stimulant	Launched	RMM-GWAS	GCST004988
-205	ESR1	dehydroepiandrosterone-sulfate	androgen receptor agonist|estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-206	ESR1	desogestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-207	ESR1	dienestrol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-208	ESR1	diethylstilbestrol	estrogen receptor agonist	Withdrawn	RMM-GWAS	GCST004988
-209	ESR1	droloxifene	selective estrogen receptor modulator (SERM)	Phase 3	RMM-GWAS	GCST004988
-210	ESR1	endoxifen	estrogen receptor antagonist	Phase 2	RMM-GWAS	GCST004988
-211	ESR1	equol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-212	ESR1	erteberel	estrogen receptor agonist	Phase 2	RMM-GWAS	GCST004988
-213	ESR1	estetrol	selective estrogen receptor modulator (SERM)	Phase 3	RMM-GWAS	GCST004988
-214	ESR1	estradiol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-215	ESR1	estradiol-acetate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-216	ESR1	estradiol-benzoate	contraceptive agent	Preclinical	RMM-GWAS	GCST004988
-217	ESR1	estradiol-cypionate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-218	ESR1	estradiol-valerate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-219	ESR1	estramustine	DNA alkylating agent	Launched	RMM-GWAS	GCST004988
-220	ESR1	estramustine-phosphate	DNA synthesis inhibitor|microtubule inhibitor	Launched	RMM-GWAS	GCST004988
-221	ESR1	estriol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-222	ESR1	estrone	estrogen receptor agonist|estrogenic hormone	Launched	RMM-GWAS	GCST004988
-223	ESR1	estropipate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-224	ESR1	ethinyl-estradiol	estrogen receptor agonist|estrogenic hormone	Launched	RMM-GWAS	GCST004988
-225	ESR1	ethynodiol-diacetate		Launched	RMM-GWAS	GCST004988
-226	ESR1	etonogestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-227	ESR1	fosfestrol	synthetic estrogen	Launched	RMM-GWAS	GCST004988
-228	ESR1	fulvestrant	estrogen receptor antagonist	Launched	RMM-GWAS	GCST004988
-229	ESR1	GDC-0810	selective estrogen receptor destabilizer	Phase 2	RMM-GWAS	GCST004988
-230	ESR1	genistein	tyrosine kinase inhibitor	Phase 2/Phase 3	RMM-GWAS	GCST004988
-231	ESR1	gestrinone	progesterone receptor antagonist	Launched	RMM-GWAS	GCST004988
-232	ESR1	hexestrol	synthetic estrogen	Launched	RMM-GWAS	GCST004988
-233	ESR1	lasofoxifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
-234	ESR1	medroxyprogesterone-acetate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-235	ESR1	melatonin	melatonin receptor agonist|nitric oxide synthase inhibitor	Launched	RMM-GWAS	GCST004988
-236	ESR1	mestranol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-237	ESR1	mitotane	antineoplastic agent	Launched	RMM-GWAS	GCST004988
-238	ESR1	naloxone	opioid receptor antagonist	Launched	RMM-GWAS	GCST004988
-239	ESR1	norgestimate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-240	ESR1	norgestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-241	ESR1	ospemifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
-242	ESR1	PPT	estrogen receptor agonist	Preclinical	RMM-GWAS	GCST004988
-243	ESR1	progesterone	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-244	ESR1	promestriene	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-245	ESR1	quinestrol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
-246	ESR1	raloxifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
-247	ESR1	SNG-1153	selective estrogen receptor modulator (SERM)	Preclinical	RMM-GWAS	GCST004988
-248	ESR1	tamoxifen	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
-249	ESR1	tibolone	androgen receptor agonist|estrogen receptor agonist|progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-250	ESR1	toremifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
-251	ESR1	Y-134	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST004988
-252	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST004988
-253	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
-254	EGFR	AEE788	EGFR inhibitor|VEGFR inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST004988
-255	EGFR	afatinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-256	EGFR	AG-490	EGFR inhibitor|JAK inhibitor	Preclinical	RMM-GWAS	GCST004988
-257	EGFR	alvocidib	CDK inhibitor	Phase 2	RMM-GWAS	GCST004988
-258	EGFR	AP26113	ALK tyrosine kinase receptor inhibitor	Phase 2	RMM-GWAS	GCST004988
-259	EGFR	AST-1306	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
-260	EGFR	AV-412	protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
-261	EGFR	AZD3759	EGFR inhibitor	Phase 2/Phase 3	RMM-GWAS	GCST004988
-262	EGFR	AZD8931	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
-263	EGFR	AZ5104	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-264	EGFR	BIBU-1361	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-265	EGFR	BIBX-1382	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
-266	EGFR	BMS-599626	EGFR inhibitor|protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
-267	EGFR	BMS-690514	EGFR inhibitor|VEGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
-268	EGFR	brigatinib	ALK tyrosine kinase receptor inhibitor|EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-269	EGFR	canertinib	EGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
-270	EGFR	CGP-52411	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-271	EGFR	CGP-53353	EGFR inhibitor|PKC inhibitor	Preclinical	RMM-GWAS	GCST004988
-272	EGFR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-273	EGFR	CNX-2006	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-274	EGFR	CUDC-101	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
-275	EGFR	dacomitinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-276	EGFR	dovitinib	EGFR inhibitor|FGFR inhibitor|FLT3 inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
-277	EGFR	EGF816	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
-278	EGFR	erbstatin-analog	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
-279	EGFR	erlotinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-280	EGFR	gefitinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-281	EGFR	GW-583340	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-282	EGFR	HKI-357	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
-283	EGFR	icotinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-284	EGFR	lapatinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-285	EGFR	lidocaine	histamine receptor agonist	Launched	RMM-GWAS	GCST004988
-286	EGFR	mubritinib	protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
-287	EGFR	neratinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-288	EGFR	olmutinib	Bruton's tyrosine kinase (BTK) inhibitor|EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-289	EGFR	orantinib	FGFR inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
-290	EGFR	OSI-420	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-291	EGFR	osimertinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
-292	EGFR	PD-153035	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
-293	EGFR	PD-158780	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-294	EGFR	PD-166285	SRC inhibitor	Preclinical	RMM-GWAS	GCST004988
-295	EGFR	PD-168393	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-296	EGFR	pelitinib	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
-297	EGFR	PKI-166	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
-298	EGFR	poziotinib	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
-299	EGFR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
-300	EGFR	rociletinib	EGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
-301	EGFR	tyrphostin-AG-1478	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-302	EGFR	tyrphostin-AG-18	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
-303	EGFR	tyrphostin-AG-494	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-304	EGFR	tyrphostin-AG-835	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
-305	EGFR	tyrphostin-AG-99	tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
-306	EGFR	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004988
-307	EGFR	vatalanib	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
-308	EGFR	WHI-P154	JAK inhibitor	Preclinical	RMM-GWAS	GCST004988
-309	EGFR	WZ-3146	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-310	EGFR	WZ-4002	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-311	EGFR	WZ8040	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-312	EGFR	XL647	EGFR inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
-313	EGFR	ZM-306416	Abl kinase inhibitor|SRC inhibitor|VEGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
-314	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
-315	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
-316	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
-317	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
-318	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
-319	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
-320	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST004988
-321	CDK6	abemaciclib	CDK inhibitor	Launched	RMM-GWAS	GCST004988
-322	CDK6	alvocidib	CDK inhibitor	Phase 2	RMM-GWAS	GCST004988
-323	CDK6	AMG-925	CDK inhibitor|FLT3 inhibitor	Phase 1	RMM-GWAS	GCST004988
-324	CDK6	apigenin	casein kinase inhibitor|cell proliferation inhibitor	Preclinical	RMM-GWAS	GCST004988
-325	CDK6	AT-7519	CDK inhibitor	Phase 2	RMM-GWAS	GCST004988
-326	CDK6	chrysin	breast cancer resistance protein inhibitor	Phase 1	RMM-GWAS	GCST004988
-327	CDK6	fisetin	Aurora kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
-328	CDK6	palbociclib	CDK inhibitor	Launched	RMM-GWAS	GCST004988
-329	CDK6	RGB-286638	CDK inhibitor	Phase 1	RMM-GWAS	GCST004988
-330	CDK6	ribociclib	CDK inhibitor	Launched	RMM-GWAS	GCST004988
-331	EPHA5	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004748
-332	TLR4	C34	toll-like receptor inhibitor	Preclinical	RMM-GWAS	GCST004748
-333	TLR4	lauric-acid	bacterial permeability inducer	Phase 3	RMM-GWAS	GCST004748
-334	TLR4	naloxone	opioid receptor antagonist	Launched	RMM-GWAS	GCST004748
-335	TLR4	paclitaxel	tubulin polymerization inhibitor	Launched	RMM-GWAS	GCST004748
-336	TLR4	resatorvid	toll-like receptor inhibitor	Phase 3	RMM-GWAS	GCST004748
-337	TLR4	VGX-1027	tumor necrosis factor receptor antagonist	Phase 1	RMM-GWAS	GCST004748
-338	FRK	bosutinib	Abl kinase inhibitor|Bcr-Abl kinase inhibitor|SRC inhibitor	Launched	RMM-GWAS	GCST004748
-339	FRK	dasatinib	Bcr-Abl kinase inhibitor|ephrin inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|SRC inhibitor|tyrosine kinase inhibitor	Launched	RMM-GWAS	GCST004748
-340	FRK	regorafenib	FGFR inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RAF inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004748
+192	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
+193	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
+194	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
+195	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
+196	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
+197	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST004988
+198	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST004988
+199	CDK6	abemaciclib	CDK inhibitor	Launched	RMM-GWAS	GCST004988
+200	CDK6	alvocidib	CDK inhibitor	Phase 2	RMM-GWAS	GCST004988
+201	CDK6	AMG-925	CDK inhibitor|FLT3 inhibitor	Phase 1	RMM-GWAS	GCST004988
+202	CDK6	apigenin	casein kinase inhibitor|cell proliferation inhibitor	Preclinical	RMM-GWAS	GCST004988
+203	CDK6	AT-7519	CDK inhibitor	Phase 2	RMM-GWAS	GCST004988
+204	CDK6	chrysin	breast cancer resistance protein inhibitor	Phase 1	RMM-GWAS	GCST004988
+205	CDK6	fisetin	Aurora kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+206	CDK6	palbociclib	CDK inhibitor	Launched	RMM-GWAS	GCST004988
+207	CDK6	RGB-286638	CDK inhibitor	Phase 1	RMM-GWAS	GCST004988
+208	CDK6	ribociclib	CDK inhibitor	Launched	RMM-GWAS	GCST004988
+209	ATIC	pemetrexed	dihydrofolate reductase inhibitor|thymidylate synthase inhibitor	Launched	RMM-GWAS	GCST004988
+210	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	RMM-GWAS	GCST004988
+211	ESR1	allylestrenol	steroidal progestin	Launched	RMM-GWAS	GCST004988
+212	ESR1	AZD9496	estrogen receptor agonist	Phase 1	RMM-GWAS	GCST004988
+213	ESR1	bazedoxifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+214	ESR1	benfluralin		Phase 3	RMM-GWAS	GCST004988
+215	ESR1	bisphenol-A	synthetic estrogen	Phase 1	RMM-GWAS	GCST004988
+216	ESR1	bithionol	autotaxin inhibitor	Withdrawn	RMM-GWAS	GCST004988
+217	ESR1	chlorotrianisene	estrogenic hormone	Launched	RMM-GWAS	GCST004988
+218	ESR1	clomifene	estrogen receptor antagonist	Launched	RMM-GWAS	GCST004988
+219	ESR1	danazol	estrogen receptor antagonist|progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+220	ESR1	dehydroepiandrosterone	protein synthesis stimulant	Launched	RMM-GWAS	GCST004988
+221	ESR1	dehydroepiandrosterone-sulfate	androgen receptor agonist|estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+222	ESR1	desogestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+223	ESR1	dienestrol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+224	ESR1	diethylstilbestrol	estrogen receptor agonist	Withdrawn	RMM-GWAS	GCST004988
+225	ESR1	droloxifene	selective estrogen receptor modulator (SERM)	Phase 3	RMM-GWAS	GCST004988
+226	ESR1	endoxifen	estrogen receptor antagonist	Phase 2	RMM-GWAS	GCST004988
+227	ESR1	equol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+228	ESR1	erteberel	estrogen receptor agonist	Phase 2	RMM-GWAS	GCST004988
+229	ESR1	estetrol	selective estrogen receptor modulator (SERM)	Phase 3	RMM-GWAS	GCST004988
+230	ESR1	estradiol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+231	ESR1	estradiol-acetate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+232	ESR1	estradiol-benzoate	contraceptive agent	Preclinical	RMM-GWAS	GCST004988
+233	ESR1	estradiol-cypionate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+234	ESR1	estradiol-valerate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+235	ESR1	estramustine	DNA alkylating agent	Launched	RMM-GWAS	GCST004988
+236	ESR1	estramustine-phosphate	DNA synthesis inhibitor|microtubule inhibitor	Launched	RMM-GWAS	GCST004988
+237	ESR1	estriol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+238	ESR1	estrone	estrogen receptor agonist|estrogenic hormone	Launched	RMM-GWAS	GCST004988
+239	ESR1	estropipate	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+240	ESR1	ethinyl-estradiol	estrogen receptor agonist|estrogenic hormone	Launched	RMM-GWAS	GCST004988
+241	ESR1	ethynodiol-diacetate		Launched	RMM-GWAS	GCST004988
+242	ESR1	etonogestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+243	ESR1	fosfestrol	synthetic estrogen	Launched	RMM-GWAS	GCST004988
+244	ESR1	fulvestrant	estrogen receptor antagonist	Launched	RMM-GWAS	GCST004988
+245	ESR1	GDC-0810	selective estrogen receptor destabilizer	Phase 2	RMM-GWAS	GCST004988
+246	ESR1	genistein	tyrosine kinase inhibitor	Phase 2/Phase 3	RMM-GWAS	GCST004988
+247	ESR1	gestrinone	progesterone receptor antagonist	Launched	RMM-GWAS	GCST004988
+248	ESR1	hexestrol	synthetic estrogen	Launched	RMM-GWAS	GCST004988
+249	ESR1	lasofoxifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+250	ESR1	medroxyprogesterone-acetate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+251	ESR1	melatonin	melatonin receptor agonist|nitric oxide synthase inhibitor	Launched	RMM-GWAS	GCST004988
+252	ESR1	mestranol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+253	ESR1	mitotane	antineoplastic agent	Launched	RMM-GWAS	GCST004988
+254	ESR1	naloxone	opioid receptor antagonist	Launched	RMM-GWAS	GCST004988
+255	ESR1	norgestimate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+256	ESR1	norgestrel	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+257	ESR1	ospemifene	selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+258	ESR1	PPT	estrogen receptor agonist	Preclinical	RMM-GWAS	GCST004988
+259	ESR1	progesterone	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+260	ESR1	promestriene	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+261	ESR1	quinestrol	estrogen receptor agonist	Launched	RMM-GWAS	GCST004988
+262	ESR1	raloxifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+263	ESR1	SNG-1153	selective estrogen receptor modulator (SERM)	Preclinical	RMM-GWAS	GCST004988
+264	ESR1	tamoxifen	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+265	ESR1	tibolone	androgen receptor agonist|estrogen receptor agonist|progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+266	ESR1	toremifene	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	Launched	RMM-GWAS	GCST004988
+267	ESR1	Y-134	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST004988
+268	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST004988
+269	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	RMM-GWAS	GCST004988
+270	EPHA5	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004988
+271	EGFR	AEE788	EGFR inhibitor|VEGFR inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST004988
+272	EGFR	afatinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+273	EGFR	AG-490	EGFR inhibitor|JAK inhibitor	Preclinical	RMM-GWAS	GCST004988
+274	EGFR	alvocidib	CDK inhibitor	Phase 2	RMM-GWAS	GCST004988
+275	EGFR	AP26113	ALK tyrosine kinase receptor inhibitor	Phase 2	RMM-GWAS	GCST004988
+276	EGFR	AST-1306	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+277	EGFR	AV-412	protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
+278	EGFR	AZD3759	EGFR inhibitor	Phase 2/Phase 3	RMM-GWAS	GCST004988
+279	EGFR	AZD8931	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+280	EGFR	AZ5104	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+281	EGFR	BIBU-1361	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+282	EGFR	BIBX-1382	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+283	EGFR	BMS-599626	EGFR inhibitor|protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
+284	EGFR	BMS-690514	EGFR inhibitor|VEGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+285	EGFR	brigatinib	ALK tyrosine kinase receptor inhibitor|EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+286	EGFR	canertinib	EGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+287	EGFR	CGP-52411	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+288	EGFR	CGP-53353	EGFR inhibitor|PKC inhibitor	Preclinical	RMM-GWAS	GCST004988
+289	EGFR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+290	EGFR	CNX-2006	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+291	EGFR	CUDC-101	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+292	EGFR	dacomitinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+293	EGFR	dovitinib	EGFR inhibitor|FGFR inhibitor|FLT3 inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+294	EGFR	EGF816	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+295	EGFR	erbstatin-analog	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+296	EGFR	erlotinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+297	EGFR	gefitinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+298	EGFR	GW-583340	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+299	EGFR	HKI-357	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+300	EGFR	icotinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+301	EGFR	lapatinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+302	EGFR	lidocaine	histamine receptor agonist	Launched	RMM-GWAS	GCST004988
+303	EGFR	mubritinib	protein tyrosine kinase inhibitor	Phase 1	RMM-GWAS	GCST004988
+304	EGFR	neratinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+305	EGFR	olmutinib	Bruton's tyrosine kinase (BTK) inhibitor|EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+306	EGFR	orantinib	FGFR inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+307	EGFR	OSI-420	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+308	EGFR	osimertinib	EGFR inhibitor	Launched	RMM-GWAS	GCST004988
+309	EGFR	PD-153035	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+310	EGFR	PD-158780	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+311	EGFR	PD-166285	SRC inhibitor	Preclinical	RMM-GWAS	GCST004988
+312	EGFR	PD-168393	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+313	EGFR	pelitinib	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+314	EGFR	PKI-166	EGFR inhibitor	Phase 1	RMM-GWAS	GCST004988
+315	EGFR	poziotinib	EGFR inhibitor	Phase 2	RMM-GWAS	GCST004988
+316	EGFR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+317	EGFR	rociletinib	EGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+318	EGFR	tyrphostin-AG-1478	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+319	EGFR	tyrphostin-AG-18	EGFR inhibitor|tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+320	EGFR	tyrphostin-AG-494	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+321	EGFR	tyrphostin-AG-835	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+322	EGFR	tyrphostin-AG-99	tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST004988
+323	EGFR	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004988
+324	EGFR	vatalanib	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+325	EGFR	WHI-P154	JAK inhibitor	Preclinical	RMM-GWAS	GCST004988
+326	EGFR	WZ-3146	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+327	EGFR	WZ-4002	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+328	EGFR	WZ8040	EGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+329	EGFR	XL647	EGFR inhibitor|VEGFR inhibitor	Phase 3	RMM-GWAS	GCST004988
+330	EGFR	ZM-306416	Abl kinase inhibitor|SRC inhibitor|VEGFR inhibitor	Preclinical	RMM-GWAS	GCST004988
+331	TLR4	C34	toll-like receptor inhibitor	Preclinical	RMM-GWAS	GCST004748
+332	TLR4	lauric-acid	bacterial permeability inducer	Phase 3	RMM-GWAS	GCST004748
+333	TLR4	naloxone	opioid receptor antagonist	Launched	RMM-GWAS	GCST004748
+334	TLR4	paclitaxel	tubulin polymerization inhibitor	Launched	RMM-GWAS	GCST004748
+335	TLR4	resatorvid	toll-like receptor inhibitor	Phase 3	RMM-GWAS	GCST004748
+336	TLR4	VGX-1027	tumor necrosis factor receptor antagonist	Phase 1	RMM-GWAS	GCST004748
+337	FRK	bosutinib	Abl kinase inhibitor|Bcr-Abl kinase inhibitor|SRC inhibitor	Launched	RMM-GWAS	GCST004748
+338	FRK	dasatinib	Bcr-Abl kinase inhibitor|ephrin inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|SRC inhibitor|tyrosine kinase inhibitor	Launched	RMM-GWAS	GCST004748
+339	FRK	regorafenib	FGFR inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RAF inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004748
+340	EPHA5	vandetanib	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	Launched	RMM-GWAS	GCST004748
 341	LHCGR	cetrorelix	gonadotropin releasing factor hormone receptor antagonist	Launched	RMM-GWAS	GCST004749
 342	LHCGR	goserelin-acetate	gonadotropin releasing factor hormone receptor agonist	Launched	RMM-GWAS	GCST004749
-343	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
-344	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
-345	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
-346	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
-347	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
-348	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
-349	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST90090980
-350	MTOR	AP1903		Phase 1/Phase 2	RMM-GWAS	GCST90090980
-351	MTOR	AZD2014	mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
-352	MTOR	AZD8055	mTOR inhibitor	Phase 1	RMM-GWAS	GCST90090980
-353	MTOR	AZ20	ATR kinase inhibitor	Preclinical	RMM-GWAS	GCST90090980
-354	MTOR	beta-hydroxy-beta-methylbutyrate	protein synthesis stimulant	Launched	RMM-GWAS	GCST90090980
-355	MTOR	BGT226	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST90090980
-356	MTOR	CC-115	DNA protein kinase inhibitor|mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
-357	MTOR	CC-223	mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
-358	MTOR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-359	MTOR	CH5132799	PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
-360	MTOR	compound-401	DNA dependent protein kinase inhibitor	Preclinical	RMM-GWAS	GCST90090980
-361	MTOR	deforolimus	mTOR inhibitor	Phase 3	RMM-GWAS	GCST90090980
-362	MTOR	everolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST90090980
-363	MTOR	GDC-0980	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
-364	MTOR	GSK2126458	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
-365	MTOR	KU-0063794	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-366	MTOR	LY294002	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	Preclinical	RMM-GWAS	GCST90090980
-367	MTOR	LY3023414	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
-368	MTOR	MLN0128	mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
-369	MTOR	NVP-BEZ235	mTOR inhibitor|PI3K inhibitor	Phase 3	RMM-GWAS	GCST90090980
-370	MTOR	OSI-027	mTOR inhibitor	Phase 1	RMM-GWAS	GCST90090980
-371	MTOR	palomid-529	AKT inhibitor|mTOR inhibitor	Phase 1	RMM-GWAS	GCST90090980
-372	MTOR	PF-04691502	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
-373	MTOR	PF-05212384	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
-374	MTOR	PI-103	mTOR inhibitor|PI3K inhibitor	Preclinical	RMM-GWAS	GCST90090980
-375	MTOR	PKI-179	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
-376	MTOR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST90090980
-377	MTOR	PP242	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-378	MTOR	SAR-245409	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST90090980
-379	MTOR	SB-2343	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
-380	MTOR	sirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST90090980
-381	MTOR	temsirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST90090980
-382	MTOR	torin-1	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-383	MTOR	torin-2	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-384	MTOR	VE-822	ATR kinase inhibitor	Phase 2	RMM-GWAS	GCST90090980
-385	MTOR	voxtalisib	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
-386	MTOR	WAY-600	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-387	MTOR	WYE-125132	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-388	MTOR	WYE-354	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-389	MTOR	WYE-687	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
-390	MTOR	XL388	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+343	MTOR	AP1903		Phase 1/Phase 2	RMM-GWAS	GCST90090980
+344	MTOR	AZD2014	mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
+345	MTOR	AZD8055	mTOR inhibitor	Phase 1	RMM-GWAS	GCST90090980
+346	MTOR	AZ20	ATR kinase inhibitor	Preclinical	RMM-GWAS	GCST90090980
+347	MTOR	beta-hydroxy-beta-methylbutyrate	protein synthesis stimulant	Launched	RMM-GWAS	GCST90090980
+348	MTOR	BGT226	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST90090980
+349	MTOR	CC-115	DNA protein kinase inhibitor|mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
+350	MTOR	CC-223	mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
+351	MTOR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+352	MTOR	CH5132799	PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
+353	MTOR	compound-401	DNA dependent protein kinase inhibitor	Preclinical	RMM-GWAS	GCST90090980
+354	MTOR	deforolimus	mTOR inhibitor	Phase 3	RMM-GWAS	GCST90090980
+355	MTOR	everolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST90090980
+356	MTOR	GDC-0980	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
+357	MTOR	GSK2126458	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
+358	MTOR	KU-0063794	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+359	MTOR	LY294002	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	Preclinical	RMM-GWAS	GCST90090980
+360	MTOR	LY3023414	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
+361	MTOR	MLN0128	mTOR inhibitor	Phase 2	RMM-GWAS	GCST90090980
+362	MTOR	NVP-BEZ235	mTOR inhibitor|PI3K inhibitor	Phase 3	RMM-GWAS	GCST90090980
+363	MTOR	OSI-027	mTOR inhibitor	Phase 1	RMM-GWAS	GCST90090980
+364	MTOR	palomid-529	AKT inhibitor|mTOR inhibitor	Phase 1	RMM-GWAS	GCST90090980
+365	MTOR	PF-04691502	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
+366	MTOR	PF-05212384	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
+367	MTOR	PI-103	mTOR inhibitor|PI3K inhibitor	Preclinical	RMM-GWAS	GCST90090980
+368	MTOR	PKI-179	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
+369	MTOR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST90090980
+370	MTOR	PP242	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+371	MTOR	SAR-245409	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST90090980
+372	MTOR	SB-2343	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST90090980
+373	MTOR	sirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST90090980
+374	MTOR	temsirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST90090980
+375	MTOR	torin-1	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+376	MTOR	torin-2	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+377	MTOR	VE-822	ATR kinase inhibitor	Phase 2	RMM-GWAS	GCST90090980
+378	MTOR	voxtalisib	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST90090980
+379	MTOR	WAY-600	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+380	MTOR	WYE-125132	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+381	MTOR	WYE-354	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+382	MTOR	WYE-687	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+383	MTOR	XL388	mTOR inhibitor	Preclinical	RMM-GWAS	GCST90090980
+384	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
+385	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
+386	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
+387	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
+388	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
+389	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST90090980
+390	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST90090980
 391	ESR1	afimoxifene	estrogen receptor antagonist	Phase 2	RMM-GWAS	GCST90090980
 392	ESR1	allylestrenol	steroidal progestin	Launched	RMM-GWAS	GCST90090980
 393	ESR1	AZD9496	estrogen receptor agonist	Phase 1	RMM-GWAS	GCST90090980
@@ -450,102 +450,102 @@
 448	ESR1	Y-134	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST90090980
 449	ESR1	ZK-164015	estrogen receptor antagonist	Preclinical	RMM-GWAS	GCST90090980
 450	ESR1	17-hydroxyprogesterone-caproate	progesterone receptor agonist	Launched	RMM-GWAS	GCST90090980
-451	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
-452	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
-453	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
-454	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
-455	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
-456	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
-457	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST006085
-458	MTOR	AP1903		Phase 1/Phase 2	RMM-GWAS	GCST006085
-459	MTOR	AZD2014	mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
-460	MTOR	AZD8055	mTOR inhibitor	Phase 1	RMM-GWAS	GCST006085
-461	MTOR	AZ20	ATR kinase inhibitor	Preclinical	RMM-GWAS	GCST006085
-462	MTOR	beta-hydroxy-beta-methylbutyrate	protein synthesis stimulant	Launched	RMM-GWAS	GCST006085
-463	MTOR	BGT226	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST006085
-464	MTOR	CC-115	DNA protein kinase inhibitor|mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
-465	MTOR	CC-223	mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
-466	MTOR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST006085
-467	MTOR	CH5132799	PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
-468	MTOR	compound-401	DNA dependent protein kinase inhibitor	Preclinical	RMM-GWAS	GCST006085
-469	MTOR	deforolimus	mTOR inhibitor	Phase 3	RMM-GWAS	GCST006085
-470	MTOR	everolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST006085
-471	MTOR	GDC-0980	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
-472	MTOR	GSK2126458	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
-473	MTOR	KU-0063794	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-474	MTOR	LY294002	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	Preclinical	RMM-GWAS	GCST006085
-475	MTOR	LY3023414	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
-476	MTOR	MLN0128	mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
-477	MTOR	NVP-BEZ235	mTOR inhibitor|PI3K inhibitor	Phase 3	RMM-GWAS	GCST006085
-478	MTOR	OSI-027	mTOR inhibitor	Phase 1	RMM-GWAS	GCST006085
-479	MTOR	palomid-529	AKT inhibitor|mTOR inhibitor	Phase 1	RMM-GWAS	GCST006085
-480	MTOR	PF-04691502	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
-481	MTOR	PF-05212384	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
-482	MTOR	PI-103	mTOR inhibitor|PI3K inhibitor	Preclinical	RMM-GWAS	GCST006085
-483	MTOR	PKI-179	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
-484	MTOR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST006085
-485	MTOR	PP242	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-486	MTOR	SAR-245409	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST006085
-487	MTOR	SB-2343	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
-488	MTOR	sirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST006085
-489	MTOR	temsirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST006085
-490	MTOR	torin-1	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-491	MTOR	torin-2	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-492	MTOR	VE-822	ATR kinase inhibitor	Phase 2	RMM-GWAS	GCST006085
-493	MTOR	voxtalisib	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
-494	MTOR	WAY-600	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-495	MTOR	WYE-125132	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-496	MTOR	WYE-354	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-497	MTOR	WYE-687	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-498	MTOR	XL388	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
-499	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
-500	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
-501	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
-502	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
-503	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
-504	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
-505	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST011049
-506	MTOR	AP1903		Phase 1/Phase 2	RMM-GWAS	GCST011049
-507	MTOR	AZD2014	mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
-508	MTOR	AZD8055	mTOR inhibitor	Phase 1	RMM-GWAS	GCST011049
-509	MTOR	AZ20	ATR kinase inhibitor	Preclinical	RMM-GWAS	GCST011049
-510	MTOR	beta-hydroxy-beta-methylbutyrate	protein synthesis stimulant	Launched	RMM-GWAS	GCST011049
-511	MTOR	BGT226	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST011049
-512	MTOR	CC-115	DNA protein kinase inhibitor|mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
-513	MTOR	CC-223	mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
-514	MTOR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST011049
-515	MTOR	CH5132799	PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
-516	MTOR	compound-401	DNA dependent protein kinase inhibitor	Preclinical	RMM-GWAS	GCST011049
-517	MTOR	deforolimus	mTOR inhibitor	Phase 3	RMM-GWAS	GCST011049
-518	MTOR	everolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST011049
-519	MTOR	GDC-0980	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
-520	MTOR	GSK2126458	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
-521	MTOR	KU-0063794	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-522	MTOR	LY294002	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	Preclinical	RMM-GWAS	GCST011049
-523	MTOR	LY3023414	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
-524	MTOR	MLN0128	mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
-525	MTOR	NVP-BEZ235	mTOR inhibitor|PI3K inhibitor	Phase 3	RMM-GWAS	GCST011049
-526	MTOR	OSI-027	mTOR inhibitor	Phase 1	RMM-GWAS	GCST011049
-527	MTOR	palomid-529	AKT inhibitor|mTOR inhibitor	Phase 1	RMM-GWAS	GCST011049
-528	MTOR	PF-04691502	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
-529	MTOR	PF-05212384	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
-530	MTOR	PI-103	mTOR inhibitor|PI3K inhibitor	Preclinical	RMM-GWAS	GCST011049
-531	MTOR	PKI-179	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
-532	MTOR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST011049
-533	MTOR	PP242	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-534	MTOR	SAR-245409	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST011049
-535	MTOR	SB-2343	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
-536	MTOR	sirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST011049
-537	MTOR	temsirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST011049
-538	MTOR	torin-1	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-539	MTOR	torin-2	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-540	MTOR	VE-822	ATR kinase inhibitor	Phase 2	RMM-GWAS	GCST011049
-541	MTOR	voxtalisib	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
-542	MTOR	WAY-600	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-543	MTOR	WYE-125132	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-544	MTOR	WYE-354	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-545	MTOR	WYE-687	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
-546	MTOR	XL388	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+451	MTOR	AP1903		Phase 1/Phase 2	RMM-GWAS	GCST006085
+452	MTOR	AZD2014	mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
+453	MTOR	AZD8055	mTOR inhibitor	Phase 1	RMM-GWAS	GCST006085
+454	MTOR	AZ20	ATR kinase inhibitor	Preclinical	RMM-GWAS	GCST006085
+455	MTOR	beta-hydroxy-beta-methylbutyrate	protein synthesis stimulant	Launched	RMM-GWAS	GCST006085
+456	MTOR	BGT226	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST006085
+457	MTOR	CC-115	DNA protein kinase inhibitor|mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
+458	MTOR	CC-223	mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
+459	MTOR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST006085
+460	MTOR	CH5132799	PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
+461	MTOR	compound-401	DNA dependent protein kinase inhibitor	Preclinical	RMM-GWAS	GCST006085
+462	MTOR	deforolimus	mTOR inhibitor	Phase 3	RMM-GWAS	GCST006085
+463	MTOR	everolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST006085
+464	MTOR	GDC-0980	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
+465	MTOR	GSK2126458	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
+466	MTOR	KU-0063794	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+467	MTOR	LY294002	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	Preclinical	RMM-GWAS	GCST006085
+468	MTOR	LY3023414	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
+469	MTOR	MLN0128	mTOR inhibitor	Phase 2	RMM-GWAS	GCST006085
+470	MTOR	NVP-BEZ235	mTOR inhibitor|PI3K inhibitor	Phase 3	RMM-GWAS	GCST006085
+471	MTOR	OSI-027	mTOR inhibitor	Phase 1	RMM-GWAS	GCST006085
+472	MTOR	palomid-529	AKT inhibitor|mTOR inhibitor	Phase 1	RMM-GWAS	GCST006085
+473	MTOR	PF-04691502	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
+474	MTOR	PF-05212384	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
+475	MTOR	PI-103	mTOR inhibitor|PI3K inhibitor	Preclinical	RMM-GWAS	GCST006085
+476	MTOR	PKI-179	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
+477	MTOR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST006085
+478	MTOR	PP242	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+479	MTOR	SAR-245409	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST006085
+480	MTOR	SB-2343	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST006085
+481	MTOR	sirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST006085
+482	MTOR	temsirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST006085
+483	MTOR	torin-1	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+484	MTOR	torin-2	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+485	MTOR	VE-822	ATR kinase inhibitor	Phase 2	RMM-GWAS	GCST006085
+486	MTOR	voxtalisib	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST006085
+487	MTOR	WAY-600	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+488	MTOR	WYE-125132	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+489	MTOR	WYE-354	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+490	MTOR	WYE-687	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+491	MTOR	XL388	mTOR inhibitor	Preclinical	RMM-GWAS	GCST006085
+492	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
+493	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
+494	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
+495	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
+496	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
+497	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST006085
+498	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST006085
+499	MTOR	AP1903		Phase 1/Phase 2	RMM-GWAS	GCST011049
+500	MTOR	AZD2014	mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
+501	MTOR	AZD8055	mTOR inhibitor	Phase 1	RMM-GWAS	GCST011049
+502	MTOR	AZ20	ATR kinase inhibitor	Preclinical	RMM-GWAS	GCST011049
+503	MTOR	beta-hydroxy-beta-methylbutyrate	protein synthesis stimulant	Launched	RMM-GWAS	GCST011049
+504	MTOR	BGT226	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST011049
+505	MTOR	CC-115	DNA protein kinase inhibitor|mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
+506	MTOR	CC-223	mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
+507	MTOR	chrysophanic-acid	EGFR inhibitor	Preclinical	RMM-GWAS	GCST011049
+508	MTOR	CH5132799	PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
+509	MTOR	compound-401	DNA dependent protein kinase inhibitor	Preclinical	RMM-GWAS	GCST011049
+510	MTOR	deforolimus	mTOR inhibitor	Phase 3	RMM-GWAS	GCST011049
+511	MTOR	everolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST011049
+512	MTOR	GDC-0980	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
+513	MTOR	GSK2126458	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
+514	MTOR	KU-0063794	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+515	MTOR	LY294002	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	Preclinical	RMM-GWAS	GCST011049
+516	MTOR	LY3023414	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
+517	MTOR	MLN0128	mTOR inhibitor	Phase 2	RMM-GWAS	GCST011049
+518	MTOR	NVP-BEZ235	mTOR inhibitor|PI3K inhibitor	Phase 3	RMM-GWAS	GCST011049
+519	MTOR	OSI-027	mTOR inhibitor	Phase 1	RMM-GWAS	GCST011049
+520	MTOR	palomid-529	AKT inhibitor|mTOR inhibitor	Phase 1	RMM-GWAS	GCST011049
+521	MTOR	PF-04691502	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
+522	MTOR	PF-05212384	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
+523	MTOR	PI-103	mTOR inhibitor|PI3K inhibitor	Preclinical	RMM-GWAS	GCST011049
+524	MTOR	PKI-179	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
+525	MTOR	PP-121	protein tyrosine kinase inhibitor	Preclinical	RMM-GWAS	GCST011049
+526	MTOR	PP242	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+527	MTOR	SAR-245409	PI3K inhibitor	Phase 1/Phase 2	RMM-GWAS	GCST011049
+528	MTOR	SB-2343	mTOR inhibitor|PI3K inhibitor	Phase 1	RMM-GWAS	GCST011049
+529	MTOR	sirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST011049
+530	MTOR	temsirolimus	mTOR inhibitor	Launched	RMM-GWAS	GCST011049
+531	MTOR	torin-1	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+532	MTOR	torin-2	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+533	MTOR	VE-822	ATR kinase inhibitor	Phase 2	RMM-GWAS	GCST011049
+534	MTOR	voxtalisib	mTOR inhibitor|PI3K inhibitor	Phase 2	RMM-GWAS	GCST011049
+535	MTOR	WAY-600	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+536	MTOR	WYE-125132	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+537	MTOR	WYE-354	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+538	MTOR	WYE-687	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+539	MTOR	XL388	mTOR inhibitor	Preclinical	RMM-GWAS	GCST011049
+540	RRM2	cladribine	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
+541	RRM2	clofarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
+542	RRM2	fludarabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
+543	RRM2	fludarabine-phosphate	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
+544	RRM2	gemcitabine	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
+545	RRM2	hydroxyurea	ribonucleotide reductase inhibitor	Launched	RMM-GWAS	GCST011049
+546	RRM2	triapine	ribonucleotide reductase inhibitor	Phase 2	RMM-GWAS	GCST011049
 547	POLR2A	dactinomycin	RNA polymerase inhibitor	Launched	RMM-GWAS	GCST011049
 548	CHD1	epirubicin	topoisomerase inhibitor	Launched	RMM-GWAS	GCST007856
 549	MAP2	docetaxel	tubulin polymerization inhibitor	Launched	RMM-GWAS	GCST007728
