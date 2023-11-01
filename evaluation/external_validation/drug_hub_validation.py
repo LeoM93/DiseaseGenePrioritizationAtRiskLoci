@@ -218,66 +218,63 @@ class DrugHubValidation():
 		drug_indication = []
 		algorithm_pval = []
 		random_distribution = []
-		
-		for algorithm, solutions in self.map__algorithm__solutions.items():
+		for considered_gwas in self.map__trait__disease_info.keys():
+			for algorithm, solutions in self.map__algorithm__solutions.items():	
 			
-			
-			for considered_gwas in self.map__trait__disease_info.keys():
-				print(algorithm,considered_gwas)
-				if considered_gwas not in solutions:
-					continue
+				if considered_gwas in solutions:
+					drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = None)
+					drug_targets = drug_targets.intersection(map__disease__seed_RMM_GWAS[considered_gwas.split('__')[0]])
 
-				drug_targets = self.__compute_drug_targets__(query_disease_area = self.map__trait__disease_info[considered_gwas][0], query_indications = None)
+					if len(drug_targets) == 0:
+						break
+
+					solution = solutions[considered_gwas]
+					phi =  len(solution.intersection(drug_targets))
+					precision_table.append([algorithm,considered_gwas.split('__')[0],phi/len(drug_targets)])
+					intersected_targets = solution.intersection(drug_targets)
+
+					for target in intersected_targets:
+						drugs = self.map__target__drugs[target]
+						for drug in drugs:
+							
+							drug_name, disease_area, mou,clinical_phase,indication = drug
+							record = [target,drug_name,mou,clinical_phase, algorithm, considered_gwas]
+							drug_indication.append(record)
 				
-				
-				drug_targets = drug_targets.intersection(map__disease__seed_RMM_GWAS[considered_gwas.split('__')[0]])
+					counter = 0
+					
+					for i in range(trial):
 
-				if len(drug_targets) == 0:
-					print(considered_gwas)
-					print(map__disease__seed[considered_gwas])
-					continue
-
-				solution = solutions[considered_gwas]
-				phi =  len(solution.intersection(drug_targets))
-				precision_table.append([algorithm,considered_gwas.split('__')[0],phi/len(drug_targets)])
-				intersected_targets = solution.intersection(drug_targets)
-
-				for target in intersected_targets:
-					drugs = self.map__target__drugs[target]
-					for drug in drugs:
 						
-						drug_name, disease_area, mou,clinical_phase,indication = drug
-						record = [target,drug_name,mou,clinical_phase, algorithm, considered_gwas]
-						drug_indication.append(record)
-			
-				counter = 0
-				
-				for i in range(trial):
+						if algorithm == 'RMM-GWAS':
+							random_solution = set(random.sample(map__disease__seed_RMM_GWAS[considered_gwas],len(solution)))
+						else:
 
-					
-					if algorithm == 'RMM-GWAS':
-						random_solution = set(random.sample(map__disease__seed_RMM_GWAS[considered_gwas],len(solution)))
+							random_solution = set(random.sample(map__disease__seed[considered_gwas],len(solution)))
+						
+						phi_random = len(random_solution.intersection(drug_targets))
+						
+						random_distribution.append([algorithm, considered_gwas.split('__')[0],phi_random/len(drug_targets)])
+						
+						if phi <= phi_random:
+							counter += 1
+
+					counter_str = ""
+					if counter == 0:
+						counter_str = "p_{val} < 10^{-3}"
 					else:
+						counter_str = "p_{val} ~ " + str(counter/trial) 
 
-						random_solution = set(random.sample(map__disease__seed[considered_gwas],len(solution)))
-					
-					phi_random = len(random_solution.intersection(drug_targets))
-					
-					random_distribution.append([algorithm, considered_gwas.split('__')[0],phi_random/len(drug_targets)])
-					
-					if phi <= phi_random:
-						counter += 1
 
-				counter_str = ""
-				if counter == 0:
-					counter_str = "p_{val} < 10^{-3}"
+
+					algorithm_pval.append([algorithm, considered_gwas.split('__')[0],counter_str])
+				
 				else:
-					counter_str = "p_{val} ~ " + str(counter/trial) 
-
-
-
-				algorithm_pval.append([algorithm, considered_gwas.split('__')[0],counter_str])
-
+					precision_table.append([algorithm,considered_gwas.split("_")[0],0.0])
+					algorithm_pval.append([algorithm, considered_gwas.split("_")[0],1.0])
+                    
+					for i in range(trial):
+						random_distribution.append([algorithm, considered_gwas.split("_")[0],0.0])
 		
 
 
@@ -287,43 +284,6 @@ class DrugHubValidation():
 		pd.DataFrame(drug_indication,columns = ["Gene","Drug Name", "Mechanism of Action", "Drug development phase", "Algorithm", "GWAS"]).to_csv(drug_hub_validation_dir  + "discovered.tsv", sep = "\t")
 
 
-
-	def run_on_randomize_bipartite_graph(self,):
-		self.__load_drug_repurposing_hub__()
-		
-		drug_targets = self.__compute_drug_targets__()
-		self.__load_gene_pool__()
-		solutions = self.__load_random_solution__()
-
-
-		table_1 = []
-		table_2 = []
-		
-		random_phis = []
-		counter = 0
-		phi = len(self.map__algorithm__solution["RMA"].intersection(drug_targets))/len(self.map__algorithm__solution["RMA"])
-		
-		for solution in solutions:
-			phi_random = len(solution.intersection(drug_targets))/len(solution)
-
-			if phi < phi_random:
-				counter += 1
-
-			random_phis.append(phi_random)
-		
-		data_frame = pd.DataFrame(random_phis, columns = ["Random Distribution"])
-		p_val = round(float(counter/len(solutions)), 4)
-
-		data_frame.to_csv(self.validation_dir_path + "drug_target_on_randomize_bipartite_graph.tsv", sep = "\t")
-		pd.DataFrame([["RMA",p_val]],columns = ["Algorithm","p_val"]).to_csv(self.validation_dir_path + "drug_target_p_value_on_randomize_bipartite_graph.tsv", sep = "\t")
-		
-
-		sns_plot = sns.histplot(data = data_frame, x = "Random Distribution")
-		sns_plot.annotate("$P_{val}$: " + str(p_val), xy=(phi, 4), xytext=(phi, 10),
-            arrowprops=dict(arrowstyle="->",color='blue'))
-		sns_plot.set_title("Drug Target Prediction")
-
-		plt.show()
 
 if __name__ == '__main__':
 	

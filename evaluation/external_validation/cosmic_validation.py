@@ -27,6 +27,7 @@ class CosmicOncoKb():
         self.seed_dir_path =  "../../experiments/GWAS/seed/"
         self.seed_dir_rmm_gwas_path = "../../experiments/GWAS/seed_RMM-GWAS/"
         self.cosmic_db = cosmic_db
+        self.oncokb_db = oncokb_db
         
         if not os.path.exists(self.validation_dir_path):
             os.makedirs(self.validation_dir_path)
@@ -145,10 +146,12 @@ class CosmicOncoKb():
         drug_indication = []
         algorithm_pval = []
         random_distribution = []
-        for algorithm, solutions in self.map__algorithm__solutions.items():
-            for gwas, solution in solutions.items():
+        
+        for gwas in self.map__trait__disease_info:
+            for algorithm, solutions in self.map__algorithm__solutions.items():
                 
-                if gwas in self.map__trait__disease_info:
+                if gwas in solutions:
+                    solution = solutions[gwas]
                     if cosmic:
                         target_nodes = self.map__phenotype__groundtruth[self.map__trait__disease_info[gwas]]
                         target_nodes = target_nodes.intersection(map__disease__seed_RMM_GWAS[gwas.split("__")[0]])
@@ -156,20 +159,17 @@ class CosmicOncoKb():
                         target_nodes = self.__load_onco_bk__()
                         target_nodes = target_nodes.intersection(map__disease__seed_RMM_GWAS[gwas.split("__")[0]])
                     
-                    if len(target_nodes) == 0:
-                        continue
-                    
-                    target_nodes_locus = len(set([map__disease__gene__locus[gwas.split("__")[0]][item] for item in target_nodes if item in map__disease__gene__locus[gwas.split("__")[0]]]))
+                   
 
+                    if len(target_nodes) == 0:
+                        break
+                        
                     phi =  len(solution.intersection(target_nodes))
-                    phi_locus = len(set([map__disease__gene__locus[gwas.split("__")[0]][item] for item in solution.intersection(target_nodes) if item in map__disease__gene__locus[gwas.split("__")[0]]]))
-                    ld = "Not filtered"    
-                    precision_table.append([algorithm,gwas.split("_")[0],phi/len(target_nodes),ld, gwas.split("__")[-1]])
+                    precision_table.append([algorithm,gwas.split("_")[0],phi/len(target_nodes)])
                     
 
                     counter = 0
                     for i in range(trial):
-                        print(gwas,algorithm)
                         
                         if algorithm == 'RMM-GWAS':
                             random_solution = set(random.sample(map__disease__seed_RMM_GWAS[gwas],len(solution)))
@@ -179,7 +179,7 @@ class CosmicOncoKb():
                         
                         phi_random = len(random_solution.intersection(target_nodes))
 
-                        random_distribution.append([algorithm, gwas.split("_")[0],phi_random/len(random_solution),ld,gwas.split("__")[-1]])
+                        random_distribution.append([algorithm, gwas.split("_")[0],phi_random/len(random_solution)])
 
                         if phi <= phi_random:
                             counter += 1
@@ -189,11 +189,19 @@ class CosmicOncoKb():
                         counter_str = "p_{val} ~ " + str(counter/trial) 
 
 
-                    algorithm_pval.append([algorithm, gwas.split("_")[0],counter_str,ld,gwas.split("__")[-1]])
-        
-        pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Recall", "filter","input type"]).to_csv(cosmic_validation_dir + "metrics.tsv", sep = "\t")
-        pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Recall", "filter","input type"]).to_csv(cosmic_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
-        pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val", "filter","input type"]).to_csv(cosmic_validation_dir + "metrics_p_val.tsv", sep = "\t")
+                    algorithm_pval.append([algorithm, gwas.split("_")[0],counter_str])
+                
+                else:
+                    precision_table.append([algorithm,gwas.split("_")[0],0.0])
+                    algorithm_pval.append([algorithm, gwas.split("_")[0],1.0])
+                    
+                    for i in range(trial):
+                        random_distribution.append([algorithm, gwas.split("_")[0],0.0])
+
+
+        pd.DataFrame(precision_table, columns = ["Algorithm","GWAS", "Recall"]).to_csv(cosmic_validation_dir + "metrics.tsv", sep = "\t")
+        pd.DataFrame(random_distribution,columns = ["Algorithm","GWAS","Recall"]).to_csv(cosmic_validation_dir + "metrics_random_distribution.tsv", sep = "\t")
+        pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val"]).to_csv(cosmic_validation_dir + "metrics_p_val.tsv", sep = "\t")
 
 
 
@@ -210,4 +218,5 @@ co = CosmicOncoKb(
 )
 
 co.run()
+co.run( validation_dir = "cosmic/", cosmic = True)
 co.run( validation_dir = "onco/", cosmic = False)

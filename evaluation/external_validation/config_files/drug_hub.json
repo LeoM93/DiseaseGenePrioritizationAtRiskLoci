@@ -1,28 +1,22 @@
 {
     
     "GCST004988": ["oncology", "breast cancer"],
-    "GCST004988__closest_genes": ["oncology", "breast cancer"],
 
     "GCST004748": ["oncology", "non-small cell lung cancer (NSCLC)"],
-    "GCST004748__closest_genes": ["oncology", "non-small cell lung cancer (NSCLC)"],
     
     
     "GCST004749": ["oncology", "non-small cell lung cancer (NSCLC)"],
-    "GCST004749__closest_genes": ["oncology", "non-small cell lung cancer (NSCLC)"],
 
     "GCST90090980":["oncology", "breast cancer"],
-    "GCST90090980__closest_genes":["oncology", "breast cancer"],
 
     "GCST006085":["oncology", "prostate cancer"],
-    "GCST006085__closest_genes": ["oncology", "prostate cancer"],
 
     "GCST011049":["oncology", "prostate cancer"],
-    "GCST011049__closest_genes": ["oncology", "prostate cancer"],
 
 
     "GCST007856":["oncology", "colorectal cancer"],
-    "GCST007856__closest_genes":["oncology", "colorectal cancer"],
 
     "GCST007728":["oncology", "ovarian cancer"],
-    "GCST007728__closest_genes":["oncology", "ovarian cancer"]
+    
+    "GCST007692":["pulmonary", "bronchitis|emphysema|chronic obstructive pulmonary disease (COPD)|asthma"]
 }

@@ -1,32 +1,45 @@
-	Algorithm	GWAS	p_val	filter	input type
-0	DOMINO	GCST90027058	p_{val} ~ 0.04	Not filtered	closest_genes
-1	DOMINO	GCST012213	p_{val} ~ 0.68	Not filtered	closest_genes
-2	DOMINO	GCST004988	p_{val} < 10^{-6}	Not filtered	closest_genes
-3	DOMINO	GCST90090980	p_{val} < 10^{-6}	Not filtered	closest_genes
-4	DOMINO	GCST004748	p_{val} ~ 0.03	Not filtered	closest_genes
-5	DOMINO	GCST011049	p_{val} < 10^{-6}	Not filtered	closest_genes
-6	DOMINO	GCST006085	p_{val} < 10^{-6}	Not filtered	closest_genes
-7	DOMINO	GCST004749	p_{val} < 10^{-6}	Not filtered	closest_genes
-8	DOMINO	GCST007856	p_{val} < 10^{-6}	Not filtered	closest_genes
-9	DOMINO	GCST007728	p_{val} ~ 0.01	Not filtered	closest_genes
-10	dmGWAS	GCST012213	p_{val} ~ 1.0	Not filtered	closest_genes
-11	dmGWAS	GCST004988	p_{val} ~ 0.09	Not filtered	closest_genes
-12	dmGWAS	GCST011049	p_{val} ~ 0.01	Not filtered	closest_genes
-13	dmGWAS	GCST006085	p_{val} ~ 0.06	Not filtered	closest_genes
-14	dmGWAS	GCST004749	p_{val} ~ 0.01	Not filtered	closest_genes
-15	RMM-GWAS	GCST007728	p_{val} ~ 0.01	Not filtered	GCST007728
-16	RMM-GWAS	GCST004988	p_{val} < 10^{-6}	Not filtered	GCST004988
-17	RMM-GWAS	GCST90027058	p_{val} ~ 0.13	Not filtered	GCST90027058
-18	RMM-GWAS	GCST007856	p_{val} < 10^{-6}	Not filtered	GCST007856
-19	RMM-GWAS	GCST011049	p_{val} < 10^{-6}	Not filtered	GCST011049
-20	RMM-GWAS	GCST006085	p_{val} < 10^{-6}	Not filtered	GCST006085
-21	RMM-GWAS	GCST012213	p_{val} < 10^{-6}	Not filtered	GCST012213
-22	RMM-GWAS	GCST90090980	p_{val} < 10^{-6}	Not filtered	GCST90090980
-23	RMM-GWAS	GCST004749	p_{val} < 10^{-6}	Not filtered	GCST004749
-24	RMM-GWAS	GCST004748	p_{val} ~ 0.03	Not filtered	GCST004748
-25	SIGMOID	GCST90027058	p_{val} ~ 0.01	Not filtered	closest_genes
-26	SIGMOID	GCST012213	p_{val} ~ 0.22	Not filtered	closest_genes
-27	SIGMOID	GCST004988	p_{val} < 10^{-6}	Not filtered	closest_genes
-28	SIGMOID	GCST011049	p_{val} < 10^{-6}	Not filtered	closest_genes
-29	SIGMOID	GCST006085	p_{val} < 10^{-6}	Not filtered	closest_genes
-30	SIGMOID	GCST007856	p_{val} < 10^{-6}	Not filtered	closest_genes
+	Algorithm	GWAS	p_val
+0	DOMINO	GCST004988	$p_{val} < 10^{-6}$
+1	dmGWAS	GCST004988	$p_{val} ~ 0.1$
+2	RMM-GWAS	GCST004988	$p_{val} < 10^{-6}$
+3	SIGMOID	GCST004988	$p_{val} < 10^{-6}$
+4	DOMINO	GCST90090980	$p_{val} < 10^{-6}$
+5	dmGWAS	GCST90090980	1.0
+6	RMM-GWAS	GCST90090980	$p_{val} < 10^{-6}$
+7	SIGMOID	GCST90090980	1.0
+8	DOMINO	GCST004748	$p_{val} < 10^{-6}$
+9	dmGWAS	GCST004748	1.0
+10	RMM-GWAS	GCST004748	$p_{val} ~ 0.01$
+11	SIGMOID	GCST004748	1.0
+12	DOMINO	GCST004749	$p_{val} < 10^{-6}$
+13	dmGWAS	GCST004749	$p_{val} ~ 0.02$
+14	RMM-GWAS	GCST004749	$p_{val} < 10^{-6}$
+15	SIGMOID	GCST004749	1.0
+16	DOMINO	GCST006085	$p_{val} < 10^{-6}$
+17	dmGWAS	GCST006085	$p_{val} ~ 0.1$
+18	RMM-GWAS	GCST006085	$p_{val} < 10^{-6}$
+19	SIGMOID	GCST006085	$p_{val} < 10^{-6}$
+20	DOMINO	GCST011049	$p_{val} < 10^{-6}$
+21	dmGWAS	GCST011049	$p_{val} ~ 0.01$
+22	RMM-GWAS	GCST011049	$p_{val} < 10^{-6}$
+23	SIGMOID	GCST011049	$p_{val} < 10^{-6}$
+24	DOMINO	GCST012213	$p_{val} ~ 0.71$
+25	dmGWAS	GCST012213	$p_{val} ~ 1.0$
+26	RMM-GWAS	GCST012213	$p_{val} < 10^{-6}$
+27	SIGMOID	GCST012213	$p_{val} ~ 0.14$
+28	DOMINO	GCST90027058	$p_{val} ~ 0.04$
+29	dmGWAS	GCST90027058	1.0
+30	RMM-GWAS	GCST90027058	$p_{val} ~ 0.11
+31	SIGMOID	GCST90027058	$p_{val} ~ 0.05$
+32	DOMINO	GCST007856	$p_{val} < 10^{-6}$
+33	dmGWAS	GCST007856	1.0
+34	RMM-GWAS	GCST007856	$p_{val} < 10^{-6}$
+35	SIGMOID	GCST007856	$p_{val} < 10^{-6}$
+36	DOMINO	GCST007728	$p_{val} ~ 0.04$
+37	dmGWAS	GCST007728	1.0
+38	RMM-GWAS	GCST007728	$p_{val} < 10^{-6}$
+39	SIGMOID	GCST007728	1.0
+40	DOMINO	GCST90129505	1.0
+41	dmGWAS	GCST90129505	1.0
+42	RMM-GWAS	GCST90129505	1.0
+43	SIGMOID	GCST90129505	1.0

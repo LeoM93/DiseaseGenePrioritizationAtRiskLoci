@@ -12,6 +12,7 @@ class AlgorithmWrapper():
 	def __init__(self, 
 		disease_dir_path,
 		GWAS_dir_path,
+		filter_ = [],
 
 	):
 		self.GWAS_dir = GWAS_dir_path + "studies/"
@@ -45,7 +46,7 @@ class AlgorithmWrapper():
 		if not os.path.exists(self.algorithm_dir_path):
 			os.makedirs(self.algorithm_dir_path)
 		
-		self.GWAS_file_paths = [self.GWAS_dir + file for file in os.listdir(self.GWAS_dir) if file[0] != "."]
+		self.GWAS_file_paths = [self.GWAS_dir + file for file in os.listdir(self.GWAS_dir) if file[0] != "." and file in filter_]
 		self.GWAS_config_files = [self.GWAS_config_file + file for file in os.listdir(self.GWAS_config_file) if file[0] != "."]
 	
 	def __load_vegas_2__(self,file_name):
@@ -274,7 +275,8 @@ class AlgorithmWrapper():
 
 aw = AlgorithmWrapper(
 	disease_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/algorithm_comparison/",
-	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS/"
+	GWAS_dir_path = "/Users/leonardomartini/Documents/network_medicine/DiseaseGenePrioritizationAtRiskLoci/experiments/GWAS/",
+	filter_ = ['GCST007692.tsv']
 	)
 
 aw.run()

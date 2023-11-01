@@ -1,0 +1,36 @@
+LINE 401 : 2023-10-10 12:13:26,465 [INFO    ] Connecting to Enrichr Server to get latest library names
+LINE 228 : 2023-10-10 12:13:26,473 [DEBUG   ] Starting new HTTP connection (1): maayanlab.cloud:80
+LINE 456 : 2023-10-10 12:13:26,547 [DEBUG   ] http://maayanlab.cloud:80 "GET /Enrichr/datasetStatistics HTTP/1.1" 308 164
+LINE 1001: 2023-10-10 12:13:26,551 [DEBUG   ] Starting new HTTPS connection (1): maayanlab.cloud:443
+LINE 456 : 2023-10-10 12:13:26,655 [DEBUG   ] https://maayanlab.cloud:443 "GET /Enrichr/datasetStatistics HTTP/1.1" 200 None
+LINE 421 : 2023-10-10 12:13:26,766 [DEBUG   ] Start Enrichr using library: Reactome_2016
+LINE 422 : 2023-10-10 12:13:26,767 [INFO    ] Analysis name: , Enrichr Library: Reactome_2016
+LINE 228 : 2023-10-10 12:13:26,769 [DEBUG   ] Starting new HTTP connection (1): maayanlab.cloud:80
+LINE 456 : 2023-10-10 12:13:26,825 [DEBUG   ] http://maayanlab.cloud:80 "POST /Enrichr/addList HTTP/1.1" 308 164
+LINE 1001: 2023-10-10 12:13:26,829 [DEBUG   ] Starting new HTTPS connection (1): maayanlab.cloud:443
+LINE 456 : 2023-10-10 12:13:26,932 [DEBUG   ] https://maayanlab.cloud:443 "POST /Enrichr/addList HTTP/1.1" 200 74
+LINE 228 : 2023-10-10 12:13:27,948 [DEBUG   ] Starting new HTTP connection (1): maayanlab.cloud:80
+LINE 456 : 2023-10-10 12:13:27,973 [DEBUG   ] http://maayanlab.cloud:80 "GET /Enrichr/export?userListId=66009171&filename=Reactome_2016..reports&backgroundType=Reactome_2016 HTTP/1.1" 308 164
+LINE 1001: 2023-10-10 12:13:27,977 [DEBUG   ] Starting new HTTPS connection (1): maayanlab.cloud:443
+LINE 456 : 2023-10-10 12:13:28,105 [DEBUG   ] https://maayanlab.cloud:443 "GET /Enrichr/export?userListId=66009171&filename=Reactome_2016..reports&backgroundType=Reactome_2016 HTTP/1.1" 200 None
+LINE 430 : 2023-10-10 12:13:28,266 [INFO    ] Save file of enrichment results: Job Id:fce3d3272fcaad80ac33be6840730e6b
+LINE 440 : 2023-10-10 12:13:28,268 [INFO    ] Done.
+
+LINE 401 : 2023-10-10 12:13:28,270 [INFO    ] Connecting to Enrichr Server to get latest library names
+LINE 228 : 2023-10-10 12:13:28,272 [DEBUG   ] Starting new HTTP connection (1): maayanlab.cloud:80
+LINE 456 : 2023-10-10 12:13:28,312 [DEBUG   ] http://maayanlab.cloud:80 "GET /Enrichr/datasetStatistics HTTP/1.1" 308 164
+LINE 1001: 2023-10-10 12:13:28,316 [DEBUG   ] Starting new HTTPS connection (1): maayanlab.cloud:443
+LINE 456 : 2023-10-10 12:13:28,383 [DEBUG   ] https://maayanlab.cloud:443 "GET /Enrichr/datasetStatistics HTTP/1.1" 200 None
+LINE 421 : 2023-10-10 12:13:28,461 [DEBUG   ] Start Enrichr using library: Reactome_2016
+LINE 422 : 2023-10-10 12:13:28,461 [INFO    ] Analysis name: , Enrichr Library: Reactome_2016
+LINE 228 : 2023-10-10 12:13:28,464 [DEBUG   ] Starting new HTTP connection (1): maayanlab.cloud:80
+LINE 456 : 2023-10-10 12:13:28,496 [DEBUG   ] http://maayanlab.cloud:80 "POST /Enrichr/addList HTTP/1.1" 308 164
+LINE 1001: 2023-10-10 12:13:28,499 [DEBUG   ] Starting new HTTPS connection (1): maayanlab.cloud:443
+LINE 456 : 2023-10-10 12:13:28,664 [DEBUG   ] https://maayanlab.cloud:443 "POST /Enrichr/addList HTTP/1.1" 200 74
+LINE 228 : 2023-10-10 12:13:29,672 [DEBUG   ] Starting new HTTP connection (1): maayanlab.cloud:80
+LINE 456 : 2023-10-10 12:13:29,698 [DEBUG   ] http://maayanlab.cloud:80 "GET /Enrichr/export?userListId=66009173&filename=Reactome_2016..reports&backgroundType=Reactome_2016 HTTP/1.1" 308 164
+LINE 1001: 2023-10-10 12:13:29,702 [DEBUG   ] Starting new HTTPS connection (1): maayanlab.cloud:443
+LINE 456 : 2023-10-10 12:13:29,889 [DEBUG   ] https://maayanlab.cloud:443 "GET /Enrichr/export?userListId=66009173&filename=Reactome_2016..reports&backgroundType=Reactome_2016 HTTP/1.1" 200 None
+LINE 430 : 2023-10-10 12:13:29,972 [INFO    ] Save file of enrichment results: Job Id:d7d09ac4cf9eab109acf44ac692374f2
+LINE 440 : 2023-10-10 12:13:29,977 [INFO    ] Done.
+

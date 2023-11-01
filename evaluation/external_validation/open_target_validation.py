@@ -23,8 +23,8 @@ class OpenTarget():
 		self.disease_experiment_dir_path = disease_experiment_dir_path
 		self.algorithms_file_path = disease_experiment_dir_path + "algorithms/"
 		self.validation_dir_path = disease_experiment_dir_path + "validation/"
-		self.seed_dir_path =  "../../experiments/input/seed/"
-		self.seed_dir_rmm_gwas_path = "../../experiments/input/seed_RMM-GWAS/"
+		self.seed_dir_path =  "../../experiments/GWAS/seed/"
+		self.seed_dir_rmm_gwas_path = "../../experiments/GWAS/seed_RMM-GWAS/"
 
 		if not os.path.exists(self.validation_dir_path):
 			os.makedirs(self.validation_dir_path)
@@ -180,7 +180,7 @@ class OpenTarget():
 		
 		for algorithm, solutions in self.map__algorithm__solutions.items():
 			for gwas, solution in solutions.items():
-				if gwas in ["GCST009841", "GCST007692","GCST004748"]:
+				if gwas in [ "GCST007692"]:
 					target_nodes = self.__compute_number_of_gene_in_phenotype_class__()
 					print(map__disease__seed_RMM_GWAS[gwas])
 					target_nodes = target_nodes.intersection(map__disease__seed_RMM_GWAS[gwas])
@@ -194,7 +194,7 @@ class OpenTarget():
 				
 						random_solution = set(random.sample(map__disease__seed[gwas],len(solution)))
 						if algorithm == 'RMM-GWAS':
-							random_solution = set(random.sample(map__disease__seed_RMM_GWAS[considered_gwas],len(solution)))
+							random_solution = set(random.sample(map__disease__seed_RMM_GWAS[gwas],len(solution)))
 						
 						phi_random = len(random_solution.intersection(target_nodes))
 						random_distribution.append([algorithm, gwas,phi_random/len(random_solution)])
@@ -214,41 +214,11 @@ class OpenTarget():
 		pd.DataFrame(algorithm_pval,columns = ["Algorithm","GWAS","p_val"]).to_csv(open_target_validation_dir + "metrics_p_val.tsv", sep = "\t")
 
 
-	def run_on_randomize_bipartite_graph(self,):
-		self.__load_mouse_phenotype_db__()
-		
-		solutions = self.__load_random_solution__()
-		target_nodes = self.__compute_number_of_gene_in_phenotype_class__()
-
-		random_phis = []
-		counter = 0
-		phi = len(self.map__algorithm__solution["RMA"].intersection(target_nodes))/len(self.map__algorithm__solution["RMA"])
-		for solution in solutions:
-			phi_random = len(solution.intersection(target_nodes))/len(solution)
-			random_phis.append(phi_random)
-
-			if phi < phi_random:
-				counter += 1
-
-
-		data_frame = pd.DataFrame(random_phis, columns = ["Random Distribution"])
-		data_frame.to_csv(self.validation_dir_path + "open_target_on_randomize_bipartite_graph.tsv", sep = "\t")
-
-		p_val = round(float(counter/len(solutions)), 4)
-		pd.DataFrame([["RMA",p_val]],columns = ["Algorithm","p_val"]).to_csv(self.validation_dir_path + "open_target_p_value_on_randomize_bipartite_graph.tsv", sep = "\t")
-
-		sns_plot = sns.histplot(data = data_frame, x = "Random Distribution")
-		sns_plot.annotate("$P_{val}$: " + str(p_val), xy=(phi, 0.5), xytext=(phi, 10),
-            arrowprops=dict(arrowstyle="->",color='blue'))
-		sns_plot.set_title("Mouse Phenotypes Prediction")
-
-		plt.show()
-
 			
 
 
 op = OpenTarget(
-	disease_experiment_dir_path = "../../experiments/algorithm_comparison_GWAS_2Mb/", 
+	disease_experiment_dir_path = "../../experiments/algorithm_comparison/", 
 	random_solution_dir = "../../experiments/Robustness_Experiment/",
 	mouse_phenotype_db = "../../datasets/curated_db/mouse_phenotype_COPD.tsv",
 	ensembl_db_file_path = "../../datasets/curated_db/mart_export.txt",

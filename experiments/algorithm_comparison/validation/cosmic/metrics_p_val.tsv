@@ -1,27 +1,37 @@
-	Algorithm	GWAS	p_val	filter	input type
-0	DOMINO	GCST90027058	p_{val} ~ 1.0	Not filtered	closest_genes
-1	DOMINO	GCST012213	p_{val} ~ 1.0	Not filtered	closest_genes
-2	DOMINO	GCST004988	p_{val} < 10^{-6}	Not filtered	closest_genes
-3	DOMINO	GCST90090980	p_{val} < 10^{-6}	Not filtered	closest_genes
-4	DOMINO	GCST011049	p_{val} ~ 0.12	Not filtered	closest_genes
-5	DOMINO	GCST006085	p_{val} ~ 0.22	Not filtered	closest_genes
-6	DOMINO	GCST007856	p_{val} ~ 0.45	Not filtered	closest_genes
-7	DOMINO	GCST007728	p_{val} ~ 1.0	Not filtered	closest_genes
-8	dmGWAS	GCST012213	p_{val} ~ 1.0	Not filtered	closest_genes
-9	dmGWAS	GCST004988	p_{val} ~ 0.06	Not filtered	closest_genes
-10	dmGWAS	GCST011049	p_{val} ~ 1.0	Not filtered	closest_genes
-11	dmGWAS	GCST006085	p_{val} ~ 1.0	Not filtered	closest_genes
-12	RMM-GWAS	GCST007728	p_{val} ~ 1.0	Not filtered	GCST007728
-13	RMM-GWAS	GCST004988	p_{val} < 10^{-6}	Not filtered	GCST004988
-14	RMM-GWAS	GCST90027058	p_{val} ~ 0.27	Not filtered	GCST90027058
-15	RMM-GWAS	GCST007856	p_{val} < 10^{-6}	Not filtered	GCST007856
-16	RMM-GWAS	GCST011049	p_{val} ~ 0.4	Not filtered	GCST011049
-17	RMM-GWAS	GCST006085	p_{val} ~ 1.0	Not filtered	GCST006085
-18	RMM-GWAS	GCST012213	p_{val} ~ 1.0	Not filtered	GCST012213
-19	RMM-GWAS	GCST90090980	p_{val} ~ 0.01	Not filtered	GCST90090980
-20	SIGMOID	GCST90027058	p_{val} ~ 1.0	Not filtered	closest_genes
-21	SIGMOID	GCST012213	p_{val} ~ 1.0	Not filtered	closest_genes
-22	SIGMOID	GCST004988	p_{val} < 10^{-6}	Not filtered	closest_genes
-23	SIGMOID	GCST011049	p_{val} ~ 0.07	Not filtered	closest_genes
-24	SIGMOID	GCST006085	p_{val} ~ 1.0	Not filtered	closest_genes
-25	SIGMOID	GCST007856	p_{val} ~ 0.01	Not filtered	closest_genes
+	Algorithm	GWAS	p_val
+0	DOMINO	GCST004988	p_{val} < 10^{-6}
+1	dmGWAS	GCST004988	p_{val} ~ 0.08
+2	RMM-GWAS	GCST004988	p_{val} < 10^{-6}
+3	SIGMOID	GCST004988	p_{val} < 10^{-6}
+4	DOMINO	GCST90090980	p_{val} < 10^{-6}
+5	dmGWAS	GCST90090980	1.0
+6	RMM-GWAS	GCST90090980	p_{val} < 10^{-6}
+7	SIGMOID	GCST90090980	1.0
+8	DOMINO	GCST006085	p_{val} ~ 0.17
+9	dmGWAS	GCST006085	p_{val} ~ 1.0
+10	RMM-GWAS	GCST006085	p_{val} ~ 1.0
+11	SIGMOID	GCST006085	p_{val} ~ 1.0
+12	DOMINO	GCST011049	p_{val} ~ 0.13
+13	dmGWAS	GCST011049	p_{val} ~ 1.0
+14	RMM-GWAS	GCST011049	p_{val} ~ 0.34
+15	SIGMOID	GCST011049	p_{val} ~ 0.01
+16	DOMINO	GCST012213	p_{val} ~ 1.0
+17	dmGWAS	GCST012213	p_{val} ~ 1.0
+18	RMM-GWAS	GCST012213	p_{val} ~ 1.0
+19	SIGMOID	GCST012213	p_{val} ~ 1.0
+20	DOMINO	GCST90027058	p_{val} ~ 1.0
+21	dmGWAS	GCST90027058	1.0
+22	RMM-GWAS	GCST90027058	p_{val} ~ 0.25
+23	SIGMOID	GCST90027058	p_{val} ~ 1.0
+24	DOMINO	GCST007856	p_{val} ~ 0.44
+25	dmGWAS	GCST007856	1.0
+26	RMM-GWAS	GCST007856	p_{val} < 10^{-6}
+27	SIGMOID	GCST007856	p_{val} ~ 0.02
+28	DOMINO	GCST007728	p_{val} ~ 1.0
+29	dmGWAS	GCST007728	1.0
+30	RMM-GWAS	GCST007728	p_{val} ~ 1.0
+31	SIGMOID	GCST007728	1.0
+32	DOMINO	GCST90129505	1.0
+33	dmGWAS	GCST90129505	1.0
+34	RMM-GWAS	GCST90129505	1.0
+35	SIGMOID	GCST90129505	1.0

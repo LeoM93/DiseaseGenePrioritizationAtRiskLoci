@@ -3,3 +3,4 @@ sota/DOMINO/src/data/*
 sota/hotnet2
 .DS_Store
 datasets/
+experiments/
