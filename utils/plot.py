@@ -93,57 +93,13 @@ class Plot():
         
         concat_df = concat_df[concat_df['root'] == "R-HSA-162582"]
         concat_df = concat_df.drop(columns=['root'])
+        concat_df.index = concat_df.index.str.replace(r' Homo sapiens R-HSA-\d+', '', regex=True)
         f,axes = plt.subplots(1,1,figsize = (4,8))
         sns_plot = sns.heatmap(concat_df, annot=False,ax = axes)
+        colorbar = sns_plot.collections[0].colorbar
+        colorbar.set_label(r'$-\log P_{value}$', fontsize=12)
         f.savefig('../imgs/reactome_heatmap.pdf',bbox_inches='tight')
         
-
-    def compute_cluster_map(self, chosen_diseases, database):
-            
-        f,axes = plt.subplots(2,3, figsize=(16,9))
-        for dir_ in [self.validation_path + file + "/" for file in os.listdir(self.validation_path) if file[0] != "."]:
-            if database not in dir_:
-                continue
-            
-            random_distribution_data_frame = self.__load_random_distribution__(dir_)
-            metrics_data_frame = self.__load_metrics__(dir_)
-            p_val_df = self.__load_pvals__(dir_)
-            
-
-            for i in range(2):
-                for j in range(3):
-                    disease = chosen_diseases[2*i + j]
-                
-                    current_df = random_distribution_data_frame.loc[(random_distribution_data_frame['GWAS'] == disease)]
-                    current_metrics = metrics_data_frame.loc[(metrics_data_frame['GWAS'] == disease)]
-                    current_p_val = p_val_df.loc[(p_val_df['GWAS'] == disease)]
-                    
-                    print(current_metrics.iloc[0]['Recall'])
-                    sns.boxplot(data = current_df,x="Algorithm", y="Recall",showfliers = False,color='white',ax= axes[i][j])
-                    sns.scatterplot(data = current_metrics,x = "Algorithm", y = "Recall",s=200, color=".2", hue= "Algorithm", style = "Algorithm",ax= axes[i][j])
-                    axes[i][j].set_title('GWAS: ' + disease)
-                    if i == 0:
-                        axes[i][j].set_xlabel('')
-                    
-                    if i == 0 and j == 0:
-                        axes[i][j].get_legend().set_visible(True)
-                    else:
-                        axes[i][j].get_legend().set_visible(False)
-                    '''
-                    axes[i][j].annotate(current_p_val.iloc[0]['p_val'], xy=(current_p_val.iloc[0]['Algorithm'], current_metrics.iloc[0]['Recall']), xytext=(current_p_val.iloc[0]['Algorithm'], current_metrics.iloc[0]['Recall'] + 0.005 ),
-                        arrowprops=dict(arrowstyle="->",color='blue'))
-                    axes[i][j].annotate(current_p_val.iloc[1]['p_val'], xy=(current_p_val.iloc[1]['Algorithm'], current_metrics.iloc[1]['Recall']), xytext=(current_p_val.iloc[1]['Algorithm'], current_metrics.iloc[1]['Recall'] + 0.005),
-                        arrowprops=dict(arrowstyle="->",color='blue'))
-                    axes[i][j].annotate(current_p_val.iloc[2]['p_val'], xy=(current_p_val.iloc[2]['Algorithm'], current_metrics.iloc[2]['Recall']), xytext=(current_p_val.iloc[2]['Algorithm'], current_metrics.iloc[2]['Recall'] + 0.005),
-                        arrowprops=dict(arrowstyle="->",color='blue'))
-                    axes[i][j].annotate(current_p_val.iloc[3]['p_val'], xy=(current_p_val.iloc[3]['Algorithm'], current_metrics.iloc[3]['Recall']), xytext=(current_p_val.iloc[3]['Algorithm'], current_metrics.iloc[3]['Recall']+ 0.005),
-                        arrowprops=dict(arrowstyle="->",color='blue'))
-                    '''
-            
-            
-            plt.show()
-    
-    
     
     def compute_comparison(self, chosen_diseases = []):
         random_distribution_concats  = []
@@ -195,8 +151,37 @@ class Plot():
 
         f.savefig('../imgs/algorithm_comparison.pdf',bbox_inches='tight')
     
+    def show_mouse_phenotypes(self, chosen_diseases = []):
+        random_distribution_concats  = []
+        metrics_concats  = []
+        for dir_ in [self.validation_path + file + "/" for file in os.listdir(self.validation_path) if file[0] != "."]:
+            print(dir_)
+            if "mouse_phenotypes" not in dir_:
+                continue 
+            
+            data_set = dir_.split("/")[-2]
+            
+            random_distribution_data_frame = self.__load_random_distribution__(dir_)
+            random_distribution_data_frame['Dataset'] = data_set
+            metrics_data_frame = self.__load_metrics__(dir_)
+            metrics_data_frame['Dataset'] = data_set
+            
+            metrics_concats.append(metrics_data_frame)
+            random_distribution_concats.append(random_distribution_data_frame)
+
+        distribution_df = pd.concat(random_distribution_concats, axis=0)
+        metrics_df = pd.concat(metrics_concats,axis=0)
+
+        f,axes = plt.subplots(1,1,figsize = (5,5))
+        sns.boxplot(data = distribution_df,x="Algorithm", y="Recall",showfliers = False,color='white',ax= axes)
+        sns.scatterplot(data = metrics_df,x = "Algorithm", y = "Recall",s=200, color=".2", hue= "Algorithm", style = "Algorithm",ax= axes)
+        axes.set_title('Mouse Phenotypes')
+        f.savefig('../imgs/mouse_phenotypes.pdf',bbox_inches='tight')
+
+    
 p = Plot(
     experiment_dir_path = "../experiments/algorithm_comparison/"
     )
 
-p.compute_cluster_map(chosen_diseases = ["GCST004988","GCST90090980","GCST011049","GCST004749", "GCST006085","GCST007856"], database= "onco")
+
+p.compute_gsea()
