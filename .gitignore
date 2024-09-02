@@ -2,7 +2,6 @@ sota/DEPICT
 sota/DOMINO/src/data/*
 sota/hotnet2
 sota/
-.DS_Store
 datasets/
 experiments/
 evaluation/
