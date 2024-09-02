@@ -49,13 +49,13 @@ To compute the weighted graph, run the following commands:
  ```
  
  ```
- python3 main.py <graph_input_file_path> <output_file_path> <gene_to_locus_file_path>
+ python3 main.py <graph_input_file_path> <output_file_path> <seed_RMM-GWAS_file_path>
  ```
 The files used in the manuscript can be downloaded at: https://drive.google.com/file/d/12oDaaEs1vso82UXsRe2AWeoGqNccZuLM/view?usp=sharing
 
 ## Running Relations-Maximization Method
 
-The directory DiseaseGenePrioritizationAtRiskLoci/toy_example contains input files as a toy dataset for RMM-GWAS
+The directory DiseaseGenePrioritizationAtRiskLoci/example contains the input graph we used in the manuscript
 
 To run RMM-GWAS, pleas follow these commands:
 
@@ -63,10 +63,5 @@ To run RMM-GWAS, pleas follow these commands:
  cd rmm_gwas python3 run_relations_maximization.py <graph_input_file_name> <output_file_path>
  ```
  
- ```
- python3 main.py <graph_input_file_path> <output_file_path> <gene_to_locus_file_path>
 
-
-## Usefull notes
-1. url ld: https://ldlink.nih.gov/?tab=snpclip
 
