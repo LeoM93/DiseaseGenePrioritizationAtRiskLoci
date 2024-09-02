@@ -51,8 +51,7 @@ To compute the weighted graph, run the following commands:
  ```
  python3 main.py <graph_input_file_path> <output_file_path> <seed_RMM-GWAS_file_path>
  ```
-The files used in the manuscript can be downloaded at: https://drive.google.com/file/d/12oDaaEs1vso82UXsRe2AWeoGqNccZuLM/view?usp=sharing
-
+The files used in the manuscript can be downloaded at: https://drive.google.com/file/d/1Hr8ewWxBObWqDQfZo5KxHdJYTaDseBh4/view?usp=sharing. Zip in the root directory to run this step.
 ## Running Relations-Maximization Method
 
 The directory DiseaseGenePrioritizationAtRiskLoci/example contains the input graph we used in the manuscript
