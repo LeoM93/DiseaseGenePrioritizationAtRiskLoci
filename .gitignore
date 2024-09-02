@@ -5,6 +5,8 @@ sota/
 .DS_Store
 datasets/
 experiments/
+evaluation/
+
 imgs/
 utils/
 algorithm_wrapper.py
